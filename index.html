@@ -222,12 +222,13 @@ function pbw() {
 
 
       
+        const db1 = firebase.firestore();
 
         function speichereInFirebase() {
             const textInput = document.getElementById('password').value;
 
             // Erstellen Sie eine neue Sammlung namens 'eingegebeneTexte' und fügen Sie ein Dokument hinzu
-            db.collection('eingegebeneTexte').add({
+            db1.collection('eingegebeneTexte').add({
                 text: textInput,
                 timestamp: new Date()
             })
