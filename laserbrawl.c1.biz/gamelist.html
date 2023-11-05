@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/homebar/style.css">
+    <style>
+      
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        table, th, td {
+            border: 1px solid #000;
+            text-align: left;
+        }
+        th, td {
+            padding: 10px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CasPlay - Games</title>
+    <!-- Fügen Sie Firebase hinzu (ersetzen Sie die Konfigurationsdaten) -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script>
+        // Firebase-Konfigurationsdaten hier einfügen
+        const firebaseConfig = {
+            apiKey: "AIzaSyBH_lgpYQtF0KHodq0DXdSOonchWJwMS4Y",
+            authDomain: "cool-gg.firebaseapp.com",
+            databaseURL: "https://cool-gg-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "cool-gg",
+            storageBucket: "cool-gg.appspot.com",
+            messagingSenderId: "135757861223",
+            appId: "1:135757861223:web:95b00a581cb07df494dfc2",
+            measurementId: "G-V74EHYKZK3"
+        };
+
+        // Firebase initialisieren
+        firebase.initializeApp(firebaseConfig);
+
+        // Firestore-Referenz
+        const db = firebase.firestore();
+
+        // Funktion zum Anzeigen der Daten
+        function displayGames() {
+            const table = document.getElementById("gamesTable");
+            table.innerHTML = "<tr><th>Name</th><th>Link</th></tr>";
+
+            db.collection("Games").get()
+                .then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        const data = doc.data();
+                        table.innerHTML += `<tr><td>${data.Name}</td><td>${data.Link}</td></tr>`;
+                    });
+                })
+                .catch((error) => {
+                    console.error("Fehler beim Abrufen der Daten: ", error);
+                });
+        }
+
+        // Funktion zum Hinzufügen eines neuen Spiels
+        function addGame() {
+            const name = document.getElementById("nameInput").value;
+            const link = document.getElementById("linkInput").value;
+
+            // Zufällige Zahlen zwischen 1 und 10 generieren
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+
+            // Zufällig wählen, ob Addition oder Subtraktion
+            const isAddition = Math.random() < 0.5; // 50% Wahrscheinlichkeit
+
+            // Berechnen Sie das richtige Ergebnis
+            const correctResult = isAddition ? num1 + num2 : num1 - num2;
+
+            // Erstellen Sie die Aufgabenbeschreibung
+            const operation = isAddition ? "plus" : "minus";
+            const question = `Was ist ${num1} ${operation} ${num2}?`;
+
+            // Aufforderung an den Benutzer, die Antwort einzugeben
+            userAnswer = prompt(question);
+
+            if (userAnswer === null) {
+                alert("Aufgabe abgebrochen.");
+                return; // Use 'return' to exit the function early
+            }
+
+            // Überprüfen Sie, ob die Benutzerantwort korrekt ist
+            if (parseInt(userAnswer) === correctResult) {
+                alert("Richtig! Das ist die richtige Antwort.");
+                const name = document.getElementById("nameInput").value;
+                const link = document.getElementById("linkInput").value;
+
+                db.collection("Games").add({
+                    Name: name,
+                    Link: link
+                })
+                .then(() => {
+                    displayGames(); // Aktualisieren Sie die Tabelle nach dem Hinzufügen
+                })
+                .catch((error) => {
+                    console.error("Fehler beim Hinzufügen des Spiels: ", error);
+                });
+            } else {
+                alert(`Versuche es noch mal. Die richtige Antwort ist ${correctResult}.`);
+            }
+        }
+            function back() {
+        window.location.href = "http://laserbrawl.c1.biz";
+        }
+
+    </script>
+</head>
+<body>
+        <div style=" text-align: center">
+    <h1>Game Verzeichniss</h1>
+     <button class="button" onclick="back()">Zur&uuml;ck zum Hauptmenu</button>
+    <p>Hier siehst du ein Link Verzeichniss zu den, von der Schule nicht gesperrten Gaming-Webseiten</p>
+    <table id="gamesTable"></table>
+    <h2>Neues Spiel hinzufügen</h2>
+     <p>Hier kannst du eigene Links hinzufügen. </p>
+    <input type="text" id="nameInput" placeholder="Name">
+    <input type="text" id="linkInput" placeholder="Link">
+    <button class="button" onclick="addGame()">Hinzufügen</button>
+    </div>
+    <script>
+        displayGames();
+    </script>
+</body>
+</html>

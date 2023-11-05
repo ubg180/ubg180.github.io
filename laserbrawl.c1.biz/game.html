@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buttons und Modal</title>
+    <style>
+        /* Stil für das Modal */
+        .modal {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        /* Stil für das Modal-Inhaltsfeld */
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Stil für die Schließen-Schaltfläche */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+                </br>
+              	<button id="btn1">Snake</button>
+                </br>
+    			<button id="btn2">Flappy Bird</button>
+            	</br>
+    			<button id="btn3">Bubble Soother</button>
+        		</br>
+    			<button id="btn4">Jump'n'Run</button>
+        </div>
+    </div>
+
+    <script>
+        // Modal und Schaltflächen referenzieren
+        const modal = document.getElementById("myModal");
+        const closeModal = document.getElementById("closeModal");
+        const buttons = document.querySelectorAll("button");
+
+        // Schaltflächen klicken, um das Modal anzuzeigen
+        buttons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                modal.style.display = "block";
+            });
+        });
+
+        // Modal schließen
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        // Klicken außerhalb des Modals, um es zu schließen
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

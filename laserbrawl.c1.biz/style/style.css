@@ -1,0 +1,178 @@
+body {
+    font-family: 'Creepster', cursive;
+    background-color: #222;
+    color: #ff6600;
+    text-align: center;
+    padding: 20px;
+    animation: backgroundFade 3s ease infinite;
+}
+
+.homebar {
+    background-color: #333;
+    color: #ff6600;
+    padding: 10px;
+}
+.block {
+        style: block;
+        }
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    animation: containerFade 2s ease-in-out;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+
+
+        .form {
+            display: block;
+            animation: formFadeIn 1s ease-in-out;
+        }
+
+        .message {
+            padding: 10px;
+            background-color: #ff6600;
+            color: #222;
+            margin-top: 10px;
+            animation: messageSlideIn 0.5s ease-in-out;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .halloween {
+            color: #ff6600;
+        }
+
+        @keyframes backgroundFade {
+            0% {
+                background-color: #222;
+            }
+            50% {
+                background-color: #000;
+            }
+            100% {
+                background-color: #222;
+            }
+        }
+
+        @keyframes containerFade {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes formFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes messageSlideIn {
+            0% {
+                margin-top: -50px;
+            }
+            100% {
+                margin-top: 10px;
+            }
+        }
+		/* Textfelder */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    background-color: #ff6600;
+    color: #222;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+    background-color: #ff6600;
+    color: #222;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #ff9933; /* Farbe im Hover-Zustand ändern, falls gewünscht */
+}
+    /* CSS für den Wartebildschirm */
+    #loadingAnimation {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      font-size: 24px;
+      padding: 20px;
+      z-index: 9999;
+    }
+
+    /* CSS für den Spielerzähler */
+    #playerCount {
+      color: orange;
+      font-size: 36px;
+    }
+
+    /* CSS für die Verlassen-Schaltfläche */
+    #leaveButton {
+      background: orange;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #leaveButton:hover {
+      background: red;
+    }
