@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/homebar/style.css">
+    <title>CasPlay - Chat</title>
+    <style>
+
+
+        #chat-box {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #e2e2e2;
+        }
+
+        #message {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+            background-color: #fff;
+        }
+
+
+        #send:hover {
+            background-color: #128c7e; /* Dunkleres Grün beim Hover */
+        }
+
+        .message-container {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-sender {
+            background-color: #25d366; /* Grüner Hintergrund für Chat-Nachrichten */
+            color: white;
+            border-radius: 15px 15px 0 15px;
+            padding: 10px;
+            min-width: 100px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .message-text {
+            background-color: #dcf8c6; /* Hintergrund für Nachrichtentext */
+            border-radius: 15px;
+            padding: 10px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat - CasPlay</h1>
+    <div id="chat-box"></div>
+    <div class="message-container">
+        <input type="text" id="message" placeholder="Gebe hier deine Nachricht ein..." autocomplete="off" class="message-text">
+        <button id="send" style=" border-radius: 25px;" class="message-sender">Send</button>
+    </div>
+  	<button class="button" style=" border-radius: 25px;" onclick="back()">Zur&uuml;ck zum Homemenu</button>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <script>
+ // Konfiguriere Firebase mit deinen eigenen Firebase-Projektdaten
+        const firebaseConfig = {
+  apiKey: "AIzaSyBH_lgpYQtF0KHodq0DXdSOonchWJwMS4Y",
+  authDomain: "cool-gg.firebaseapp.com",
+  databaseURL: "https://cool-gg-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "cool-gg",
+  storageBucket: "cool-gg.appspot.com",
+  messagingSenderId: "135757861223",
+  appId: "1:135757861223:web:95b00a581cb07df494dfc2",
+  measurementId: "G-V74EHYKZK3"
+        };
+
+        // Initialisiere Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Authentifiziere den Benutzer
+        const auth = firebase.auth();
+        let currentUserEmail = null;
+
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                currentUserEmail = user.email;
+            }
+        });
+
+        // Referenz zur Firebase-Echtzeitdatenbank
+        const datab = firebase.database();
+        const chatRef = datab.ref('chat');
+
+        // Zeitverzögerung zwischen Nachrichten (in Millisekunden)
+        const messageDelay = 10000; // 10 Sekunden
+
+        // Zeitstempel für die letzte Nachricht
+        let lastMessageTime = 0;
+
+        // Zeige Chatnachrichten und aktualisiere den Titel
+        const chatBox = document.getElementById('chat-box');
+        chatRef.on('child_added', (snapshot) => {
+            const message = snapshot.val();
+            chatBox.innerHTML += `<p>${message.user}: ${message.text} (${message.timestamp})</p>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Aktualisiere den Titel, um neue Benachrichtigungen anzuzeigen
+            document.title = "Neue Nachricht erhalten!";
+
+            // Zähle die Anzahl der neuen Nachrichten und speichere sie im localStorage
+            let newMessageCount = parseInt(localStorage.getItem('newMessageCount')) || 0;
+            newMessageCount++;
+            localStorage.setItem('newMessageCount', newMessageCount);
+
+            // Setze einen Timer, um den Titel nach ein paar Sekunden zurückzusetzen
+            setTimeout(() => {
+                document.title = "CasPlay - Chat";
+            }, 3000); // Zurücksetzen nach 3 Sekunden
+        });
+
+        // Sende eine Nachricht
+        const messageInput = document.getElementById('message');
+        const sendButton = document.getElementById('send');
+
+        messageInput.addEventListener('keydown', (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Verhindert das Standardverhalten des Eingabefelds
+                sendMessage();
+            }
+        });
+
+        sendButton.addEventListener('click', () => {
+            sendMessage();
+        });
+
+        function sendMessage() {
+            const currentTime = Date.now();
+            if (currentUserEmail && currentTime - lastMessageTime >= messageDelay) {
+                const messageText = messageInput.value;
+                if (messageText !== '') {
+                    const timestamp = new Date().toLocaleString();
+                    chatRef.push({
+                        user: currentUserEmail,
+                        text: messageText,
+                        timestamp: timestamp
+                    });
+                    messageInput.value = '';
+                    lastMessageTime = currentTime;
+                }
+            }
+        }
+
+        function back() {
+            window.location.href = "http://laserbrawl.c1.biz/";
+}
+
+
+    </script>
+</body>
+</html>

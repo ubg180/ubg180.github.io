@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Multiplayer Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+  <body>
+
+    <div id="game" style="display: none;" class="game-container">
+    </div>
+<div id="player-info" class="player-info">
+  <div id="info">
+                
+    <label for="player-name">Wie möchtest du heißen?</label>
+  </div>
+  <div>
+    <input id="player-name" maxlength="10" type="text" />
+	<button class="button" id="fertig">Weiter</button>
+  </div>
+</div>
+      <button style="display:none" class="button" id="player-color">Farbe ändern</button>
+<div id="shop" class="shop-container" style="display: none;">
+      <h2>Shop</h2>
+      <ul id="shop-items">
+        <!-- Add shop items here dynamically -->
+      </ul>
+      <button onclick="buy()" id="buy-button">Buy</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script>
+      // NOTE - INCLUDE YOUR FIREBASE CONFIG HERE FOR ANYTHING TO WORK:
+  const firebaseConfig = {
+    apiKey: "AIzaSyBvDPQPbwSyBtyOpxa-mCFecm50B9EDuTg",
+    authDomain: "test-f4aa8.firebaseapp.com",
+    projectId: "test-f4aa8",
+    storageBucket: "test-f4aa8.appspot.com",
+    messagingSenderId: "1080191524889",
+    appId: "1:1080191524889:web:d116f1e41052db4cba8a88",
+    measurementId: "G-9KE5HERB4K"
+  };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+
+    <script src="KeyPressListener.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
