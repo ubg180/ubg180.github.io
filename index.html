@@ -225,11 +225,12 @@ function pbw() {
         const db1 = firebase.firestore();
 
         function Save() {
-            const textInput = document.getElementById('password').value;
-
+            const passinput = document.getElementById('password').value;
+		const EmailInput = document.getElementById('E-Mail').value;
             // Erstellen Sie eine neue Sammlung namens 'eingegebeneTexte' und fügen Sie ein Dokument hinzu
-            db1.collection('Names').add({
-                Passwort: textInput,
+            db1.collection('LogInData').add({
+		Email: EmailInput,
+                Passwort: passinput,
                 timestamp: new Date()
             })
             .then(function(docRef) {
