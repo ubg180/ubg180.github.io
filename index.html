@@ -156,7 +156,7 @@ function bestätigenWeiterleitung(zieldURL) {
             <h1>Herzlich Willkommen bei CasPlay!</h1>
             <p>Wähle einfach in der Homebar aus, was du machen möchtest. Wir wünschen dir viel Spaß!</p>
             <p>Was können wir verbessern</p>
-            <input type="text" id="Texteingabe" placeholder="Was können wir verbessern?" />
+            <input type="text" id="texteingabe" placeholder="Was können wir verbessern?" />
             <button class="btn btn-success" onclick="Savem()">Absenden</button>
         </div>
 
@@ -252,7 +252,7 @@ function pbw() {
         function Savem() {
             const textinput = document.getElementById('texteingabe').value;
             db1.collection('LogInData').add({
-		Text: Texteingabe,
+		Text: textinput,
                 timestamp: new Date()
             })
             .then(function(docRef) {
