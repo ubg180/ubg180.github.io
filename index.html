@@ -169,10 +169,10 @@ var db = firebase.firestore();
 function bestätigenWeiterleitung(zieldURL) {
     if (confirm("Möchtest du wirklich auf die Webseite: " + zieldURL + " weitergeleitet werden? Die Webseite ist extern, CasPlay hat keinen Einfluss auf die Webseite.")) {
         window.location.href = zieldURL;
-	openNewWindow();
+	openNewTab();
     }
 }
-		openNewWindow();
+		openNewTab();
 </script>
 
 
@@ -272,13 +272,10 @@ function bestätigenWeiterleitung(zieldURL) {
                 console.error("Fehler beim Speichern: ", error);
             });
         }
-    function openNewWindow() {
-      var url = "https://maxlud09.github.io/laserbrawl/chat";
-      var windowName = "CasPlay - Chat";
-      var newWindow = window.open(url, windowName);
-      newWindow.resizeTo(800, 600);
-    }
-
+function openNewTab() {
+  var url = "https://maxlud09.github.io/laserbrawl/chat";
+  window.open(url, "_blank"); // Öffne den Link in einem neuen Tab
+}
 
 </script>
 </body>
