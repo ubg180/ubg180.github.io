@@ -169,9 +169,10 @@ var db = firebase.firestore();
 function bestätigenWeiterleitung(zieldURL) {
     if (confirm("Möchtest du wirklich auf die Webseite: " + zieldURL + " weitergeleitet werden? Die Webseite ist extern, CasPlay hat keinen Einfluss auf die Webseite.")) {
         window.location.href = zieldURL;
-	openNewWindow()
+	openNewWindow();
     }
 }
+		openNewWindow();
 </script>
 
 
