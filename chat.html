@@ -110,7 +110,6 @@
 
         // Spiele den Ton ab und aktualisiere den Index
         function playNotificationSound() {
-            notificationSound.play();
             let newIndex = parseInt(localStorage.getItem('messageIndex')) || 0;
             newIndex++;
             localStorage.setItem('messageIndex', newIndex);
