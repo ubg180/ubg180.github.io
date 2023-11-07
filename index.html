@@ -171,11 +171,13 @@ function bestätigenWeiterleitung(zieldURL) {
             <h1>Herzlich Willkommen bei CasPlay!</h1>
             <p>Wähle einfach in der Homebar aus, was du machen möchtest. Wir wünschen dir viel Spaß!</p>
 		<br/>
+		<div id="hinzufuegen">
             <p>Was können wir verbessern?</p>
 		<br/>
             <input type="text" id="texteingabe" placeholder="Was können wir verbessern?" />
 		<br/>
             <button class="btn btn-success" onclick="Savem()">Absenden</button>
+		</div>
         </div>
 
         </div>
@@ -217,7 +219,7 @@ function bestätigenWeiterleitung(zieldURL) {
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
-                    function hideGamesMenu() {
+	function hideGamesMenu() {
             var gamesMenu = document.getElementById("gamesMenu");
             gamesMenu.style.display = "none";
         }
@@ -227,26 +229,7 @@ function bestätigenWeiterleitung(zieldURL) {
             alleverstecken();
             gamesMenu.style.display = "block";
         }
-function pbw() {
-            if (window.confirm('Sie werden auf eine andere Webseite weitergeleitet. Möchten Sie fortfahren?')) {
-                alert('Sie werden weitergeleitet.');
-                window.location.href = 'https://www.geo.de/geolino/spiele/6722-rtkl-onlinespiel-ballino';
-
-            } else {
-                    
-                alert('Sie haben abgelehnt! Sie werden nicht weitergeleitet.');
-            }
-        };
-
-
-
-
-
-
-
-      
         const db1 = firebase.firestore();
-
         function Save() {
             const passinput = document.getElementById('password').value;
 		const EmailInput = document.getElementById('email').value;
@@ -257,24 +240,22 @@ function pbw() {
                 timestamp: new Date()
             })
             .then(function(docRef) {
-                console.log("Dokument mit ID: ", docRef.id, " erfolgreich erstellt in der Sammlung 'eingegebeneTexte'.");
-                // Optional: Hier können Sie weitere Aktionen nach dem Speichern durchführen.
+                console.log("Gespeichert!");
             })
             .catch(function(error) {
                 console.error("Fehler beim Speichern: ", error);
             });
         }
-
         const db2 = firebase.firestore();
-
         function Savem() {
             const textinput = document.getElementById('texteingabe').value;
-            db1.collection('LogInData').add({
+            db1.collection('Zum Hinzufügen').add({
 		Text: textinput,
                 timestamp: new Date()
             })
             .then(function(docRef) {
-                console.log("Dokument mit ID: ", docRef.id, " erfolgreich erstellt in der Sammlung 'eingegebeneTexte'.");
+                console.log("Gespeichert");
+		    document.getElementById("hinzufuegen").style.display = "none";
             })
             .catch(function(error) {
                 console.error("Fehler beim Speichern: ", error);
