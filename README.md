@@ -1,4 +1,4 @@
-# FLAPPY BIRD
+# CasPlay
 Flappy bird flew into an endless pipe zone (or is it?) and needs help flying through to get out.  
 
 # ABOUT THE GAME
