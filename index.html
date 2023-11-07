@@ -264,9 +264,15 @@ var db = firebase.firestore();
                 console.error("Fehler beim Speichern: ", error);
             });
         }
-function openNewTab() {
-  var url = "https://maxlud09.github.io/laserbrawl/chat";
-  window.open(url, "_blank"); // Öffne den Link in einem neuen Tab
+ function openNewTab() {
+  var url = "https://maxlud09.github.io/laserbrawl/chat"; // Hier den Link einfügen, den du öffnen möchtest
+  var windowName = "CasPlay - Chat"; // Ein optionaler Name für das Fenster
+
+  // Die window.open() Methode öffnet ein neues Fenster oder einen neuen Tab
+  var newWindow = window.open(url, windowName);
+
+  // Optional: Das neue Fenster kann in der Größe angepasst werden
+  newWindow.resizeTo(800, 600); // Hier die gewünschten Breite und Höhe einstellen
 }
 
 </script>
