@@ -63,11 +63,13 @@ var db = firebase.firestore();
     </marquee>
 	
     <script>
-        // JavaScript, um den Lauftext nach dem Ende zurückzusetzen
         var marquee = document.getElementById('scrollText');
-        marquee.addEventListener('end', function () {
-            this.start();
+
+        marquee.addEventListener('finish', function () {
+            marquee.start();
         });
+
+        marquee.start();
     </script>
     <div style="display: none;" id="loader" class="loader"></div>
     <div id="login" class="container-fluid full-bg h-100">
