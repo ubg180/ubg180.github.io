@@ -58,9 +58,17 @@ var db = firebase.firestore();
 </head>
 <body class="h-100">
     <!-- Login Fenster -->
-	<marquee behavior="scroll" direction="left" scrollamount="3" loop="infinite">
-	+++++Die Webseite Casplay steht heute, am 07.11.2023, zwischen 19:00 Uhr und 20:00 Uhr aufgrund von Wartungsarbeiten und größeren Updates, sowie aufgrund von Sicherheitsupdates nicht oder nur eingeschränkt zur Verfügung. Wir bitten um Verständniss! ++++++
+	<marquee  id="scrollText" behavior="scroll" direction="left" scrollamount="3" loop="infinite">
+	++++Aufgrund einer Störung eines Servers kann es zu Ausfällen kommen.++++Aufgrund der hohen Nachfrage kann es zu Verzögerungen kommen. Wir bitten um Verständniss!+++++Die Webseite Casplay steht heute, am 08.11.2023, zwischen 19:00 Uhr und 20:00 Uhr aufgrund von Wartungsarbeiten und größeren Updates, sowie aufgrund von Sicherheitsupdates nicht oder nur eingeschränkt zur Verfügung. Wir bitten um Verständniss! ++++++
     </marquee>
+	
+    <script>
+        // JavaScript, um den Lauftext nach dem Ende zurückzusetzen
+        var marquee = document.getElementById('scrollText');
+        marquee.addEventListener('end', function () {
+            this.start();
+        });
+    </script>
     <div style="display: none;" id="loader" class="loader"></div>
     <div id="login" class="container-fluid full-bg h-100">
         <div class="container h-100">
