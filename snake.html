@@ -1,35 +1,17 @@
 <!DOCTYPE html>
-<html lang="de>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CasPlay - Snake</title>
-	    <link rel="shortcut icon" href="assets/images/fav.jpg">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/homebar/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/snake.css">
-	 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>Snake</title>
+<link rel="shortcut icon" href="snake.png">
+<script src="everypage.js"></script>
 </head>
-<body>
-    <h1>Snake Spiel</h1>
-    <div id="score">Score: 0 Highscore: 0</div>
-           <button onclick="back()">Zur&uuml;ck zum Hauptmenu</button>
-
-    <br>
-    <div id="game-board"></div>
-    <button id="start-button">Start</button>
-   <script src="assets/js/functions/snake.js"></script>
-    <script>
-    function back() {
-        window.location.href = "https://maxlud09.github.io/laserbrawl/";
-        }
-</script>
-    
+<body onload='focus()'>
+<a href=".." style='font-size: 1.5rem;'>Back To Home Page</a>
+<button onclick="openFullscreen('main')" style='font-size: 1.5rem;'>Fullscreen Mode</button>
+<iframe style='height: 600px; width: 600px;' allow="fullscreen" allowfullscreen scrolling="no" frameborder="0" id="main" allowtransparency="true" 
+        src="../g/snake/index.html"></iframe>
+<script src="fullScreen.js"></script>
+<script src="load.js"></script>
+<script>function focus() {document.getElementById('main').focus();}</script>
 </body>
 </html>
