@@ -16,7 +16,7 @@ function alleverstecken() {
         "password",
        	"hometext",
         "chat",
-       	"gamesmenu"
+       	"gamesMenu"
     ];
 
     // Verstecke alle Elemente in der Liste
