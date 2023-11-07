@@ -106,13 +106,32 @@
         // Zeitstempel für die letzte Nachricht
         let lastMessageTime = 0;
 
-       const notificationSound = document.getElementById('notification-sound');
+              const notificationSound = document.getElementById('notification-sound');
+        let timerInterval; // Variable für den Timer
 
         // Spiele den Ton ab und aktualisiere den Index
         function playNotificationSound() {
+            notificationSound.play();
             let newIndex = parseInt(localStorage.getItem('messageIndex')) || 0;
             newIndex++;
             localStorage.setItem('messageIndex', newIndex);
+        }
+
+        // Starte den Timer
+        function startTimer() {
+            timerInterval = setInterval(function () {
+                // Prüfe, ob es neue Nachrichten gibt
+                let messageIndex = parseInt(localStorage.getItem('messageIndex')) || 0;
+                if (messageIndex < chatBox.children.length) {
+                    // Es gibt neue Nachrichten, spiele den Ton und aktualisiere den Index
+                    playNotificationSound();
+                }
+            }, 2000); // Timer alle 2 Sekunden
+        }
+
+        // Stoppe den Timer
+        function stopTimer() {
+            clearInterval(timerInterval);
         }
 
         // Zeige Chatnachrichten und aktualisiere den Titel
@@ -121,13 +140,8 @@
             chatBox.innerHTML += `<p>${message.user}: ${message.text} (${message.timestamp})</p>`;
             chatBox.scrollTop = chatBox.scrollHeight;
 
-            // Überprüfe, ob ein neuer Index vorhanden ist
-            let messageIndex = parseInt(localStorage.getItem('messageIndex')) || 0;
-
-            if (messageIndex < chatBox.children.length) {
-                // Es gibt neue Nachrichten, spiele den Ton und aktualisiere den Index
-                playNotificationSound();
-            }
+            // Starte den Timer, wenn eine neue Nachricht eintrifft
+            startTimer();
 
             // Setze den Index auf die aktuelle Anzahl der Nachrichten
             localStorage.setItem('messageIndex', chatBox.children.length);
