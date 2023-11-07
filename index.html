@@ -38,7 +38,6 @@ firebase.initializeApp(firebaseConfig);
 // Auf Firestore zugreifen
 var db = firebase.firestore();
 
-// Jetzt kannst du Firestore verwenden, ohne den '[DEFAULT]'-Fehler zu erhalten.
 </script>
     <!-- Favicon und Stylesheets -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -130,7 +129,7 @@ var db = firebase.firestore();
             <h1>Spiele:</h1>
             <p>Welches Spiel möchtest du spielen?</p>
 		<br/>
-		    <button onclick="window.location.href = 'https://casplay.000webhostapp.com/';" class="button" aria-label="Poki">Poki</button>
+		    <button onclick="window.location.href = 'https://casplay.000webhostapp.com/';" class="button" aria-label="Poki">Poki (Funktioniert nicht ordnungsgemäß)</button>
 		<br/>
             <button onclick="bestätigenWeiterleitung('https://ubg44.github.io/TunnelRush/')" class="button" aria-label="Spiele Bubble Shooter">Tunnel Rush</button>
 
@@ -156,7 +155,7 @@ var db = firebase.firestore();
                 <br/>
 			<button class="button" onclick="bestätigenWeiterleitung('https://ubg365.github.io/');">UBG Games</button>
 		 <br/>
-			<button class="button" onclick="bestätigenWeiterleitung('https://temple-run2.github.io/');">UBG Games</button>
+			<button class="button" onclick="bestätigenWeiterleitung('https://temple-run2.github.io/');">Temple Run</button>
 
 <script>
 function bestätigenWeiterleitung(zieldURL) {
