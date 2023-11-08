@@ -58,8 +58,8 @@ var db = firebase.firestore();
 </head>
 <body class="h-100">
     <!-- Login Fenster -->
-	<marquee  id="scrollText" behavior="scroll" direction="left" scrollamount="3" loop="infinite">
-	++++Aufgrund einer Störung eines Servers kann es zu Fehlern kommen.+++++Die Webseite Casplay steht heute, am 08.11.2023, zwischen 19:00 Uhr und 20:00 Uhr aufgrund von Wartungsarbeiten, größeren Updates und wegen Sicherheitsupdates nicht oder nur eingeschränkt zur Verfügung. Wir bitten um Verständniss! ++++++
+<marquee  id="scrollText" behavior="scroll" direction="left" scrollamount="4" loop="infinite">
+	++++Aufgrund einer Störung eines Servers kann es zu Fehlern kommen. Wir bitten um Verständniss!++++Ab jetzt steht auch ein Webserver zu Verfügung, er ist nicht VOM SCHULNETZWERK ABHÄNGIG und hat daher KEINE EINSCHRÄNKUNGEN!!!
     </marquee>
 	
     <script>
@@ -126,11 +126,10 @@ var db = firebase.firestore();
     <div id="home" style="display: none;">
         <!-- Anfang des Home Menus -->
         <div class="homebar">
-
-                            <button onclick="st()" class="button" aria-label="Start">Start</button>
-
+            <button onclick="st()" class="button" aria-label="Start">Start</button>
             <button onclick="showGamesMenu()" class="button" aria-label="Spiele">Spiele</button>
             <button class="button" onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/chat';">Chat</button>
+	    <button class="button" onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/browser';">Web Browser</button>
             <button onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/gamelist.html';" class="button" aria-label="Gamelist">Gameverzeichniss</button>
             <button onclick="Support()" class="button" aria-label="Support">Support</button>
             <button class="button btn-primary" id="account-button" aria-label="Konto verwalten" onclick="showAccountOverview()">Konto</button>
@@ -143,42 +142,40 @@ var db = firebase.firestore();
             <h1>Spiele:</h1>
             <p>Welches Spiel möchtest du spielen?</p>
 		<br/>
-		    <button onclick="window.location.href = 'https://casplay.000webhostapp.com/';" class="button" aria-label="Poki">Poki (Funktioniert nicht ordnungsgemäß)</button>
+	    <button onclick="window.location.href = 'https://casplay.000webhostapp.com/';" class="button" aria-label="Poki">Poki (Funktioniert nicht ordnungsgemäß)</button>
 		<br/>
             <button onclick="bestätigenWeiterleitung('https://ubg44.github.io/TunnelRush/')" class="button" aria-label="Spiele Bubble Shooter">Tunnel Rush</button>
 
-             <br/>
+            	 <br/>
             <button onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/flappybird.html';" class="button" aria-label="Flappy Bird">Flappy Bird</button>
             	
             <button onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/snake.html';" class="button" aria-label="Snake">Snake</button>
              
             <button onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/bubbleshoter.html';" class="button" aria-label="Spiele Bubble Shooter">Bubble Shooter</button>
-        	<br/>
+        	  <br/>
             <button class="button" onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/mm.html';">Monkey Mart</button>
 		
             <button onclick="bestätigenWeiterleitung('https://www.geo.de/geolino/spiele/6722-rtkl-onlinespiel-ballino')" class="button" aria-label="Spiele Bubble Shooter">Bubble Shooter v2</button>
 	
             <button class="button" onclick="bestätigenWeiterleitung('https://www.jetztspielen.de/');">Jetzt Spielen</button>
-		<br/>
+	    	   <br/>
 	     <button class="button" onclick="bestätigenWeiterleitung('https://dddavit.github.io/subway/');">Subway Surfers</button>
 		
 	     <button class="button" onclick="bestätigenWeiterleitung('https://ubg365.github.io/');">UBG Games</button>
 	
 	     <button class="button" onclick="bestätigenWeiterleitung('https://temple-run2.github.io/');">Temple Run</button>
-		<br/>
+		    <br/>
 	      <button class="button" onclick="bestätigenWeiterleitung('https://yandex.com/games/de/app/140656');">Like a King</button>
 						 
-		<button class="button" onclick="bestätigenWeiterleitung('https://mountain658.github.io/bloonstowerdefense.html');">Ballons TD Battles</button>
+	      <button class="button" onclick="bestätigenWeiterleitung('https://mountain658.github.io/bloonstowerdefense.html');">Ballons TD Battles</button>
 		
-		<button class="button" onclick="bestätigenWeiterleitung('https://mountain658.github.io/stickmanhook.html');">Stickman hook</button>
-		<br/>
-		<button class="button" onclick="bestätigenWeiterleitung('https://maxlud09.github.io/gogoat35.github.io');">Weitere Games</button>
+	      <button class="button" onclick="bestätigenWeiterleitung('https://mountain658.github.io/stickmanhook.html');">Stickman hook</button>
+		    <br/>
+	      <button class="button" onclick="bestätigenWeiterleitung('https://maxlud09.github.io/gogoat35.github.io');">Weitere Games</button>
 
 		<button class="button" onclick="bestätigenWeiterleitung('https://archive.org/details/arcade_tail2nos');">Tail2Nose</button>
 		
-				<button class="button" onclick="bestätigenWeiterleitung('https://ubg44.github.io/');">UBG44/button>
-
-
+		<button class="button" onclick="bestätigenWeiterleitung('https://ubg44.github.io/');">UBG44</button>
         </div>
 
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" id="hometext">
