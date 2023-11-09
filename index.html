@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+	<style>
+		    marquee {
+      font-size: 24px;
+      color: red;
+      background-color: black;
+    }
+	</style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KE5HERB4K"></script>
 <script>
@@ -53,14 +60,31 @@ var db = firebase.firestore();
 	<script src="assets/firebase/script/script.js"></script>
     	<script src="assets/js/functions/script_index.js"></script>
 
-    
-    
+<script>    
+      var database = firebase.database();
+
+    // Get a reference to the disruptions node
+    var disruptionsRef = database.ref('disruptions');
+
+    // Listen for value changes
+    disruptionsRef.on('value', function(snapshot) {
+      // Get the value of the snapshot
+      var disruptions = snapshot.val();
+
+      // Get the marquee element
+      var marquee = document.getElementById('marquee');
+
+      // Update the marquee text with the disruptions
+      marquee.textContent = disruptions;
+    });
+  </script>
 </head>
+<body>
+  <marquee id="marquee" direction="left" scrollamount="10">Loading disruptions...</marquee
+
 <body class="h-100">
     <!-- Login Fenster -->
-<marquee  id="scrollText" behavior="scroll" direction="left" scrollamount="4" loop="infinite">
-	Information zum Web Browser: Der Browser steht aufgrund eines Syntax Fehler zurzeit nur außerhalb des Schulnetzwerks zu Verfügung. Ich arbeite an einer Lösung! ++++Aufgrund einer Störung eines Servers kann es zu Fehlern kommen. Wir bitten um Verständniss!++++Ab jetzt steht auch ein Web Browser zu Verfügung, er ist NICHT VOM SCHULNETZWERK ABHÄNGIG und hat daher KEINE EINSCHRÄNKUNGEN!!!
-    </marquee>
+
 	
     <script>
         var marquee = document.getElementById('scrollText');
