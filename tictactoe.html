@@ -30,7 +30,9 @@ firebase.initializeApp(firebaseConfig);
 
 // Auf Firestore zugreifen
 var db = firebase.firestore();
-
+   function back() {
+        window.location.href = "https://maxlud09.github.io/laserbrawl/";
+        }
 </script>
     <title>CasPlay - TicTacToe</title>
 
@@ -56,6 +58,8 @@ var db = firebase.firestore();
 <body>
 			      <marquee id="marquee" direction="left" scrollamount="6">Lade Informationen</marquee>
     <!-- Login Fenster -->    <h1>CasPlay - TicTacToe</h1>
+	     <button class="button" onclick="back()">Zur&uuml;ck zum Hauptmenu</button>
+
     <p>Klicke auf Play in Private Lobby" wenn du einen Code von deinem Gegner erhalten hast gebe ihn ein, <br/> wenn nicht gebe irgendeinen Code ein und teile ihn mit deinem Mitspieler. <br/> Wir wünschen dir Viel Spaß!</p></p>
     <iframe src="https://tic-tac-toe-nextjs.web.app/" width="800" height="600" frameborder="0"></iframe>
     
