@@ -34,7 +34,7 @@ function validateAndRegister() {
     const passwordInput = document.getElementById('password');
 
     // Überprüfen, ob die Elemente im DOM vorhanden sind
-    if (!nameInput || !lastNameInput || !genderInput || !phoneNumberInput || !emailInput || !passwordInput) {
+    if (!emailInput || !passwordInput) {
         showalert("Fehler:", "Ein oder mehrere Eingabefelder wurden nicht gefunden.", 5000);
         console.error("Ein oder mehrere Eingabefelder wurden nicht gefunden.");
         return;
@@ -49,7 +49,7 @@ function validateAndRegister() {
     const password = passwordInput.value;
 
     // Überprüfung, ob alle erforderlichen Felder ausgefüllt sind
-    if (!name || !lastName || !gender || !email || !password) {
+    if (!email || !password) {
         showalert("Fehler:", "Bitte fülle alle Felder aus.", 5000);
         console.error("Bitte fülle alle Felder aus.");
         return;
