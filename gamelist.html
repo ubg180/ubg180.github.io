@@ -24,6 +24,11 @@
         h1, h2 {
             text-align: center;
         }
+        		    marquee {
+      font-size: 24px;
+      color: red;
+      background-color: black;
+    }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -121,10 +126,31 @@
         }
 
     </script>
+    <script>    
+      var database = firebase.database();
+
+    // Get a reference to the disruptions node
+    var disruptionsRef = database.ref('disruptions');
+
+    // Listen for value changes
+    disruptionsRef.on('value', function(snapshot) {
+      // Get the value of the snapshot
+      var disruptions = snapshot.val();
+
+      // Get the marquee element
+      var marquee = document.getElementById('marquee');
+
+      // Update the marquee text with the disruptions
+      marquee.textContent = disruptions;
+    });
+  </script>
 </head>
 <body>
         <div style=" text-align: center">
+            		      <marquee id="marquee" direction="left" scrollamount="6">Lade Informationen</marquee>
+
     <h1>Game Verzeichniss</h1>
+            
      <button class="button" onclick="back()">Zur&uuml;ck zum Hauptmenu</button>
     <p>Hier siehst du ein Link Verzeichniss zu den, von der Schule nicht gesperrten Gaming-Webseiten</p>
     <table id="gamesTable"></table>
