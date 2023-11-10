@@ -53,7 +53,32 @@
             padding: 10px;
             flex-grow: 1;
         }
+     
+		    marquee {
+      font-size: 24px;
+      color: red;
+      background-color: black;
+    }
+	
     </style>
+    <script>    
+      var database = firebase.database();
+
+    // Get a reference to the disruptions node
+    var disruptionsRef = database.ref('disruptions');
+
+    // Listen for value changes
+    disruptionsRef.on('value', function(snapshot) {
+      // Get the value of the snapshot
+      var disruptions = snapshot.val();
+
+      // Get the marquee element
+      var marquee = document.getElementById('marquee');
+
+      // Update the marquee text with the disruptions
+      marquee.textContent = disruptions;
+    });
+  </script>
 </head>
 <body>
     <audio id="notification-sound">
@@ -61,6 +86,8 @@
         <source src="notification.mp3" type="audio/mpeg">
     </audio>
     <h1>Chat - CasPlay</h1>
+    		      <marquee id="marquee" direction="left" scrollamount="6">Lade Informationen</marquee>
+
     <div id="chat-box"></div>
     <div class="message-container">
         <input type="text" id="message" placeholder="Gebe hier deine Nachricht ein..." autocomplete="off" class="message-text">
