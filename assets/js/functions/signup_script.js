@@ -41,10 +41,6 @@ function validateAndRegister() {
     }
 
     // Benutzerdaten aus den Eingabefeldern abrufen
-    const name = nameInput.value;
-    const lastName = lastNameInput.value;
-    const gender = genderInput.value;
-    const phoneNumber = phoneNumberInput.value;
     const email = emailInput.value;
     const password = passwordInput.value;
 
