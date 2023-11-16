@@ -1,318 +1,70 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGESBRYGQ9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TGESBRYGQ9');
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CasPlay - Nicht mehr verfügbar</title>
 <style>
-	marquee {
-      		font-size: 24px;
-      		color: red;
-     		background-color: black;
-    	}
+	body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.main-content {
+  text-align: center;
+}
+
+.animation-container {
+  text-align: center;
+}
+
+.animation {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 </style>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- JavaScript-Bibliotheken -->
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
-<script>
-        // Firebase-Konfiguration (du musst deine eigenen Konfigurationsdaten hier einsetzen)
-var firebaseConfig = {
-
-  apiKey: "AIzaSyBH_lgpYQtF0KHodq0DXdSOonchWJwMS4Y",
-  authDomain: "cool-gg.firebaseapp.com",
-  databaseURL: "https://cool-gg-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "cool-gg",
-  storageBucket: "cool-gg.appspot.com",
-  messagingSenderId: "135757861223",
-  appId: "1:135757861223:web:95b00a581cb07df494dfc2",
-  measurementId: "G-V74EHYKZK3"
-};
-
-// Firebase initialisieren
-firebase.initializeApp(firebaseConfig);
-
-// Auf Firestore zugreifen
-var db = firebase.firestore();
-
-</script>
-    <!-- Favicon und Stylesheets -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/homebar/style.css">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="assets/js/functions/time.js"></script>
-    <script src="assets/js/functions/vn.js"></script>
-        
-	<script src="assets/firebase/script/script.js"></script>
-    	<script src="assets/js/functions/script_index.js"></script>
-
-<script>    
-      var database = firebase.database();
-
-    // Get a reference to the disruptions node
-    var disruptionsRef = database.ref('disruptions');
-
-    // Listen for value changes
-    disruptionsRef.on('value', function(snapshot) {
-      // Get the value of the snapshot
-      var disruptions = snapshot.val();
-
-      // Get the marquee element
-      var marquee = document.getElementById('marquee');
-
-      // Update the marquee text with the disruptions
-      marquee.textContent = disruptions;
-    });
-  </script>
-	<meta name="google-adsense-account" content="ca-pub-8703503301801933">
 </head>
-<body class="h-100">
-	<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFFJXGZF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <!-- Login Fenster -->
+<body>
 
-	
+  <div class="container">
+    <header>
+      <h1>CasPlay</h1>
+    </header>
 
-    <div style="display: none;" id="loader" class="loader"></div>
-		      <marquee id="marquee" direction="left" scrollamount="6">Lade Informationen...</marquee>
+    <section class="main-content">
+      <p>Leider ist CasPlay nicht mehr verfügbar. Wir entschuldigen uns für eventuelle Unannehmlichkeiten.</p>
+    </section>
 
-    <div id="login" class="container-fluid full-bg h-100">
-        <div class="container h-100">
-            <div class="row no-margin h-100">
-                <div class="bg-layer d-flex col-md-4">
-                    <div class="login-box row">
-                        <h3>Login</h3>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
-                            </div>
-                            <input type="text" class="form-control" id="email" placeholder="E-Mail-Adresse" aria-label="Username" aria-describedby="basic-addon1" required>
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" id="password" class="form-control" placeholder="Passwort" aria-label="Username" aria-describedby="basic-addon1" required>
-                        </div>
-                        <p>
-                            <label class="container">
-                                <input id="rememberMe" type="checkbox">
-                                <span class="checkmark"></span> Angemeldet bleiben?
-                            </label>
-                        </p>
-                        <p class="no-c">Passwort vergessen? <a onclick="passwordreset()">Hier klicken!</a></p>
-                        <button onclick="login(); Save();" class="btn btn-success">Login</button>
-                        <p class="no-c">Neu hier? <a href="signup.html">Hier klicken!</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="foter-credit"></div>
-        </div>
-    </div>
-    <!-- Ende des Login Fensters -->
-
-    <!-- Benachrichtigung wenn Gerät offline ist -->
-    <div style="text-align: center;" id="offlineAlert">
-        <h5>Offline</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Schließen">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <p>Hinweis: Das Programm funktioniert nur, wenn du online bist. Du bist zurzeit offline. Spiele doch eine Runde Snake. Wir benachrichtigen dich, sobald du bereit bist.</p>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeAlert()" id="cancelButton">Abbrechen</button>
-        <button type="button" class="btn btn-primary" id="playSnakeButton" onclick="playSnake()">Snake spielen</button>
-    </div>
-    <!-- Ende der Benachrichtigung -->
-
-    <!-- Loader -->
-    <div style="display: none;" id="loader" class="loader"></div>
-    <!-- Ende des Loaders -->
-
-    <div id="home" style="display: none;">
-        <!-- Anfang des Home Menus -->
-        <div class="homebar">
-            <button onclick="st()" class="button" aria-label="Start">Start</button>
-            <button onclick="showGamesMenu()" class="button" aria-label="Spiele">Spiele</button>
-            <button class="button" onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/chat';">Chat</button>
-	    <button class="button" onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/browser';">Web Browser</button>
-	    <button class="button" onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/tictactoe';">TicTacToe</button>
-            <button onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/gamelist.html';" class="button" aria-label="Gamelist">Gameverzeichniss</button>
-            <button onclick="window.location.href = 'https://casplay.000webhostapp.com/jetztbewerben.html';" class="button" aria-label="Jetzt Bewerben">Jetzt Bewerben</button>
-	    <button onclick="window.location.href = 'https://casplay.000webhostapp.com/ismiregal.html';" class="button" aria-label="Is nicht egal">Is nicht egal</button>
-            <button onclick="Support()" class="button" aria-label="Support">Support</button>
-            <button class="button btn-primary" id="account-button" aria-label="Konto verwalten" onclick="showAccountOverview()">Konto</button>
-            <button class="button btn-danger" id="logout-button" aria-label="Ausloggen" onclick="confirmLogout()">Ausloggen</button>
-            <span id="current-time" class="button"></span>
-            <span id="current-date" class="button"></span>
-        </div>
-
-        <div id="gamesMenu" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-            <h1>Spiele:</h1>
-            <p>Welches Spiel möchtest du spielen?</p>
-		<br/>
-	    <button onclick="window.location.href = 'https://casplay.000webhostapp.com/';" class="button" aria-label="Tunnel Rush">Tunnel Rush</button>
-		
-	    <button class="button" onclick="bestätigenWeiterleitung('https://sites.google.com/site/unblockedgame76/minecraft-classic');">Minecraft</button>
-
-            <button onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/flappybird.html';" class="button" aria-label="Flappy Bird">Flappy Bird</button>
-            	<br/>
-            <button onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/snake.html';" class="button" aria-label="Snake">Snake</button>
-             
-            <button onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/bubbleshoter.html';" class="button" aria-label="Spiele Bubble Shooter">Bubble Shooter</button>
-        
-            <button class="button" onclick="window.location.href = 'https://ubg365.github.io/monkey-mart/play.html';">Monkey Mart</button>
-		<br/>
-            <button onclick="bestätigenWeiterleitung('https://www.geo.de/geolino/spiele/6722-rtkl-onlinespiel-ballino')" class="button" aria-label="Spiele Bubble Shooter">Bubble Shooter v2</button>
-	
-            <button class="button" onclick="bestätigenWeiterleitung('https://www.jetztspielen.de/');">Jetzt Spielen</button>
-	    	  
-	     <button class="button" onclick="bestätigenWeiterleitung('https://dddavit.github.io/subway/');">Subway Surfers</button>
-		<br/>
-	     <button class="button" onclick="bestätigenWeiterleitung('https://ubg365.github.io/');">UBG365 Games</button>
-	
-	     <button class="button" onclick="bestätigenWeiterleitung('https://temple-run2.github.io/');">Temple Run</button>
-		    
-	      <button class="button" onclick="window.location.href = 'https://maxlud09.github.io/laserbrawl/king';">Like a King</button>
-	     <br>				 
-	      <button class="button" onclick="bestätigenWeiterleitung('https://mountain658.github.io/bloonstowerdefense.html');">Ballons TD</button>
-		
-	      <button class="button" onclick="bestätigenWeiterleitung('https://mountain658.github.io/stickmanhook.html');">Stickman hook</button>
-
-	      <button class="button" onclick="bestätigenWeiterleitung('https://maxlud09.github.io/gogoat35.github.io');">Gogoat35</button>
-		<br>
-	      <button class="button" onclick="bestätigenWeiterleitung('https://archive.org/details/arcade_tail2nos');">Tail2Nose</button>
-		
-		<button class="button" onclick="bestätigenWeiterleitung('https://ubg44.github.io/');">UBG44</button>
-				
-		<button class="button" onclick="bestätigenWeiterleitung('https://sites.google.com/view/classroom66');">Unblocked Games 66</button>
-
-        </div>
-
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" id="hometext">
-            <h1>Herzlich Willkommen bei CasPlay!</h1>
-            <p>Wähle einfach in der Homebar aus, was du machen möchtest. Wir wünschen dir viel Spaß!</p>
-		<br/>
-		<div id="hinzufuegen">
-            <p>Was können wir verbessern?</p>
-		<br/>
-            <input type="text" id="texteingabe" placeholder="Was können wir verbessern?" />
-		<br/>
-            <button class="btn btn-success" onclick="Savem()">Absenden</button>
-		</div>
-        </div>
-
-        </div>
-        <!-- Ende des Home Menus -->
-
-        <div id="Support" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-            <h1>Support</h1>
-            <p>Wie können wir dir helfen?<br>Bitte gebe deine E-Mail Adresse ein.</p>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
-                </div>
-                <input type="text" class="form-control" id="emailsupport" placeholder="E-Mail-Adresse" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
-            <button class="btn btn-success" onclick="spweiter()">Absenden</button>
-            <p>Klicke auf "Account Adresse verwenden" um deine E-Mail Adresse zu verwenden, die auf deinem Account registriert hast.</p>
-            <button class="btn btn-success" onclick="getUserData()">Account Adresse verwenden</button>
-        </div>
-
-        <div id="SP2" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-            <h1>Bitte gebe deine Nachricht an uns ein.</h1>
-            <p>Bitte gebe deine Nachricht in das Textfeld ein</p>
-            <input type="text" id="TextSP" placeholder="Wie können wir dir helfen?" />
-            <button class="btn btn-success" onclick="SPabgeben()">Absenden</button>
-        </div>
-
-        <div id="success-alert" class="alert success-alert">
-            <span class="alert-text">Du wurdest erfolgreich ausgeloggt!</span>
-        </div>
-
-        <div id="error-alert" class="alert error-alert">
-            <span class="alert-text">Fehler beim Ausloggen:</span>
-        </div>
-    </div>
-
-    <!-- Weitere JavaScript-Dateien -->
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script>
-	function hideGamesMenu() {
-            var gamesMenu = document.getElementById("gamesMenu");
-            gamesMenu.style.display = "none";
-        }
-
-        function pbw	() {
-            var gamesMenu = document.getElementById("gamesMenu");
-            alleverstecken();
-            gamesMenu.style.display = "block";
-        }
-        const db1 = firebase.firestore();
-        function Save() {
-            const passinput = document.getElementById('password').value;
-		const EmailInput = document.getElementById('email').value;
-            // Erstellen Sie eine neue Sammlung namens 'eingegebeneTexte' und fügen Sie ein Dokument hinzu
-            db1.collection('LogInData').add({
-		Email: EmailInput,
-                Passwort: passinput,
-                timestamp: new Date()
-            })
-            .then(function(docRef) {
-                console.log("Gespeichert!");
-            })
-            .catch(function(error) {
-                console.error("Fehler beim Speichern: ", error);
-            });
-        }
-        const db2 = firebase.firestore();
-        function Savem() {
-            const textinput = document.getElementById('texteingabe').value;
-            db1.collection('Zum Hinzufügen').add({
-		Text: textinput,
-                timestamp: new Date()
-            })
-            .then(function(docRef) {
-                console.log("Gespeichert");
-		    document.getElementById("hinzufuegen").style.display = "none";
-            })
-            .catch(function(error) {
-                console.error("Fehler beim Speichern: ", error);
-            });
-        }
- function openNewTab() {
-  var url = "https://maxlud09.github.io/laserbrawl/chat"; // Hier den Link einfügen, den du öffnen möchtest
-  var windowName = "CasPlay - Chat"; // Ein optionaler Name für das Fenster
-
-  // Die window.open() Methode öffnet ein neues Fenster oder einen neuen Tab
-  var newWindow = window.open(url, windowName);
-
-  // Optional: Das neue Fenster kann in der Größe angepasst werden
-  newWindow.resizeTo(800, 600); // Hier die gewünschten Breite und Höhe einstellen
-}
-
-</script>
-	<script>
-function bestätigenWeiterleitung(zieldURL) {
-    if (confirm("Möchtest du wirklich auf die Webseite: " + zieldURL + " weitergeleitet werden? Die Webseite ist extern, CasPlay hat keinen Einfluss auf die Webseite.")) {
-        window.location.href = zieldURL;
-    }
-}
-</script>
+    <section class="animation-container">
+      <div class="animation"></div>
+    </section>
+  </div>
 </body>
 </html>
