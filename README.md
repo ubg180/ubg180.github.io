@@ -72,7 +72,7 @@ Die Nutzung in den Netzwerk von Bildungseinrichtungen ohne die Erlaubniss des do
 *Bosna i Herzegovina
 # Schulische Nutzung
 DIe Nutzung in der Schule oder in dem Netzwerk einer Bildungseinrichtung ist strengstens untersagt und wird nicht gestatet.
-# Inkrafttreten
-Die Nutzungsbedingungen und alle anderen in dieser Datei enthaltenen Bedingungen, treten am Montag, den 20.11.2023 um 08:00 Uhr inkraft. Bis dahin wird der Betrieb der Webseite ruhen. Wir bitten um Verständnis. 
-## Ende 
+# Unanehmlichkeiten
+Wir bitten die unannehmlichkeiten zu enrschuldigen. Wir werden selbstverständlich, soweit es uns möglich ist, ein Verfahren gegen die Leher einleiten. 
+# Wieder Verfügbar 
 Viel Spaß beim Spielen!
