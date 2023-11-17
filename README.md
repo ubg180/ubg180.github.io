@@ -8,7 +8,7 @@ Diese Webseite, Play4All, ist eine private Plattform und unterliegt nicht dem Ba
 
 ## Nicht schulische Plattform
 
-Gemäß unserer Auslegung des Bayerischen Erziehungs- und Unterrichtsgesetzes (BayEUG) betrachten wir Play4All nicht als schulische Plattform. Diese Webseite bietet ausschließlich Spiele für Unterhaltungszwecke an und ist nicht für schulische Aktivitäten oder den Lehrplan bestimmt. Die Nutzung von Play4All hat keinen Bezug zu schulischen Verpflichtungen oder Lehrinhalten.
+Gemäß unserer Auslegung des Bayerischen Erziehungs- und Unterrichtsgesetzes (BayEUG) betrachten wir Play4All nicht als schulische Plattform. Diese Webseite bietet ausschließlich Spiele für Unterhaltungszwecke an und ist nicht für schulische Aktivitäten oder den Lehrplan bestimmt. Die Nutzung von Play4All hat keinen Bezug zu schulischen Verpflichtungen oder Lehrinhalten. Somit sind schulische Sanktionen jeglicher Art aufrung von BayEUG Artikel 86 (Erziehungs- und Sicherungsmaßnahmen) Absatz 3 Nummer 5 bzw. BayEUG §86 Abs.: 3 Nr.:5; unzulässig. 
 
 ## Unabhängigkeit von Bildungseinrichtungen
 
@@ -16,14 +16,19 @@ Wir möchten betonen, dass Play4All unabhängig von Bildungseinrichtungen und Sc
 
 ## Haftungsausschluss
 
-Die Betreiber von Play4All übernehmen keine Verantwortung für Missverständnisse oder Fehlinterpretationen bezüglich der Natur dieser Plattform im Zusammenhang mit schulischen Angelegenheiten. Die Webseite ist als eigenständige Unterhaltungsplattform konzipiert und sollte nicht als schulische Ressource betrachtet werden.
+Die Betreiber von Play4All übernehmen keine Verantwortung für Missverständnisse oder Fehlinterpretationen bezüglich der Natur dieser Plattform im Zusammenhang mit schulischen Angelegenheiten. Die Webseite ist als eigenständige Unterhaltungsplattform konzipiert und kann nicht als schulische Ressource betrachtet werden.
 
-Bitte lesen Sie die Nutzungsbedingungen sorgfältig durch, bevor Sie die Webseite nutzen. Bei Fragen oder Bedenken können Sie uns unter senad.aljancoivic@gmail.bih erreichen.
+Bitte lesen Sie die Nutzungsbedingungen sorgfältig durch, bevor Sie die Webseite nutzen. Bei Fragen oder Bedenken können Sie uns unter a.senad@hotmail.com erreichen.
+Bei einer Registrierung stimmen Sie den Nutzungsbedingungen zu.
+## Nutzungsbedingungen
+### Schulische Nutzung
+Die Nutzung in den Netzwerk von Bildungseinrichtungen ohne die Erlaubniss des dortigen Personals ist nicht gestattet. 
+### 
 ## Impressum
-Senad Aljancovic 
-71000 Sarajevo
-Bosnien i Herzegovina 
-## Schulische Nutzung
-DIe Nutzung in der Schule oder in dem Netzwerk einer Bildungseinrichtung ist strengstens untersagt und wird nicht gestatet. Wir bitten um Verständnis.
+*Senad Aljancovic*
+*71000 Sarajevo*
+*Bosna i Herzegovina*
+# Schulische Nutzung
+DIe Nutzung in der Schule oder in dem Netzwerk einer Bildungseinrichtung ist strengstens untersagt und wird nicht gestatet.
 ## Ende 
 Viel Spaß beim Spielen!
