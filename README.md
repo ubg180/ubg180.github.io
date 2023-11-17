@@ -61,7 +61,7 @@ Kanton Sarajevo
 Bosna i Herzegovina 
 
 
-### Haftungshinweis:
+### Haftungsausschluss:
 Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
 
 Vielen Dank für deine Aufmerksamkeit und viel Spaß beim Spielen auf Play4All!
