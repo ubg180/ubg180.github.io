@@ -55,10 +55,10 @@ Die Webseite verwendet Firebase für den Login und die Registrierung. Deine Date
 
 ### Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
 
-Senad Aljancoiv
-Kanton Sarajevo
-71000 Sarajevo 
-Bosna i Herzegovina 
+*Senad Aljancoiv
+*Kanton Sarajevo
+*71000 Sarajevo 
+*Bosna i Herzegovina 
 
 
 ### Haftungsausschluss:
@@ -67,10 +67,12 @@ Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für di
 Vielen Dank für deine Aufmerksamkeit und viel Spaß beim Spielen auf Play4All!
 Die Nutzung in den Netzwerk von Bildungseinrichtungen ohne die Erlaubniss des dortigen Personals ist nicht gestattet. 
 ## Impressum
-*Senad Aljancovic*
-*71000 Sarajevo*
-*Bosna i Herzegovina*
+*Senad Aljancovic
+*71000 Sarajevo
+*Bosna i Herzegovina
 # Schulische Nutzung
 DIe Nutzung in der Schule oder in dem Netzwerk einer Bildungseinrichtung ist strengstens untersagt und wird nicht gestatet.
+# Inkrafttreten
+Die Nutzungsbedingungen und alle anderen in dieser Datei enthaltenen Bedingungen, treten am Montag, den 20.11.2023 um 08:00 Uhr inkraft. Bis dahin wird der Betrieb der Webseite ruhen. Wir bitten um Verständnis. 
 ## Ende 
 Viel Spaß beim Spielen!
