@@ -18,6 +18,12 @@ Wir möchten betonen, dass Play4All unabhängig von Bildungseinrichtungen und Sc
 
 Die Betreiber von Play4All übernehmen keine Verantwortung für Missverständnisse oder Fehlinterpretationen bezüglich der Natur dieser Plattform im Zusammenhang mit schulischen Angelegenheiten. Die Webseite ist als eigenständige Unterhaltungsplattform konzipiert und sollte nicht als schulische Ressource betrachtet werden.
 
-Bitte lesen Sie die Nutzungsbedingungen sorgfältig durch, bevor Sie die Webseite nutzen. Bei Fragen oder Bedenken können Sie uns unter [Kontaktadresse] erreichen.
-
+Bitte lesen Sie die Nutzungsbedingungen sorgfältig durch, bevor Sie die Webseite nutzen. Bei Fragen oder Bedenken können Sie uns unter senad.aljancoivic@gmail.bih erreichen.
+## Impressum
+Senad Aljancovic 
+71000 Sarajevo
+Bosnien i Herzegovina 
+## Schulische Nutzung
+DIe Nutzung in der Schule oder in dem Netzwerk einer Bildungseinrichtung ist strengstens untersagt und wird nicht gestatet. Wir bitten um Verständnis.
+## Ende 
 Viel Spaß beim Spielen!
