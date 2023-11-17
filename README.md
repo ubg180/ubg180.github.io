@@ -20,10 +20,53 @@ Die Betreiber von Play4All übernehmen keine Verantwortung für Missverständnis
 
 Bitte lesen Sie die Nutzungsbedingungen sorgfältig durch, bevor Sie die Webseite nutzen. Bei Fragen oder Bedenken können Sie uns unter a.senad@hotmail.com erreichen.
 Bei einer Registrierung stimmen Sie den Nutzungsbedingungen zu.
-## Nutzungsbedingungen
-### Schulische Nutzung
+
+# Play4All - Nutzungsbedingungen
+
+Willkommen bei Play4All, einer Webseite, die unblocked Browser Games bereitstellt und eine Chat-Funktion für ein unterhaltsames Spielerlebnis bietet. Bitte lese die folgenden Nutzungsbedingungen sorgfältig durch, bevor du unsere Dienste in Anspruch nimmst.
+
+## 1. Zustimmung zu den Nutzungsbedingungen
+
+Durch die Nutzung von Play4All stimmst du diesen Nutzungsbedingungen ausdrücklich zu. Wenn du mit diesen Bedingungen nicht einverstanden bist, solltest du die Webseite nicht nutzen.
+
+## 2. Standort
+
+Der Sitz von Play4All befindet sich im Olympischen Dorf in Sarajevo.
+
+## 3. Nutzung in Bildungseinrichtungen
+
+Die Nutzung von Play4All in Bildungseinrichtungen ist ohne ausdrückliche Erlaubnis untersagt. Bitte kontaktiere uns, um Informationen zur Lizenzierung für Bildungseinrichtungen zu erhalten.
+
+## 4. Chat-Funktion
+
+Die Chat-Funktion auf Play4All ermöglicht es den Nutzern, miteinander zu kommunizieren. Bitte beachte, dass wir keine Verantwortung für den Inhalt der Chat-Nachrichten übernehmen. Nutze den Chat verantwortungsbewusst und respektiere die Community-Richtlinien.
+
+## 5. Firebase Login und Register
+
+Die Webseite verwendet Firebase für den Login und die Registrierung. Deine Daten werden gemäß unserer Datenschutzrichtlinie behandelt.
+
+## Impressum
+
+### Play4All
+
+**Sitz:** Olympisches Dorf, Sarajevo
+
+**Kontakt:**
+- Email: a.senad@hotmail.com
+
+### Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+
+Senad Aljancoiv
+Kanton Sarajevo
+71000 Sarajevo 
+Bosna i Herzegovina 
+
+
+### Haftungshinweis:
+Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+
+Vielen Dank für deine Aufmerksamkeit und viel Spaß beim Spielen auf Play4All!
 Die Nutzung in den Netzwerk von Bildungseinrichtungen ohne die Erlaubniss des dortigen Personals ist nicht gestattet. 
-### 
 ## Impressum
 *Senad Aljancovic*
 *71000 Sarajevo*
