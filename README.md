@@ -35,8 +35,7 @@ Der Sitz von Play4All befindet sich im Olympischen Dorf in Sarajevo.
 
 ## 3. Nutzung in Bildungseinrichtungen
 
-Die Nutzung von Play4All in Bildungseinrichtungen ist ohne ausdrückliche Erlaubnis untersagt. Bitte kontaktiere uns, um Informationen zur Lizenzierung für Bildungseinrichtungen zu erhalten.
-
+Die Nutzung von Play4All in Bildungseinrichtungen ist ohne ausdrückliche Erlaubnis untersagt.
 ## 4. Chat-Funktion
 
 Die Chat-Funktion auf Play4All ermöglicht es den Nutzern, miteinander zu kommunizieren. Bitte beachte, dass wir keine Verantwortung für den Inhalt der Chat-Nachrichten übernehmen. Nutze den Chat verantwortungsbewusst und respektiere die Community-Richtlinien.
