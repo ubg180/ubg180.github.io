@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGESBRYGQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-TGESBRYGQ9');
+</script>
+    <!-- JavaScript-Bibliotheken -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+	<style>
+	marquee {
+      		font-size: 24px;
+     		color: red;
+      		background-color: black;
+    		}
+	</style>
+	<script>
+        // Firebase-Konfiguration
+	var firebaseConfig = {
+ 	apiKey: "AIzaSyBH_lgpYQtF0KHodq0DXdSOonchWJwMS4Y",
+  	authDomain: "cool-gg.firebaseapp.com",
+ 	databaseURL: "https://cool-gg-default-rtdb.europe-west1.firebasedatabase.app",
+  	projectId: "cool-gg",
+  	storageBucket: "cool-gg.appspot.com",
+  	messagingSenderId: "135757861223",
+  	appId: "1:135757861223:web:95b00a581cb07df494dfc2",
+  	measurementId: "G-V74EHYKZK3"
+	};
+
+// Firebase initialisieren
+firebase.initializeApp(firebaseConfig);
+
+// Auf Firestore zugreifen
+var db = firebase.firestore();
+
+</script>
+      <!-- Favicon und Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/homebar/style.css">
+    <title>CasPlay - Like a King</title>
+
+<script>    
+      var database = firebase.database();
+
+    // Get a reference to the disruptions node
+    var disruptionsRef = database.ref('disruptions');
+
+    // Listen for value changes
+    disruptionsRef.on('value', function(snapshot) {
+      // Get the value of the snapshot
+      var disruptions = snapshot.val();
+
+      // Get the marquee element
+      var marquee = document.getElementById('marquee');
+
+      // Update the marquee text with the disruptions
+      marquee.textContent = disruptions;
+    });
+  </script>
+</head>
+<body class="h-100">
+<marquee id="marquee" direction="left" scrollamount="6">Lade Informationen...</marquee>
+    <h1>Play4All - X Trench Run</h1>
+	<iframe src="https://bitlifeonline.github.io/x-trench-run/" width="1300" height="700" frameborder="0">Oh! Es scheint als sei ein Fehler aufgetreten!</iframe>
+    
+</body>
+</html>
