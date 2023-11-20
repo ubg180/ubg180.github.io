@@ -8,7 +8,7 @@ Diese Webseite, Play4All, ist eine private Plattform und unterliegt nicht dem Ba
 
 ## Nicht schulische Plattform
 
-Gemäß unserer Auslegung des Bayerischen Erziehungs- und Unterrichtsgesetzes (BayEUG) betrachten wir Play4All nicht als schulische Plattform. Diese Webseite bietet ausschließlich Spiele für Unterhaltungszwecke an und ist nicht für schulische Aktivitäten oder den Lehrplan bestimmt. Die Nutzung von Play4All hat keinen Bezug zu schulischen Verpflichtungen oder Lehrinhalten. Somit sind schulische Sanktionen jeglicher Art aufrung von BayEUG Artikel 86 (Erziehungs- und Sicherungsmaßnahmen) Absatz 3 Nummer 5 bzw. BayEUG §86 Abs.: 3 Nr.:5; unzulässig. 
+Gemäß unserer Auslegung des Bayerischen Erziehungs- und Unterrichtsgesetzes (BayEUG) betrachten wir Play4All nicht als schulische Plattform. Diese Webseite bietet ausschließlich Spiele für Unterhaltungszwecke an und ist nicht für schulische Aktivitäten bestimmt. Die Nutzung von Play4All hat keinen Bezug zu schulischen Verpflichtungen oder Lehrinhalten. Somit sind schulische Sanktionen jeglicher Art aufrung von BayEUG Artikel 86 (Erziehungs- und Sicherungsmaßnahmen) Absatz 3 Nummer 5 bzw. BayEUG §86 Abs.: 3 Nr.:5; unzulässig. 
 
 ## Unabhängigkeit von Bildungseinrichtungen
 
@@ -55,7 +55,7 @@ Die Webseite verwendet Firebase für den Login und die Registrierung. Deine Date
 
 ### Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
 
-*Senad Aljancoiv
+*Senad Aljancoiv*
 *Kanton Sarajevo
 *71000 Sarajevo 
 *Bosna i Herzegovina 
