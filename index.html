@@ -142,6 +142,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div style="display: none;" id="loader" class="loader"></div>
     <!-- Ende des Loaders -->
 
+
+
+<p>Site Counter: <span id="counter">0</span></p>
     <div id="home" style="display: none;">
         <!-- Anfang des Home Menus -->
         <div class="homebar">
@@ -321,6 +324,31 @@ function bestätigenWeiterleitung(zieldURL) {
         window.location.href = zieldURL;
     }
 }
+		const database = firebase.database();
+  const counterRef = database.ref('counter');
+
+  // Counter-Wert initialisieren
+  let counterValue = 0;
+
+  // Counter-Wert von der Datenbank abrufen
+  counterRef.on('value', (snapshot) => {
+    const data = snapshot.val();
+    counterValue = data ? data : 0;
+    document.getElementById('counter').innerText = counterValue;
+  });
+
+  // Counter erhöhen, wenn die Seite geladen wird
+  counterValue++;
+  counterRef.set(counterValue);
+
+  // Funktion, die den Counter erhöht und in der Datenbank aktualisiert
+  function increaseCounter() {
+    counterValue++;
+    counterRef.set(counterValue);
+  }
+
+  // Füge einen Event Listener hinzu, um den Counter zu erhöhen, wenn die Seite geladen wird
+  document.addEventListener('DOMContentLoaded', increaseCounter);
 </script>
 </body>
 </html>
