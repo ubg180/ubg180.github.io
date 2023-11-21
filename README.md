@@ -73,7 +73,7 @@ Die Nutzung in den Netzwerk von Bildungseinrichtungen ohne die Erlaubniss des do
 - Bosna i Herzegovina
 # Schulische Nutzung
 DIe Nutzung in der Schule oder in dem Netzwerk einer Bildungseinrichtung ist strengstens untersagt und wird nicht gestatet.
-# Unanehmlichkeiten
-Wir bitten die unannehmlichkeiten zu enrschuldigen. Wir werden selbstverständlich, soweit es uns möglich ist, ein Verfahren gegen die Leher einleiten. 
+# Danke für die Nutzung
+Wir bedanken uns für die hohe Nachfrage von mitlerweile schon über 100 Nutzern. Vielen Dank!
 # Wieder Verfügbar 
 Viel Spaß beim Spielen!
