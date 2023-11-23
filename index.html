@@ -11,19 +11,7 @@
 
   gtag('config', 'G-TGESBRYGQ9');
 	    // Erstellen Sie eine Referenz auf die Anzahl der Nutzer
-    var userCountRef = database.ref("userCount");
 
-    // Erhöhen Sie die Anzahl der Nutzer um eins, wenn die Seite geladen wird
-    userCountRef.transaction(function(currentValue) {
-      return (currentValue || 0) + 1;
-    });
-
-    // Verringern Sie die Anzahl der Nutzer um eins, wenn die Seite verlassen wird
-    window.addEventListener("unload", function() {
-      userCountRef.transaction(function(currentValue) {
-        return (currentValue || 0) - 1;
-      });
-    });
   </script>
 </script>
 <style>
@@ -60,7 +48,19 @@ firebase.initializeApp(firebaseConfig);
 
 // Auf Firestore zugreifen
 var db = firebase.firestore();
+    var userCountRef = database.ref("userCount");
 
+    // Erhöhen Sie die Anzahl der Nutzer um eins, wenn die Seite geladen wird
+    userCountRef.transaction(function(currentValue) {
+      return (currentValue || 0) + 1;
+    });
+
+    // Verringern Sie die Anzahl der Nutzer um eins, wenn die Seite verlassen wird
+    window.addEventListener("unload", function() {
+      userCountRef.transaction(function(currentValue) {
+        return (currentValue || 0) - 1;
+      });
+    });
 </script>
     <!-- Favicon und Stylesheets -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
