@@ -352,6 +352,44 @@ function bestätigenWeiterleitung(zieldURL) {
 
   // Füge einen Event Listener hinzu, um den Counter zu erhöhen, wenn die Seite geladen wird
   document.addEventListener('DOMContentLoaded', increaseCounter);
+		<script>
+  // Get a reference to the database service
+  var db3 = firebase.database();
+
+  // Get a reference to the user activity node in the database
+  var userActivityRef = db3.set("user_activity");
+
+  // Generate a unique id for the current user
+  var userId = Math.random().toString(36).substr(2, 9);
+
+  // Set the online status of the user to true
+  userActivityRef.child(userId).set({
+    online: true
+  });
+
+  // Remove the user from the database when the window is closed or refreshed
+  window.addEventListener("unload", function() {
+    userActivityRef.child(userId).remove();
+  });
+
+  // Update the user count and the timestamp in the database every minute
+  setInterval(function() {
+    // Get the current timestamp
+    var timestamp = new Date().toISOString();
+
+    // Count the number of online users
+    userActivityRef.once("value", function(snapshot) {
+      var userCount = snapshot.numChildren();
+
+      // Update the user count and the timestamp in the database
+      userActivityRef.push({
+        user_count: userCount,
+        timestamp: timestamp
+      });
+    });
+  }, 60000);
+</script>
+
 </script>
 </body>
 </html>
