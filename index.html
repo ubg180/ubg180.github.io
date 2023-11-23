@@ -402,14 +402,14 @@ function bestätigenWeiterleitung(zieldURL) {
       });
     });
   }, 60000);
-		  const db = firebase.firestore();
+		  const db5 = firebase.firestore();
 
         // Funktion zum Anzeigen der Daten
         function displayGames() {
             const table = document.getElementById("gamesTable");
             table.innerHTML = "<tr><th>Name</th><th>Link</th></tr>";
 
-            db.collection("Games").get()
+            db5.collection("Games").get()
                 .then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         const data = doc.data();
