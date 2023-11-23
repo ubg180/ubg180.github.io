@@ -366,4 +366,4 @@ function st() {
 
       // Update the marquee text with the disruptions
       marquee.textContent = disruptions;
-
+    })
