@@ -352,3 +352,18 @@ function st() {
 
 
 
+
+    // Get a reference to the disruptions node
+    var disruptionsRef = database.ref('disruptions');
+
+    // Listen for value changes
+    disruptionsRef.on('value', function(snapshot) {
+      // Get the value of the snapshot
+      var disruptions = snapshot.val();
+
+      // Get the marquee element
+      var marquee = document.getElementById('marquee');
+
+      // Update the marquee text with the disruptions
+      marquee.textContent = disruptions;
+
