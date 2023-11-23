@@ -48,7 +48,7 @@ firebase.initializeApp(firebaseConfig);
 
 // Auf Firestore zugreifen
 var db = firebase.firestore();
-    var userCountRef = database.ref("userCount");
+    var userCountRef = db.ref("userCount");
 
     // Erhöhen Sie die Anzahl der Nutzer um eins, wenn die Seite geladen wird
     userCountRef.transaction(function(currentValue) {
