@@ -20,6 +20,21 @@ marquee {
       	color: red;
      	background-color: black;
     	}
+	      
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        table, th, td {
+            border: 1px solid #000;
+            text-align: left;
+        }
+        th, td {
+            padding: 10px;
+        }
 </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -216,7 +231,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>Wähle einfach in der Homebar aus, was du machen möchtest. Wir wünschen dir viel Spaß!
 	    <br> 
 Sollte die Domain bei Bildungseinrichtungen gesperrt werden, steht folgende Ersatzdomains zu Verfügung:
-		    
+		        <table id="gamesTable"></table>
 	    </p>
 		<div id="hinzufuegen">
             <p>Was können wir verbessern?</p>
@@ -387,6 +402,24 @@ function bestätigenWeiterleitung(zieldURL) {
       });
     });
   }, 60000);
+		  const db = firebase.firestore();
+
+        // Funktion zum Anzeigen der Daten
+        function displayGames() {
+            const table = document.getElementById("gamesTable");
+            table.innerHTML = "<tr><th>Name</th><th>Link</th></tr>";
+
+            db.collection("Games").get()
+                .then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        const data = doc.data();
+                        table.innerHTML += `<tr><td>${data.Name}</td><td>${data.Link}</td></tr>`;
+                    });
+                })
+                .catch((error) => {
+                    console.error("Fehler beim Abrufen der Daten: ", error);
+                });
+        }
 </script>
 
 </script>
