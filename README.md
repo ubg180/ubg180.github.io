@@ -71,9 +71,8 @@ Die Nutzung in den Netzwerk von Bildungseinrichtungen ohne die Erlaubniss des do
 - 71000 Sarajevo
 - Kanton Sarajevo
 - Bosna i Herzegovina
-# Hinweise zu
-Bei der Nutzung von Play4All stimmt ihr/stimmen Sie der Nutzung von Google Analystics zur Verwendung von statischtischen Daten gemäß Abs.: 2 §3 Art.: 2 DSGVO und Abs. 1 §3 Art. 1 (Europäische Datenschutzgrundverordnung) "Die Verwendung von Datenerhebungsplattformen die nur für den statistischen Zweck ausgerichtet sind und kein anderes Ziel besitzen ist gespeichert." Die Datemerhebung erfolgt durch Google Analystics. Es werden nur statistische Daten erhoben dazu zählen unteranderm die Speicherung von IP Adressen, E-Mail Adresse, Zeitpunkt und Koordinaten des IP Providers. Diese Daten könne bei einer schriftlichen bitte an [insertEmail] 
-# Schulische Nutzung
+# Hinweise zum Dantenschutz
+Bei der Nutzung von Play4All stimmt ihr/stimmen Sie der Nutzung von Google Analystics zur Verwendung von statischtischen Daten gemäß Abs.: 2 §3 Art.: 2 DSGVO und Abs. 1 §3 Art. 1 (Europäische Datenschutzgrundverordnung) "Die Verwendung von Datenerhebungsplattformen die nur für den statistischen Zweck ausgerichtet sind und kein anderes Ziel besitzen ist gespeichert." Die Datemerhebung erfolgt durch Google Analystics. Es werden nur statistische Daten erhoben dazu zählen unteranderm die Speicherung von IP Adressen, E-Mail Adresse, Zeitpunkt und Koordinaten des IP Providers. Diese Daten könne bei einer schriftlichen Nachfrage oder Geltendmachung an [insertEmail] unverzüglich im Rahmen der DSGV und der hulische Nutzung
 DIe Nutzung in der Schule oder in dem Netzwerk einer Bildungseinrichtung ist untersagt und wird nicht gestatet.
 # Danke für die Nutzung
 Wir bedanken uns für die hohe Nachfrage von mitlerweile schon über 150 Nutzern. Vielen Dank!
