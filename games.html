@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>Play4All</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <style>
+    /* Allgemeine Stile für die Webseite */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #222;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      margin: 20px 0;
+    }
+
+    /* Stile für die Spielkästen */
+    .game-box {
+      width: 300px;
+      height: 300px;
+      margin: 20px;
+      float: left;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .game-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .game-box:hover img {
+      transform: scale(1.1);
+    }
+
+    .game-box .game-desc {
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      box-sizing: border-box;
+      transition: bottom 0.5s;
+    }
+
+    .game-box:hover .game-desc {
+      bottom: 0;
+    }
+
+    .game-box .game-desc h3 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .game-box .game-desc p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+	marquee {
+      	font-size: 24px;
+      	color: red;
+     	background-color: black;
+    	}
+  </style>
+      <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+	        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+  <script>
+        // Firebase-Konfiguration (du musst deine eigenen Konfigurationsdaten hier einsetzen)
+var firebaseConfig = {
+
+  apiKey: "AIzaSyBH_lgpYQtF0KHodq0DXdSOonchWJwMS4Y",
+  authDomain: "cool-gg.firebaseapp.com",
+  databaseURL: "https://cool-gg-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "cool-gg",
+  storageBucket: "cool-gg.appspot.com",
+  messagingSenderId: "135757861223",
+  appId: "1:135757861223:web:95b00a581cb07df494dfc2",
+  measurementId: "G-V74EHYKZK3"
+};
+
+// Firebase initialisieren
+firebase.initializeApp(firebaseConfig);
+
+// Auf Firestore zugreifen
+var db = firebase.firestore();
+	var database = firebase.database();
+</script>
+  <script>
+	function openNewTab(url) {
+    // Ein neuer Tab wird geöffnet
+    window.open(url, '_blank');
+}
+  </script>
+</head>
+<body>
+		      <marquee id="marquee" direction="left" scrollamount="6">Lade Informationen...</marquee>
+
+  <h1>Play4All</h1>
+  <!-- Spielkästen mit Bildern, Titeln und Beschreibungen -->
+  <div class="game-box" onclick="openNewTab('https://dddavit.github.io/subway/')">
+    <img src="game1.jfif" alt="Subway Surfers Logo">
+    <div class="game-desc">
+      <h3>Subway Surfers</h3>
+      <p>Fliehe vor dem Polizisten, indem du den immer schneller werdenden Zügen ausweichst.</p>
+    </div>
+  </div>
+  <div onclick="openNewTab('https://maxlud09.github.io/games/bloonstowerdefense.html')" class="game-box" >
+    <img src="game2.jfif" alt="Ballons TD Logo">
+    <div class="game-desc">
+      <h3>Ballons TD</h3>
+      <p>Ballons TD - Wie lange schaffst du es dich gegen die immer größeren Mengen an Ballons zu verteidigen?</p>
+    </div>
+  </div>
+  <div  onclick="openNewTab('https://temple-run2.github.io/')" class="game-box" >
+    <img src="game3.jfif" alt="TTemple Run Logo">
+    <div class="game-desc">
+      <h3>Temple Run</h3>
+      <p>Fliehe vor dem wütenden Bären, trotze dabei so lange wie möglich den Gefahren des dichtesten Jungles.</p>
+    </div>
+  </div>
+    <div class="game-box" onclick="openNewTab('https://casplay.000webhostapp.com/')">
+    <img src="game4.jfif" alt=" Tunnel Rush Logo">
+    <div class="game-desc">
+      <h3>Tunnel Rush</h3>
+      <p>Kämpfe dich durch die endlosen Leveln und weiche dabei den Hinderniss aus. Wie lange schaffst du es?</p>
+    </div>
+  </div>
+      <div class="game-box" onclick="openNewTab('')">
+    <img src="game.jfif" alt="Logo">
+    <div class="game-desc">
+      <h3></h3>
+      <p></p>
+    </div>
+  </div>
+        <div class="game-box" onclick="openNewTab('https://maxlud09.github.io/laserbrawl/trekrunn')">
+    <img src="game5.jfif" alt="X Trech Run Logo">
+    <div class="game-desc">
+      <h3>X Trech Run</h3>
+      <p>Schaffst du es den Hindernissen auszuweichen und während dem den Endboss zubesiegen.</p>
+    </div>
+  </div>
+        <div class="game-box" onclick="openNewTab('https://maxlud09.github.io/stickmanhook.html')">
+    <img src="game6.jfif" alt="Stick Man Hook Logo">
+    <div class="game-desc">
+      <h3>Stick Man Hook</h3>
+      <p>Wie weit schaffst du es ohne herunterzufallen.</p>
+    </div>
+  </div>
+        <div class="game-box" onclick="openNewTab('https://ubg365.github.io/monkey-mart/play.html')">
+    <img src="game7.jfif" alt="Logo">
+    <div class="game-desc">
+      <h3>Monkey Mart</h3>
+      <p>Werde zum Geschäfts Mann bei dem du einen eigenen Supermarkt managen kannst. Pushe deinen Supermarkt hoch! </p>
+    </div>
+  </div>
+        <div class="game-box" onclick="openNewTab('https://maxlud09.github.io/games/chess.html')">
+    <img src="game8.jfif" alt="Chess Logo">
+    <div class="game-desc">
+      <h3>Schach</h3>
+      <p>Spiele Schach gegen den Computer du kannst 3 Schwierigkeitsgrade auswählen: Einfach, Normal, Schwer. Schaffst du es jetzt den Computer zu besiegen?</p>
+    </div>
+  </div>
+ <div class="game-box" onclick="openNewTab('')">
+    <img src="game9.png" alt="2048 Logo">
+    <div class="game-desc">
+      <h3>2048 (Nicht Verfügbar)</h3>
+      <p>Was ist dein Highscore? Schaffst du es deine Freunde zu besiegen? </p>
+    </div>
+  </div>
+        <div class="game-box" onclick="openNewTab('https://maxlud09.github.io/games/slope.html')">
+    <img src="game11.jfif" alt=" Slope Logo">
+    <div class="game-desc">
+      <h3>Slope</h3>
+      <p>Spiele Slope! Steuere eine Kugel ohne von der Plattform herunterzufallen.</p>
+    </div>
+  </div>
+  <div class="game-box" onclick="openNewTab('')">
+    <img src="game10.png" alt="Tetris Logo">
+    <div class="game-desc">
+      <h3>Tetris (Nicht Verfügbar)</h3>
+      <p>Spiele Tetris! Wie hoch schaffst du es?</p>
+    </div>
+  </div>
+        <div class="game-box" onclick="openNewTab('https://maxlud09.github.io/laserbrawl/king')">
+    <img src="game12.jfif" alt="Logo">
+    <div class="game-desc">
+      <h3>Like a King</h3>
+      <p>Baue dein eigenes Königreich auf und kämpfe gegen Online Spieler.</p>
+    </div>
+  </div>
+ <div class="game-box" onclick="openNewTab('https://maxlud09.github.io/laserbrawl/tictactoe')">
+    <img src="game16.png" alt="Logo">
+    <div class="game-desc">
+      <h3>TicTacToe</h3>
+      <p>Spiele TicTacToe gegen deine Freunde oder eine KI.</p>
+    </div>
+  </div>
+<div class="game-box" onclick="openNewTab('')">
+    <img src="game15.jpg" alt="Logo">
+    <div class="game-desc">
+      <h3>Run 3  (Nicht Verfügbar)</h3>
+      <p>Schaffst du es dein Raumschiff zuerreichen? Passe auf, dass dich dabei nicht die fiesen Weltraummonster töten!</p>
+    </div>
+  </div>
+        <div class="game-box" onclick="openNewTab('')">
+    <img src="game14.jpg" alt="Logo">
+    <div class="game-desc">
+      <h3>Drift Hunters (Nicht Verfügbar)</h3>
+      <p>Drift Hunters - Wie lange schaffst du es mit deinem Traumauto zu driften?</p>
+    </div>
+  </div>
+       <div class="game-box" onclick="openNewTab('https://sites.google.com/site/unblockedgame76/minecraft-classic')">
+    <img src="game17.jfif" alt="Logo">
+    <div class="game-desc">
+      <h3>Minecraft</h3>
+      <p>Spiele Minecraft online direkt im Browser! Teile den Link mit Freunden </p>
+    </div>
+  </div>
+</body>
+</html>
