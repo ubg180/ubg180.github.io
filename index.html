@@ -65,6 +65,7 @@ firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 	var database = firebase.database();
 </script>
+
     <!-- Favicon und Stylesheets -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
@@ -79,6 +80,24 @@ var db = firebase.firestore();
 
 
 	<meta name="google-adsense-account" content="ca-pub-8703503301801933">
+				<script>
+			  function runOncePerDay() {
+      // Überprüfe, ob heute bereits ausgeführt wurde
+      const lastRunDate = localStorage.getItem('lastRunDate');
+
+      const today = new Date().toLocaleDateString();
+      
+      if (lastRunDate !== today) {
+        // Führe die Funktion aus, da sie heute noch nicht aufgerufen wurde
+		showalert("Adventsklaender", "Sichere dir wertvolle Prämien und lasse dich überraschen. Jetzt einfach <a href="advent.html">Hier klicken</a>", "7000")
+        
+        // Aktualisiere den letzten Ausführungszeitpunkt im localStorage
+        localStorage.setItem('lastRunDate', today);
+      } else {
+        // Die Funktion wurde heute bereits aufgerufen
+      }
+    }
+		</script>
 </head>
 <body class="h-100">
 	<!-- Google Tag Manager (noscript) -->
@@ -425,35 +444,6 @@ function bestätigenWeiterleitung(zieldURL) {
                 .catch((error) => {
                     console.error("Fehler beim Abrufen der Daten: ", error);
                 });
-        }
-// Funktion, die einmal pro Tag aufgerufen werden soll
-function einmalProTag() {
-    console.log("Die Funktion wurde aufgerufen!");
-    
-        showalert("Ersatzdomains:", "Ab jetzt stehen Ersatzdomains zur Verfügung: https://laserbrawl.c1.biz und spielen.c1.biz. Diese werden einmal pro Woche aktualliesiert.", 7000);
-
-    // Setze einen Cookie oder speichere im Local Storage, um den Aufruf zu verfolgen
-    document.cookie = "funktionAufgerufen=true; expires=" + new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toUTCString();
-}
-
-// Überprüfe, ob die Funktion heute bereits aufgerufen wurde
-function checkUndRun() {
-    // Lies den Cookie oder Local Storage-Wert
-    const funktionAufgerufen = document.cookie.includes("funktionAufgerufen=true");
-
-    // Wenn die Funktion heute noch nicht aufgerufen wurde, rufe sie auf
-    if (!funktionAufgerufen) {
-        einmalProTag();
-    } else {
-        console.log("Die Funktion wurde heute bereits aufgerufen.");
-    }
-}
-
-// Rufe die Funktion beim Laden der Seite auf
-checkUndRun();
-
-
-</script>
 
 </body>
 </html>
