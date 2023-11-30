@@ -6,13 +6,7 @@
     <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/homebar/style.css">
-		<style>
-		    marquee {
-      font-size: 24px;
-      color: red;
-      background-color: black;
-    }
-	</style>
+
          <!-- JavaScript-Bibliotheken -->
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
@@ -43,27 +37,11 @@ var db = firebase.firestore();
 </script>
     <title>Play4All- TheUnblockedHub</title>
 
-<script>    
-      var database = firebase.database();
 
-    // Get a reference to the disruptions node
-    var disruptionsRef = database.ref('disruptions');
-
-    // Listen for value changes
-    disruptionsRef.on('value', function(snapshot) {
-      // Get the value of the snapshot
-      var disruptions = snapshot.val();
-
-      // Get the marquee element
-      var marquee = document.getElementById('marquee');
-
-      // Update the marquee text with the disruptions
-      marquee.textContent = disruptions;
-    });
-  </script>
 </head>
 <body>
-<marquee id="marquee" direction="left" scrollamount="6">Lade Informationen</marquee> 
+<script src="assets/firebase/script/störungen.js"></script>
+  <div id="bar"></div>
 	<h1>Play4All - TheUnblockedHub</h1>
 	     <button class="button" onclick="back()">Zur&uuml;ck zum Hauptmenu</button>
 
