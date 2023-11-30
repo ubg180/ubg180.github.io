@@ -427,6 +427,31 @@ function bestätigenWeiterleitung(zieldURL) {
                     console.error("Fehler beim Abrufen der Daten: ", error);
                 });
         }
+// Funktion, die einmal pro Tag aufgerufen werden soll
+function einmalProTag() {
+    console.log("Die Funktion wurde aufgerufen!");
+    
+        showalert("Test", "Test", 7000);
+
+    // Setze einen Cookie oder speichere im Local Storage, um den Aufruf zu verfolgen
+    document.cookie = "funktionAufgerufen=true; expires=" + new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toUTCString();
+}
+
+// Überprüfe, ob die Funktion heute bereits aufgerufen wurde
+function checkUndRun() {
+    // Lies den Cookie oder Local Storage-Wert
+    const funktionAufgerufen = document.cookie.includes("funktionAufgerufen=true");
+
+    // Wenn die Funktion heute noch nicht aufgerufen wurde, rufe sie auf
+    if (!funktionAufgerufen) {
+        einmalProTag();
+    } else {
+        console.log("Die Funktion wurde heute bereits aufgerufen.");
+    }
+}
+
+// Rufe die Funktion beim Laden der Seite auf
+checkUndRun();
 
 
 </script>
