@@ -76,6 +76,7 @@ var db = firebase.firestore();
     <script src="assets/js/functions/vn.js"></script>
         
 	<script src="assets/firebase/script/script.js"></script>
+	<script src="assets/firebase/script/störungen.js"></script>
     	<script src="assets/js/functions/script_index.js"></script>
 
 
@@ -104,28 +105,13 @@ var db = firebase.firestore();
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFFJXGZF"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-	<script>
-		    // Get a reference to the disruptions node
-    var disruptionsRef = database.ref('disruptions');
-
-    // Listen for value changes
-    disruptionsRef.on('value', function(snapshot) {
-      // Get the value of the snapshot
-      var disruptions = snapshot.val();
-
-      // Get the marquee element
-      var marquee = document.getElementById('marquee');
-
-      // Update the marquee text with the disruptions
-      marquee.textContent = disruptions;
-    })
-	    </script>
+	
     <!-- Login Fenster -->
 
 	
 
     <div style="display: none;" id="loader" class="loader"></div>
-		      <marquee id="marquee" direction="left" scrollamount="6">Lade Informationen...</marquee>
+  <div id="bar"></div>
 
     <div id="login" class="container-fluid full-bg h-100">
         <div class="container h-100">
