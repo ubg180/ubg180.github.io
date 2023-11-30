@@ -68,7 +68,6 @@
         <!-- Passe den Dateipfad zur Tondatei an -->
         <source src="notification.mp3" type="audio/mpeg">
     </audio>
-<script src="assets/firebase/script/störungen.js"></script>
   <div id="bar"></div>
     <h1>Play4All - Chat</h1>
 
@@ -203,28 +202,11 @@
         }
 
   function back() {
-        window.location.href = "https://maxlud09.github.io/laserbrawl/";
+        window.location.href = "index.html";
         }
 
-
     </script>
-	    <script>    
-      var database = firebase.database();
+<script src="assets/firebase/script/störungen.js"></script>
 
-    // Get a reference to the disruptions node
-    var disruptionsRef = database.ref('disruptions');
-
-    // Listen for value changes
-    disruptionsRef.on('value', function(snapshot) {
-      // Get the value of the snapshot
-      var disruptions = snapshot.val();
-
-      // Get the marquee element
-      var marquee = document.getElementById('marquee');
-
-      // Update the marquee text with the disruptions
-      marquee.textContent = disruptions;
-    });
-  </script>
 </body>
 </html>
