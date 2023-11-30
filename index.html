@@ -117,7 +117,7 @@ var db = firebase.firestore();
       
       if (lastRunDate !== today) {
         // Führe die Funktion aus, da sie heute noch nicht aufgerufen wurde
-		showalert("Adventsklaender", "Sichere dir wertvolle Prämien und lasse dich überraschen. Jetzt einfach <a href="advent.html">Hier klicken</a>", "7000")
+		showalert("Adventsklaender", "Sichere dir wertvolle Prämien und lasse dich überraschen. Klicke einfach auf Adventskalender in der Homebar", "7000")
         
         // Aktualisiere den letzten Ausführungszeitpunkt im localStorage
         localStorage.setItem('lastRunDate', today);
