@@ -43,27 +43,11 @@ var db = firebase.firestore();
     <link rel="stylesheet" type="text/css" href="assets/css/homebar/style.css">
     <title>CasPlay - Browser</title>
 
-<script>    
-      var database = firebase.database();
 
-    // Get a reference to the disruptions node
-    var disruptionsRef = database.ref('disruptions');
-
-    // Listen for value changes
-    disruptionsRef.on('value', function(snapshot) {
-      // Get the value of the snapshot
-      var disruptions = snapshot.val();
-
-      // Get the marquee element
-      var marquee = document.getElementById('marquee');
-
-      // Update the marquee text with the disruptions
-      marquee.textContent = disruptions;
-    });
-  </script>
 </head>
 <body class="h-100">
-		      <marquee id="marquee" direction="left" scrollamount="6">Lade Informationen</marquee>
+	<script src="assets/firebase/script/störungen.js"></script>
+  <div id="bar"></div>
     <h1>Play4All - Browser</h1>
     
     <iframe src="https://www.proxysite.com/de/" width="800" height="600" frameborder="0"></iframe>
