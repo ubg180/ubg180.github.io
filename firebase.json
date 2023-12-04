@@ -1,8 +1,17 @@
 {
   "hosting": {
     "site": "laserbrawl",
-
-    "public": "public",
-    ...
+    "public": "laserbrawl",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }
