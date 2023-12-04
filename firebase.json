@@ -1,0 +1,8 @@
+{
+  "hosting": {
+    "site": "laserbrawl",
+
+    "public": "public",
+    ...
+  }
+}
