@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "laserbrawl",
+"site": "playforall",
     "public": "laserbrawl",
     "ignore": [
       "firebase.json",
