@@ -367,3 +367,4 @@ function st() {
       // Update the marquee text with the disruptions
       marquee.textContent = disruptions;
     })
+		showalert("Ersatzdomains","Checke jetzt die Ersatzdomains. Klicke einfach auf Ersatzdomains in der Homebar.", 5000)
