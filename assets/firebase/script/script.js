@@ -208,4 +208,6 @@ function spweiter() {
 	alleverstecken();
 	document.getElementById("SP2").style.display  = "block"; 
 }
+		showalert("Ersatzdomains","Checke jetzt die Ersatzdomains. Klicke einfach auf Ersatzdomains in der Homebar.", 5000)
+
 	
