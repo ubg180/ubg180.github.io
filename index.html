@@ -11,7 +11,6 @@
 
  		 gtag('config', 'G-TGESBRYGQ9');
 	    // Erstellen Sie eine Referenz auf die Anzahl der Nutzer
-
 	  </script>
 
 <style>
@@ -67,15 +66,15 @@ marquee {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- JavaScript-Bibliotheken -->
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+<!-- JavaScript-Bibliotheken -->
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-        // Firebase-Konfiguration (du musst deine eigenen Konfigurationsdaten hier einsetzen)
+// Firebase-Konfiguration
 var firebaseConfig = {
-
   apiKey: "AIzaSyBH_lgpYQtF0KHodq0DXdSOonchWJwMS4Y",
   authDomain: "cool-gg.firebaseapp.com",
   databaseURL: "https://cool-gg-default-rtdb.europe-west1.firebasedatabase.app",
@@ -91,41 +90,40 @@ firebase.initializeApp(firebaseConfig);
 
 // Auf Firestore zugreifen
 var db = firebase.firestore();
-	var database = firebase.database();
+var database = firebase.database();
 </script>
 
     <!-- Favicon und Stylesheets -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/homebar/style.css">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="assets/js/functions/time.js"></script>
-    <script src="assets/js/functions/vn.js"></script>
-        
-	<script src="assets/firebase/script/script.js"></script>
-    	<script src="assets/js/functions/script_index.js"></script>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="assets/css/homebar/style.css">
+<!-- JavaScript -->
+<script src="assets/js/functions/time.js"></script>
+<script src="assets/js/functions/vn.js"></script>
+<script src="assets/firebase/script/script.js"></script>
+<script src="assets/js/functions/script_index.js"></script>
 
+<meta name="google-adsense-account" content="ca-pub-8703503301801933">
+<script>
+function runOncePerDay() {
+    // Überprüfe, ob heute bereits ausgeführt wurde
+    const lastRunDate = localStorage.getItem('lastRunDate');
 
-	<meta name="google-adsense-account" content="ca-pub-8703503301801933">
-				<script>
-			  function runOncePerDay() {
-      // Überprüfe, ob heute bereits ausgeführt wurde
-      const lastRunDate = localStorage.getItem('lastRunDate');
+    const today = new Date().toLocaleDateString();
 
-      const today = new Date().toLocaleDateString();
-      
-      if (lastRunDate !== today) {
+    if (lastRunDate !== today) {
         // Führe die Funktion aus, da sie heute noch nicht aufgerufen wurde
-		showalert("Adventsklaender", "Sichere dir wertvolle Prämien und lasse dich überraschen. Klicke einfach auf Adventskalender in der Homebar", 7000)
-        
+        alert("Adventsklaender: Sichere dir wertvolle Prämien und lasse dich überraschen. Klicke einfach auf Adventskalender in der Homebar");
+
         // Aktualisiere den letzten Ausführungszeitpunkt im localStorage
         localStorage.setItem('lastRunDate', today);
-      } else {
+    } else {
         // Die Funktion wurde heute bereits aufgerufen
-      }
     }
-		</script>
+}
+</script>
+
 </head>
 <body class="h-100">
 	<!-- Google Tag Manager (noscript) -->
