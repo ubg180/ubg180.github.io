@@ -23,7 +23,7 @@ function login() {
 				logUserActivity(userAction);
                 loader.style.display = "none";
                 home.style.display = "block";
-		    		showalert("Neues Video","Checke jetzt das Neue Video. Klicke einfach auf Allein Allein in der Homebar. Wir wünschen viel Spaß beim Anschauen.", 5000)
+     showalert("Neues Video", "Schaue dir jetzt das neuste Video an. Einfach auf 'Allein Allein' klicken. Wir wünschen viel Spaß beim anschauen", 5000)
 
             })
             .catch(function (error) {
