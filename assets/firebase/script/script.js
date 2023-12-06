@@ -23,6 +23,8 @@ function login() {
 				logUserActivity(userAction);
                 loader.style.display = "none";
                 home.style.display = "block";
+		    		showalert("Ersatzdomains","Checke jetzt die Ersatzdomains. Klicke einfach auf Ersatzdomains in der Homebar.", 5000)
+
             })
             .catch(function (error) {
                 // Fehler bei der Anmeldung
