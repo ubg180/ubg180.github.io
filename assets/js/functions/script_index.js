@@ -7,6 +7,7 @@
 // Funktion zum Einblenden des Home-Menüs
 function alleverstecken() {
     const elementsToHide = [
+	"widget",
         "SP2",
         "Support",
         "login",
