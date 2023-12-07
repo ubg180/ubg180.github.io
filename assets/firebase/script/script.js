@@ -19,11 +19,10 @@ function login() {
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(function (user) {
                 // Erfolgreiche Anmeldung
-				const userAction = "Erfolgreiche Anmeldung.";
-				logUserActivity(userAction);
                 loader.style.display = "none";
+		     document.getElementById("widget").style.display = "block";
                 home.style.display = "block";
-		    document.getElementById("widget").style.display = "block";
+		document.getElementById("widget").style.display = "block";
 
             })
             .catch(function (error) {
@@ -210,6 +209,6 @@ function spweiter() {
 	alleverstecken();
 	document.getElementById("SP2").style.display  = "block"; 
 }
-		showalert("Ersatzdomains","Checke jetzt die Ersatzdomains. Klicke einfach auf Ersatzdomains in der Homebar.", 5000)
+
 
 	
