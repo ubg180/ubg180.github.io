@@ -360,24 +360,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Ende des Home Menus -->
   <div style="display: none;" id="widget" class="widget-container">
     <!-- Widget 1 -->
-    <div id="widget1" onclick="" class="widget">
+    <div id="widget1" class="widget">
       <h1>Willkommen bei Play4All</h1>
       <p>Wir wünschen dir viel Spaß beim Spielen und entdecken. Wir haben einiges im Design verändert.</p>
     </div>
 
     <!-- Widget 2 -->
-    <div onclick="" id="widget2" class="widget new">
+    <div onclick="window.location.href = 'alleine.html';" id="widget2" class="widget new">
 	<br>
       <h1>Neu: Video</h1>
       <p>Siehe dir jetzt das neue Video an. Einfach hier klicken.</p>
     </div>
 
     <!-- Widget 3 -->
-    <div id="widget3" onclick="" class="widget">
+    <div id="widget3" onclick="window.location.href = 'advent.html';" class="widget">
       <h1>Schon Prämien und Rabatte abgeholt?</h1>
       <p>Sichere dir jetzt im Adventskalender tolle Rabatte und Prämien. Einfach hier klicken!</p>
     </div>
-	      <div id="widget3" onclick="" class="widget">
+	      <div id="widget3" onclick="window.location.href = 'games.html';" class="widget">
       <h1>Spielen?</h1>
       <p>Du willst zu den coolen Spielen? Einfach hier klicken!</p>
     </div>
@@ -462,14 +462,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         }
  function openNewTab() {
-  var url = "chat.html"; // Hier den Link einfügen, den du öffnen möchtest
-  var windowName = "CasPlay - Chat"; // Ein optionaler Name für das Fenster
+  var url = "chat.html";
+  var windowName = "Play4All - Chat"; 
 
-  // Die window.open() Methode öffnet ein neues Fenster oder einen neuen Tab
+
   var newWindow = window.open(url, windowName);
 
-  // Optional: Das neue Fenster kann in der Größe angepasst werden
-  newWindow.resizeTo(800, 600); // Hier die gewünschten Breite und Höhe einstellen
+
+  newWindow.resizeTo(800, 600); 
 }
 
 </script>
