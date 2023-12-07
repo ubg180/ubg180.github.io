@@ -23,21 +23,21 @@
 }
 
 
-    .widget {
-      width: calc(25% - 20px) !important; /* 25% der Breite minus den äußeren Abstand von 20px */
-      height: 200px;
-      border: 2px solid green;
-      border-radius: 10px;
-      background-color: rgba(0, 128, 0, 0.5); /* Grüner Hintergrund mit 50% Transparenz */
-      box-shadow: 0 0 10px green;
-      margin: 10px;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      overflow-y: hidden;
-      overflow-x: hidden;
-      position: relative;
-      transition: box-shadow 0.3s ease;
-    }
+.widget {
+  flex: 0 0 calc(25% - 20px) !important; /* 25% der Breite minus den äußeren Abstand von 20px */
+  height: 200px;
+  border: 2px solid green;
+  border-radius: 10px;
+  background-color: rgba(0, 128, 0, 0.5);
+  box-shadow: 0 0 10px green;
+  margin: 10px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
 
     .widget:hover {
       box-shadow: 0 0 20px green;
