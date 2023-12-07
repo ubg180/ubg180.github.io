@@ -30,6 +30,7 @@ function alleverstecken() {
 
     // Zeige das Home-Menü an
     document.getElementById("home").style.display = "block";
+	    document.getElementById("widget").style.display = "block";
 }
 
 
