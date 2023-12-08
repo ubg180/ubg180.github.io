@@ -304,9 +304,20 @@ body {
   background-color: green;
   color: white;
   border: none;
-  cursor: pointer;
+  cursor: pointer      
   font-size: 14px;
 }
+.nbutton {
+  padding: 5px 10px;
+  margin-right: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  animation: bounce-in 3s ease-in-out;
+}
+
 
 .button:hover {
   background-color: darkgreen;
