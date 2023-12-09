@@ -90,11 +90,23 @@
     #link:hover {
       text-decoration: underline;
     }
+	  #bar {
+  color: red !important;
+  background-color: black !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 20px !important;
+  padding: 10px !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
   </style>
   <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+	<script src="assets/firebase/script/störungen_updates.js"></script>
+
   <script>
   
  var firebaseConfig = {
@@ -131,6 +143,8 @@ var database = firebase.database();
 	</script>
 </head>
 <body>
+	  <div id="bar"></div>
+
   <div id="container">
     <p id="message">Wir führen zurzeit, wie angekündigt, 
 	wichtige Software- und Sicherheitsupdates durch.<br>
