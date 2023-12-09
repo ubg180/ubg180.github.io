@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>Play4All - Störung </title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #container {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #message {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    #gear {
+      position: absolute;
+      top: 65%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 10px solid white;
+      box-sizing: border-box;
+      animation: spin 1s linear infinite;
+    }
+
+    #gear::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 50%;
+      border: 10px solid black;
+      box-sizing: border-box;
+    }
+
+    #gear::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-top: 20px solid white;
+      border-right: 20px solid white;
+      border-bottom: 20px solid white;
+      border-left: 20px solid transparent;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    #alternative {
+      font-size: 18px;
+      margin-top: 10px;
+      color: yellow;
+    }
+
+    #link {
+      color: yellow;
+      text-decoration: none;
+    }
+
+    #link:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+  <script>
+  
+ var firebaseConfig = {
+  apiKey: "AIzaSyBH_lgpYQtF0KHodq0DXdSOonchWJwMS4Y",
+  authDomain: "cool-gg.firebaseapp.com",
+  databaseURL: "https://cool-gg-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "cool-gg",
+  storageBucket: "cool-gg.appspot.com",
+  messagingSenderId: "135757861223",
+  appId: "1:135757861223:web:95b00a581cb07df494dfc2",
+  measurementId: "G-V74EHYKZK3"
+};
+
+// Firebase initialisieren
+firebase.initializeApp(firebaseConfig);
+
+// Auf Firestore zugreifen
+var db = firebase.firestore();
+var database = firebase.database();
+
+    const dbupdate = firebase.database().ref("updates");
+
+    // Lese den Wert der Variable updates aus der Datenbank
+    firebase.database().ref("updates").on("value", function(snapshot) {
+      // Wenn updates true ist, leite zur Seite update.html weiter
+      if (snapshot.val() === false) {
+        window.location.href = "index.html";
+      }
+      // Wenn updates false ist, tue nichts
+      else {
+	  console.log("nichts")
+      }
+    });
+	</script>
+</head>
+<body>
+  <div id="container">
+    <p id="message">Wir führen zurzeit, wie angekündigt, 
+	wichtige Software- und Sicherheitsupdates durch.<br>
+	Die Webseite steht vorraussichtlich bis Montag, den 11.12.2023 07:00 Uhr nicht zur Verfügung.
+	<br> Letzter Stand: 09.12.2023, 11:11 Uhr. </p>
+	
+    <p id="alternative">Unsere Ersatzdomain <br><a id="link" href="https://cool-gg.web.app" target="_blank">cool-gg.web.app</a> 
+	steht aber die ganze  Zeit zur Verfügung.</p>
+  </div>
+  <div id="gear"></div>
+</body>
+</html>
