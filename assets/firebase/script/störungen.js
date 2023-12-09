@@ -47,3 +47,16 @@
 
     // Die Funktion alle 2 Sekunden wiederholen
     setInterval(updateBar, 5000);
+ const dbupdate = firebase.database().ref("updates");
+
+    // Lese den Wert der Variable updates aus der Datenbank
+    firebase.database().ref("updates").on("value", function(snapshot) {
+      // Wenn updates true ist, leite zur Seite update.html weiter
+      if (snapshot.val() === true) {
+        window.location.href = "update.html";
+      }
+      // Wenn updates false ist, tue nichts
+      else {
+	  console.log("nichts")
+      }
+    });
