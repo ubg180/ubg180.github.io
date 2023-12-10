@@ -81,7 +81,13 @@
   0% {
     transform: rotateX(0deg);
   }
-  50% {
+  50% {      <div class="game-box" onclick="openNewTab('')">
+    <img src="game.jfif" alt="Logo">
+    <div class="game-desc">
+      <h3></h3>
+      <p></p>
+    </div>
+  </div>
     transform: rotateX(90deg);
   }
   100% {
@@ -173,6 +179,13 @@ var db = firebase.firestore();
     <div class="game-desc">
       <h3>Real City Driving 2</h3>
       <p>Die Fortsetzung von dem erfolgreichen Real City Drive Game geht in die nächste Runde. Spiele es jetzt.</p>
+    </div>
+  </div>
+	      <div class="game-box" onclick="openNewTab('helixjump.html')">
+    <img src="game30.png" alt="Logo">
+    <div class="game-desc">
+      <h3>Helix Fruit Jump</h3>
+      <p>Spiele jetzt Helix Fruit Jump! Wie weit schaffst du es? Vergleiche dein Level mit deinen Freunden!</p>
     </div>
   </div>
     <div class="game-box" onclick="openNewTab('https://casplay.000webhostapp.com/')">
