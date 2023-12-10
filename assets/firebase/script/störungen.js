@@ -44,11 +44,26 @@
 
     // Die Funktion zum ersten Mal aufrufen
     updateBar();
+ const dbupdate = firebase.database().ref("updates");
+ const dbupdatecoolgg = firebase.database().ref("updatesgg");
 
     // Die Funktion alle 2 Sekunden wiederholen
     setInterval(updateBar, 5000);
- const dbupdate = firebase.database().ref("updates");
+ function aufCoolGgWebApp() {
+    // Lese den Wert der Variable updates aus der Datenbank
+    firebase.database().ref("updatesgg").on("value", function(snapshot) {
+      // Wenn updates true ist, leite zur Seite update.html weiter
+      if (snapshot.val() === true) {
+        window.location.href = "update.html";
+      }
+      // Wenn updates false ist, tue nichts
+      else {
+	
+      }
+    })
+    }
 
+function aufAndererSeite() {
     // Lese den Wert der Variable updates aus der Datenbank
     firebase.database().ref("updates").on("value", function(snapshot) {
       // Wenn updates true ist, leite zur Seite update.html weiter
@@ -57,6 +72,15 @@
       }
       // Wenn updates false ist, tue nichts
       else {
-	  console.log("nichts")
+	
       }
-    });
+    })
+};
+
+    // Überprüfen der Host-Domain
+    if (window.location.hostname === 'cool-gg.web.app') {
+      aufCoolGgWebApp();
+    } else {
+      aufAndererSeite();
+    }
+
