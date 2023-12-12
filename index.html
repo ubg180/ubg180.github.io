@@ -225,9 +225,7 @@ firebase.initializeApp(firebaseConfig);
 // Auf Firestore zugreifen
 var db = firebase.firestore();
 var database = firebase.database();
-        function bookmarkMe() {
-            alert("Wir haben Hinweise, dass die Seite demnächst gesperrt wird. Drücken Sie " + (navigator.userAgent.toLowerCase().indexOf('mac') !== -1 ?  'Command/Cmd' : 'CTRL') + "+D, um eine Liste mit Ersatzdomains zu speichern.");
-        }
+
 </script>
 
     <!-- Favicon und Stylesheets -->
@@ -355,11 +353,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Widget 2 -->
-    <div onclick="window.location.href = 'report.html';"  id="widget2" class="widget new">
-      <h1>Wichtiger Hinweis:</h1>
+    <div style="pointer-events: none;" id="widget2" class="widget new">
+      <h1>JUBILÄUM 100. NUTZER:</h1>
       <p>
-Wir haben erfahren, dass Play4All demnächst gesperrt wird. Sollte dies geschehen,  weicht bitte auf die Ersatzdomains aus. 	      <br>
-      	Wir bitten die Störungen zu Entschuldigen! 
+Wir stehen kurz vor unserem 100. Nutzer. Entdecke tolle Prämien zum 100. Nutzer. 
       </p>
     </div>
 
