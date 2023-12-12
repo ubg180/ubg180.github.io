@@ -77,10 +77,12 @@ function aufAndererSeite() {
     })
 };
 
-    // Überprüfen der Host-Domain
-    if (window.location.hostname === 'cool-gg.web.app') {
-      aufCoolGgWebApp();
-    } else {
+// Überprüfe, ob die aktuelle Seite auf "cool-gg.web.app" ist und nicht auf "/update.html"
+if (window.location.hostname === 'cool-gg.web.app' && window.location.pathname !== '/update.html') {
+    aufCoolGgWebApp();
+}
+
+    else {
       aufAndererSeite();
     }
 
