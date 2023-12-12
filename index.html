@@ -225,7 +225,9 @@ firebase.initializeApp(firebaseConfig);
 // Auf Firestore zugreifen
 var db = firebase.firestore();
 var database = firebase.database();
-
+        function bookmarkMe() {
+            alert("Wir haben Hinweise, dass die Seite demnächst gesperrt wird. Drücken Sie " + (navigator.userAgent.toLowerCase().indexOf('mac') !== -1 ?  'Command/Cmd' : 'CTRL') + "+D, um eine Liste mit Ersatzdomains zu speichern.");
+        }
 </script>
 
     <!-- Favicon und Stylesheets -->
@@ -551,6 +553,7 @@ function bestätigenWeiterleitung(zieldURL) {
 		</script>
 	    <script>
 		    runOncePerDay()
+		    bookmarkMe()
 </script>
 
 </body>
