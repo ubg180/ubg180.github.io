@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <title id="pageTitle"></title>
+  <title>Play4All - Fortnite</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGESBRYGQ9"></script>
   <script>
@@ -36,13 +36,8 @@
     // Auf Firestore zugreifen
     var db = firebase.firestore();
 
-    // Hier den gewünschten Namen einfügen
-    var playerName = "Fortnite";
 
-    // Dynamisch den Namen im Title und im Header einfügen
-    document.getElementById("pageTitle").innerText = "Play4All - " + playerName;
-    document.getElementById("playerName").innerText = "Play4All - " + playerName;
-    document.getElementById("playerIframe").src = "https://ubg9.github.io/fortnite.html";
+ 
   </script>
   <!-- Favicon und Stylesheets -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -53,7 +48,9 @@
 <body class="h-100">
   <script src="assets/firebase/script/störungen.js"></script>
   <div id="bar"></div>
-  <h1 id="playerName"></h1> 
-  <iframe id="playerIframe" width="1300" height="700" frameborder="0">Oh! Es scheint als sei ein Fehler aufgetreten!</iframe>
+  <h1>Play4All - Fortnite</h1> 
+  <iframe src="https://ubg9.github.io/fortnite.html" width="1300" height="700" frameborder="0">Oh! Es scheint als sei ein Fehler aufgetreten!</iframe>
+
 </body>
 </html>
+
