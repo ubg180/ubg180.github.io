@@ -239,24 +239,7 @@ var database = firebase.database();
 <script src="assets/firebase/script/script.js"></script>
 <script src="assets/js/functions/script_index.js"></script>
 
-<meta name="google-adsense-account" content="ca-pub-8703503301801933">
-<script>
-function runOncePerDay() {
-    // Überprüfe, ob heute bereits ausgeführt wurde
-    const lastRunDate = localStorage.getItem('lastRunDate');
 
-    const today = new Date().toLocaleDateString();
-
-    if (lastRunDate !== today) {
-        // Führe die Funktion aus, da sie heute noch nicht aufgerufen wurde
-     showalert("Neues Video", "Schon unser neues Video entdeckt. Noch nicht? Einfach auf Sc klicken!", 5000)
-
-        // Aktualisiere den letzten Ausführungszeitpunkt im localStorage
-        localStorage.setItem('lastRunDate', today);
-    } else {  
-    }
-}
-</script>
 
 </head>
 <body class="h-100">
