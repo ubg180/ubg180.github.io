@@ -196,7 +196,24 @@
 .animate {
   animation: cube 2s infinite !important;
 }
+.highlight-box {
+      border: 2px solid #ff0000;
+      background-color: rgba(255, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      animation: highlight 2s infinite alternate;
+    }
 
+    @keyframes highlight {
+      from {
+        border-color: #ff0000;
+        background-color: rgba(255, 0, 0, 0.2);
+      }
+      to {
+        border-color: #ff0000;
+        background-color: rgba(255, 0, 0, 0.5);
+      }
+    }
 </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -266,8 +283,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </div>
-            <div class="foter-credit"></div>
+            <div class="foter-credit">
+		      <div class="highlight-box">
+    <h1>Wichtige Information:</h1>
+    <p>Alle Nutzer müssen sich aufgrund der gestrigen Störung neu registrieren!</p>
+  </div>
+	    </div>
         </div>
+	    
     </div>
     <!-- Ende des Login Fensters -->
 
