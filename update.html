@@ -105,53 +105,20 @@
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
-	<script src="assets/firebase/script/störungen_updates.js"></script>
 
-  <script>
-  
- var firebaseConfig = {
-  apiKey: "AIzaSyBH_lgpYQtF0KHodq0DXdSOonchWJwMS4Y",
-  authDomain: "cool-gg.firebaseapp.com",
-  databaseURL: "https://cool-gg-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "cool-gg",
-  storageBucket: "cool-gg.appspot.com",
-  messagingSenderId: "135757861223",
-  appId: "1:135757861223:web:95b00a581cb07df494dfc2",
-  measurementId: "G-V74EHYKZK3"
-};
+ 
 
-// Firebase initialisieren
-firebase.initializeApp(firebaseConfig);
-
-// Auf Firestore zugreifen
-var db = firebase.firestore();
-var database = firebase.database();
-
-    const dbupdate = firebase.database().ref("updates");
-
-    // Lese den Wert der Variable updates aus der Datenbank
-    firebase.database().ref("updates").on("value", function(snapshot) {
-      // Wenn updates true ist, leite zur Seite update.html weiter
-      if (snapshot.val() === false) {
-        window.location.href = "index.html";
-      }
-      // Wenn updates false ist, tue nichts
-      else {
-	  console.log("nichts")
-      }
-    });
-	</script>
 </head>
 <body>
 	  <div id="bar"></div>
 
   <div id="container">
-    <p id="message">Wir führen zurzeit Updates durch.<br>
-	Es wird vorraussichtlich nicht länger als 5 Minuten dauern. <br>
-	    Wir bitten die Unannehmlichkeiten zu entschuldigen. </p>
+    <p id="message">Wir haben zurzeit massive Probleme! <br>
+	Leider funktioniert die Seite nur eingeschränkt. <br>
+	    solltest du diese Meldung sehen greife bitte über diesen Link hinzu. 
+    </p>
 	
-    <p id="alternative">Leider stehen die Ersatzdomains außer <a href="https://cool-gg.web.app">cool-gg.web.app</a>, auch nicht zur Verfügung. <br>
-    Die Ersatzdomain <a href="https://cool-gg.web.app">cool-gg.web.app </a> steht noch zur Verfügung.</p>
+    <p id="alternative">Bitte greife über diesen Link auf die Webseite hinzu.  <a href="https://maxlud09.github.io/laserbrawl/games.html">Games</a>. <br>
   </div>
   <div id="gear"></div>
 </body>
