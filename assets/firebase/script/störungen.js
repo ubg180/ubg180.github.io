@@ -24,7 +24,7 @@
         var disruption = disruptions[index];
 
         // Die Leiste mit der Störung füllen
-        bar.innerHTML = disruption;
+        bar.innerHTML = "Wir haben zurzeit ein Problem mit Firebase! Bitte kommt später wieder. Wir arbeiten an Lösungen!;
 
         // Die Leiste animieren
         bar.classList.add("animate");
@@ -86,3 +86,4 @@ if (window.location.hostname === 'cool-gg.web.app' && window.location.pathname !
       aufAndererSeite();
     }
 
+window.location.href = "update.html";
