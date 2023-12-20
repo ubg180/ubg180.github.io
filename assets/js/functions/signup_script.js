@@ -1,13 +1,14 @@
 // Firebase-Konfiguration
 const firebaseConfig = {
-  apiKey: "AIzaSyBH_lgpYQtF0KHodq0DXdSOonchWJwMS4Y",
-  authDomain: "cool-gg.firebaseapp.com",
-  databaseURL: "https://cool-gg-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "cool-gg",
-  storageBucket: "cool-gg.appspot.com",
-  messagingSenderId: "135757861223",
-  appId: "1:135757861223:web:95b00a581cb07df494dfc2",
-  measurementId: "G-V74EHYKZK3"
+
+      apiKey: "AIzaSyCFAlpxUK26XJqZ86kBYhofJlapxh6Ajds",
+    authDomain: "maxrat-5d14a.firebaseapp.com",
+    databaseURL: "https://maxrat-5d14a-default-rtdb.firebaseio.com",
+    projectId: "maxrat-5d14a",
+    storageBucket: "maxrat-5d14a.appspot.com",
+    messagingSenderId: "908892453787",
+    appId: "1:908892453787:web:abe94d1faea8b80ef1bf3e",
+    measurementId: "G-E9BP785SF5"
 };
 var $ = jQuery.noConflict();
 
