@@ -1,3 +1,21 @@
+// Firebase-Konfiguration
+var firebaseConfig = {
+      apiKey: "AIzaSyCFAlpxUK26XJqZ86kBYhofJlapxh6Ajds",
+    authDomain: "maxrat-5d14a.firebaseapp.com",
+    databaseURL: "https://maxrat-5d14a-default-rtdb.firebaseio.com",
+    projectId: "maxrat-5d14a",
+    storageBucket: "maxrat-5d14a.appspot.com",
+    messagingSenderId: "908892453787",
+    appId: "1:908892453787:web:abe94d1faea8b80ef1bf3e",
+    measurementId: "G-E9BP785SF5"
+};
+
+// Firebase initialisieren
+firebase.initializeApp(firebaseConfig);
+
+// Auf Firestore zugreifen
+var db = firebase.firestore();
+var database = firebase.database();
 // Auf die Datenbank zugreifen
     var database4 = firebase.database();
 
