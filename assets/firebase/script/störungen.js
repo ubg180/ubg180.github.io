@@ -10,7 +10,6 @@ var firebaseConfig = {
   measurementId: "G-E9BP785SF5"
 };
 
-firebase.initializeApp(firebaseConfig);
 
 // Restlicher Code bleibt unverändert
 
