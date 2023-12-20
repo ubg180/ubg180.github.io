@@ -1,4 +1,4 @@
-     var firebaseConfig {
+     var firebaseConfig = {
 	 apiKey: "AIzaSyCFAlpxUK26XJqZ86kBYhofJlapxh6Ajds",
     authDomain: "maxrat-5d14a.firebaseapp.com",
     databaseURL: "https://maxrat-5d14a-default-rtdb.firebaseio.com",
