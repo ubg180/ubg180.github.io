@@ -70,8 +70,13 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(() => {
         // Code, der nach erfolgreicher E-Mail-Verifizierung ausgeführt wird
         scheduleCheckAndRedirect();
-        showalert("Erfolgreich registriert:", "Bitte überprüfe den Posteingang, auch den Spam-Ordner.", 5000);
+        showalert("Erfolgreich registriert:", "Du wirst in 3 Sekunden zum Login weitergeleitet. Bitte loge dich mit deinen Login Daten ein.", 5000);
         console.log("Benutzer wurde erfolgreich registriert."); // Informative Meldung
+          // Umleitung nach 3 Sekunden
+setTimeout(function() {
+    window.location.href = "index.html";
+}, 3000);
+
     })
     .catch((error) => {
         // Code für die Fehlerbehandlung

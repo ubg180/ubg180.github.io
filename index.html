@@ -196,7 +196,28 @@
 .animate {
   animation: cube 2s infinite !important;
 }
+    .highlight-box {
+      border: 2px solid #ff0000;
+      background-color: rgba(255, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      animation: highlight 2s infinite alternate;
+    }
 
+    .highlight-box h1, .highlight-box p {
+      color: #000000; /* Schwarze Schriftfarbe */
+    }
+
+    @keyframes highlight {
+      from {
+        border-color: #ff0000;
+        background-color: rgba(255, 0, 0, 0.2);
+      }
+      to {
+        border-color: #ff0000;
+        background-color: rgba(255, 0, 0, 0.5);
+      }
+    }
 </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -207,27 +228,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-// Firebase-Konfiguration
-var firebaseConfig = {
-  apiKey: "AIzaSyBH_lgpYQtF0KHodq0DXdSOonchWJwMS4Y",
-  authDomain: "cool-gg.firebaseapp.com",
-  databaseURL: "https://cool-gg-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "cool-gg",
-  storageBucket: "cool-gg.appspot.com",
-  messagingSenderId: "135757861223",
-  appId: "1:135757861223:web:95b00a581cb07df494dfc2",
-  measurementId: "G-V74EHYKZK3"
-};
-
-// Firebase initialisieren
-firebase.initializeApp(firebaseConfig);
-
-// Auf Firestore zugreifen
-var db = firebase.firestore();
-var database = firebase.database();
-
-</script>
 
     <!-- Favicon und Stylesheets -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -237,14 +237,10 @@ var database = firebase.database();
 <!-- JavaScript -->
 <script src="assets/js/functions/time.js"></script>
 <script src="assets/js/functions/vn.js"></script>
-
+<script src="assets/firebase/script/script.js"></script>
 <script src="assets/js/functions/script_index.js"></script>
-<script>
-    document.getElementById("login").style.display = "none";
 
-    document.getElementById("home").style.display = "block";
-	    document.getElementById("widget").style.display = "block";
-</script>
+
 
 </head>
 <body class="h-100">
@@ -259,9 +255,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div style="display: none;" id="loader" class="loader"></div>
 <script src="assets/firebase/script/störungen.js"></script>
-  <div id="bar"></div>
+  <div id="bar">Alle Nutzer die sich vor dem 21.12.2023 registriert haben, müssen dies erneut tuen.</div>
 
-    <div style="display: none;" id="login" class="container-fluid full-bg h-100">
+    <div id="login" class="container-fluid full-bg h-100">
+
         <div class="container h-100">
             <div class="row no-margin h-100">
                 <div class="bg-layer d-flex col-md-4">
@@ -288,16 +285,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="no-c">Passwort vergessen? <a onclick="passwordreset()">Hier klicken!</a></p>
                         <button onclick="login(); Save();" class="btn btn-success">Login</button>
                         <p class="no-c">Neu hier? <a href="signup.html">Hier klicken!</a></p>
+		
                     </div>
                 </div>
             </div>
-            <div class="foter-credit"></div>
+            <div class="foter-credit">
+<p>Bitte beachte, dass sich alle Nutzer neu registrieren müssen. </p>
+	    </div>
         </div>
+	    
     </div>
     <!-- Ende des Login Fensters -->
 
     <!-- Benachrichtigung wenn Gerät offline ist -->
-    <div style="text-align: center; display: none;" id="offlineAlert">
+    <div style="text-align: center;" id="offlineAlert">
         <h5>Offline</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Schließen">
             <span aria-hidden="true">&times;</span>
@@ -311,13 +312,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Loader -->
     <div style="display: none;" id="loader" class="loader"></div>
     <!-- Ende des Loaders -->
-    <div id="home" >
+    <div id="home" style="display: none;">
         <!-- Anfang des Home Menus -->
         <div class="homebar">
             <button onclick="window.location.href = 'games.html';" class="button" aria-label="Games">Games</button>
+            <button class="button" onclick="window.location.href = 'chat.html';" aria-label="Chat">Chat</button>
 	    <button onclick="window.location.href = 'report.html';" class="button" aria-label="Bug Report">Bug Report</button>
 	    <button onclick="window.location.href = 'advent.html';" class="button" aria-label="Adventskalender">Adventskalender</button>
+	    <button onclick="window.location.href = 'domains.html';" class="button" aria-label="Ersatzdomains">Ersatzdomains</button>
 	    <button onclick="window.location.href = 'videos.html';" class="button" aria-label="Kontakt">Kontakt</button>
+            <button class="button btn-danger" id="logout-button" aria-label="Ausloggen" onclick="confirmLogout()">Ausloggen</button>
             <span id="current-time" class="button"></span>
             <span id="current-date" class="button"></span>
 	</div>
@@ -326,25 +330,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
         <!-- Ende des Home Menus -->
-  <div  id="widget1" class="widget-container">
+  <div style="display: none;" id="widget" class="widget-container">
     <!-- Widget 1 -->
     <div style="pointer-events: none;" id="widget1" class="widget">
       <h1 style="font-size: 35px !Important;">Herzlich - Willkommen bei Play4All</h1>
       <p>Wir wünschen dir viel Spaß beim spielen und entdecken.</p>
-    </div>
-	  <br>
-	    <!-- Widget 2 -->
-    <div style="pointer-events: none;" id="widget2" class="widget new">
-      <h1>Massive Störungen:</h1>
-      <p>
-	Wir haben zurzeit ganz massive Probleme. Wir arbeiten an Lösungen. 
-<br>
-Zurzeit ist alles nur notdürftig geflickt. 
-      </p>
+	      <div class="highlight-box">
+    <h1>Wichtige Informationen:</h1>
+    <p>Aufgrund der gestrigen Störungen stehen die Ersatzdomains NICHT zur Verfügung. 
+	    <br>
+	    Alle Nutzer die sich vor dem 21.12.2023 registriert haben, müssen dies erneut tuen.</p>
+  </div>
     </div>
 
   
-<br>
+
     <!-- Widget 3 -->
     <div id="widget3" onclick="window.location.href = 'advent.html';" class="widget">
       <h1>Schon Prämien und Rabatte abgeholt?</h1>
@@ -368,7 +368,7 @@ Zurzeit ist alles nur notdürftig geflickt.
             <button class="btn btn-success" onclick="spweiter()">Absenden</button>
             <p>Klicke auf "Account Adresse verwenden" um deine E-Mail Adresse zu verwenden, die auf deinem Account registriert hast.</p>
             <button class="btn btn-success" onclick="getUserData()">Account Adresse verwenden</button>
-	</div>
+        </div>
 
         <div id="SP2" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
             <h1>Bitte gebe deine Nachricht an uns ein.</h1>
@@ -377,7 +377,14 @@ Zurzeit ist alles nur notdürftig geflickt.
             <button class="btn btn-success" onclick="SPabgeben()">Absenden</button>
         </div>
 
+        <div id="success-alert" class="alert success-alert">
+            <span class="alert-text">Du wurdest erfolgreich ausgeloggt!</span>
+        </div>
 
+        <div id="error-alert" class="alert error-alert">
+            <span class="alert-text">Fehler beim Ausloggen:</span>
+        </div>
+    </div>
 
     <!-- Weitere JavaScript-Dateien -->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
@@ -524,8 +531,8 @@ function bestätigenWeiterleitung(zieldURL) {
                     console.error("Fehler beim Abrufen der Daten: ", error);
                 });
 		showalert("Ersatzdomains","Checke jetzt die Ersatzdomains. Klicke einfach auf Ersatzdomains in der Homebar.", 5000)
-		</script>
-	    <script>
+		
+	   
 		    runOncePerDay()
 		    bookmarkMe()
 </script>
