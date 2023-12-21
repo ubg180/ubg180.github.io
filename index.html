@@ -384,12 +384,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="alert-text">Fehler beim Ausloggen:</span>
         </div>
     </div>
-
+<script>
+	    function anonAnmelden() {
+      firebase.auth().signInAnonymously()
+        .then((userCredential) => {
+          // Der Benutzer wurde erfolgreich angemeldet
+          const user = userCredential.user;
+          console.log('Angemeldeter Benutzer:', user);
+		  document.getElementById("home").style.display = "block";
+			document.getElementById("widget").style.display = "block";
+        })
+        .catch((error) => {
+          // Bei einem Fehler während der Anmeldung
+          const errorCode = error.code;
+          const errorMessage = error.message;
+		  showalert("Es ist ein Fehler aufgetreten! Bitte versuche es erneut!");
+          
+        });
+    }
+</script>
     <!-- Weitere JavaScript-Dateien -->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
+	
     <script>
 	function hideGamesMenu() {
             var gamesMenu = document.getElementById("gamesMenu");
