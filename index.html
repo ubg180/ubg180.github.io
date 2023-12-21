@@ -196,12 +196,16 @@
 .animate {
   animation: cube 2s infinite !important;
 }
-.highlight-box {
+    .highlight-box {
       border: 2px solid #ff0000;
       background-color: rgba(255, 0, 0, 0.2);
-      padding: 3px;
-      border-radius: 1px;
-color: black !important;
+      padding: 20px;
+      border-radius: 10px;
+      animation: highlight 2s infinite alternate;
+    }
+
+    .highlight-box h1, .highlight-box p {
+      color: #000000; /* Schwarze Schriftfarbe */
     }
 
     @keyframes highlight {
@@ -278,7 +282,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <span class="checkmark"></span> Angemeldet bleiben?
                             </label>
                         </p>
-			    <p>Bitte beachte, dass sich alle Nutzer neu registrieren müssen. </p>
                         <p class="no-c">Passwort vergessen? <a onclick="passwordreset()">Hier klicken!</a></p>
                         <button onclick="login(); Save();" class="btn btn-success">Login</button>
                         <p class="no-c">Neu hier? <a href="signup.html">Hier klicken!</a></p>
@@ -287,7 +290,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
             <div class="foter-credit">
-
+<p>Bitte beachte, dass sich alle Nutzer neu registrieren müssen. </p>
 	    </div>
         </div>
 	    
@@ -332,6 +335,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div style="pointer-events: none;" id="widget1" class="widget">
       <h1 style="font-size: 35px !Important;">Herzlich - Willkommen bei Play4All</h1>
       <p>Wir wünschen dir viel Spaß beim spielen und entdecken.</p>
+	      <div class="highlight-box">
+    <h1>Wichtiger Bereich</h1>
+    <p>Dieser Bereich ist hervorgehoben.</p>
+  </div>
     </div>
 
   
