@@ -388,11 +388,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	    function anonAnmelden() {
       firebase.auth().signInAnonymously()
         .then((userCredential) => {
-          // Der Benutzer wurde erfolgreich angemeldet
-          const user = userCredential.user;
-          console.log('Angemeldeter Benutzer:', user);
-		  document.getElementById("home").style.display = "block";
-			document.getElementById("widget").style.display = "block";
+		// Der Benutzer wurde erfolgreich angemeldet
+		document.getElementById("login").style.display = "none";
+		document.getElementById("loader").style.display = "block";
+          	const user = userCredential.user;
+          	console.log('Angemeldeter Benutzer:', user);
+		document.getElementById("loader").style.display = "none";
+		document.getElementById("home").style.display = "block";
+		document.getElementById("widget").style.display = "block";
         })
         .catch((error) => {
           // Bei einem Fehler während der Anmeldung
