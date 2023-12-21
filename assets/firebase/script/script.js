@@ -209,6 +209,22 @@ function spweiter() {
 	alleverstecken();
 	document.getElementById("SP2").style.display  = "block"; 
 }
-
+    function anonAnmelden() {
+      firebase.auth().signInAnonymously()
+        .then((userCredential) => {
+          // Der Benutzer wurde erfolgreich angemeldet
+          const user = userCredential.user;
+          console.log('Angemeldeter Benutzer:', user);
+		  document.getElementById("home").style.display = "block";
+			document.getElementById("widget").style.display = "block";
+        })
+        .catch((error) => {
+          // Bei einem Fehler während der Anmeldung
+          const errorCode = error.code;
+          const errorMessage = error.message;
+		  showalert("Es ist ein Fehler aufgetreten! Bitte versuche es erneut!");
+          
+        });
+    }
 
 	
