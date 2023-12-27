@@ -103,10 +103,29 @@
  
 </head>
 	  <script>
-	function openNewTab(url) {
-    // Ein neuer Tab wird geöffnet
-    window.open(url, '_blank');
-}
+        // Funktion, um Parameter an die URL anzuhängen
+        function appendParameterToURL(url, paramName, paramValue) {
+            var separator = (url.indexOf('?') !== -1) ? '&' : '?';
+            return url + separator + paramName + '=' + paramValue;
+        }
+
+        // Funktion zum Weiterleiten mit Parametern
+        function redirectToTargetPage(pageTitle, pageHeading, iframeLink) {
+            // Ziel-URL für die Weiterleitung
+            var targetURL = 'game.html';
+
+            // Parameter zur Ziel-URL hinzufügen
+            var finalURL = appendParameterToURL(targetURL, 'pageTitle', pageTitle);
+            finalURL = appendParameterToURL(finalURL, 'pageHeading', pageHeading);
+            finalURL = appendParameterToURL(finalURL, 'iframeLink', iframeLink);
+
+            // Aktuelle Uhrzeit hinzufügen
+            var currentTime = new Date().getTime();
+            finalURL = appendParameterToURL(finalURL, 'currentTime', currentTime);
+
+            // Weiterleitung zur Ziel-URL in einem neuen Tab
+            window.open(finalURL, '_blank');
+        }
   </script>
 <body>
 <script src="assets/firebase/script/störungen.js"></script>
