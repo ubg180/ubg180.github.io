@@ -126,6 +126,10 @@
             // Weiterleitung zur Ziel-URL in einem neuen Tab
             window.open(finalURL, '_blank');
         }
+		  	function openNewTab(url) {
+    // Ein neuer Tab wird geöffnet
+    window.open(url, '_blank');
+}
   </script>
 <body>
 <script src="assets/firebase/script/störungen.js"></script>
@@ -400,7 +404,7 @@
       <p>Spiele jetzt Ball Blast! Wie viele Coins schaffst du einzusammlen?</p>
     </div>
   </div>
-	      <div class="game-box" onclick="openNewTab('jetpack.html')">
+	      <div class="game-box" onclick="redirectToTargetPage('Play4All - Jetpack Joyride ', 'Play4All - Jetpack - Joyride', '')">
     <img src="img/game43.jfif" alt="Logo">
     <div class="game-desc">
       <h3>Jetpack Joyride</h3>
