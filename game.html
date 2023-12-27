@@ -31,7 +31,7 @@
 	<script src="assets/firebase/script/störungen.js"></script>
   <div id="bar"></div>
   <script>
-        // Funktion zum Extrahieren von Parametern aus der URL
+             // Funktion zum Extrahieren von Parametern aus der URL
         function getParameterByName(name, url) {
             name = name.replace(/[\[\]]/g, "\\$&");
             var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
@@ -45,13 +45,14 @@
         var pageTitle = getParameterByName('pageTitle', window.location.href);
         var pageHeading = getParameterByName('pageHeading', window.location.href);
         var iframeLink = getParameterByName('iframeLink', window.location.href);
+        var currentTime = getParameterByName('currentTime', window.location.href);
 
         // Titel der Zielseite setzen
         if (pageTitle) {
             document.title = pageTitle;
         }
 
-        // Überschrift und iframe-Link anzeigen
+        // Überschrift setzen
         if (pageHeading) {
             var heading = document.createElement('h1');
             heading.textContent = pageHeading;
@@ -62,11 +63,26 @@
         if (iframeLink) {
             var iframe = document.createElement('iframe');
             iframe.src = iframeLink;
-            iframe.width = '1300';
+	    iframe.width = '1300';
             iframe.height = '700';   
             iframe.frameborde = '0';
             document.body.appendChild(iframe);
         }
+
+        // Zeitunterschied prüfen
+        if (currentTime) {
+            var currentTimeInMillis = parseInt(currentTime);
+            var currentTimeOnPageLoad = new Date().getTime();
+
+            // Zeitunterschied in Minuten berechnen
+            var timeDifferenceInMinutes = (currentTimeOnPageLoad - currentTimeInMillis) / (1000 * 60);
+
+            // Wenn mehr als 5 Minuten vergangen sind, Fehler anzeigen
+            if (timeDifferenceInMinutes > 5) {
+                alert("Fehler: Mehr als 5 Minuten vergangen!");
+            }
+        }
+    
     </script>
 </body>
 </html>
