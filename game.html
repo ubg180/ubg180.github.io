@@ -1,82 +1,72 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-    <title>Buttons und Modal</title>
-    <style>
-        /* Stil für das Modal */
-        .modal {
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-        }
+	<title></title> //// Hier Namen einsetzen
+<-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGESBRYGQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        /* Stil für das Modal-Inhaltsfeld */
-        .modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+  gtag('config', 'G-TGESBRYGQ9');
+</script>
+    <!-- JavaScript-Bibliotheken -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
 
-        /* Stil für die Schließen-Schaltfläche */
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
+	
+      <!-- Favicon und Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/homebar/style.css">
+
+
 </head>
-<body>
+<body class="h-100">
+	<script src="assets/firebase/script/störungen.js"></script>
+  <div id="bar"></div>
+  <script>
+        // Funktion zum Extrahieren von Parametern aus der URL
+        function getParameterByName(name, url) {
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
 
+        // Parameter aus der URL extrahieren
+        var pageTitle = getParameterByName('pageTitle', window.location.href);
+        var pageHeading = getParameterByName('pageHeading', window.location.href);
+        var iframeLink = getParameterByName('iframeLink', window.location.href);
 
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-                </br>
-              	<button id="btn1">Snake</button>
-                </br>
-    			<button id="btn2">Flappy Bird</button>
-            	</br>
-    			<button id="btn3">Bubble Soother</button>
-        		</br>
-    			<button id="btn4">Jump'n'Run</button>
-        </div>
-    </div>
+        // Titel der Zielseite setzen
+        if (pageTitle) {
+            document.title = pageTitle;
+        }
 
-    <script>
-        // Modal und Schaltflächen referenzieren
-        const modal = document.getElementById("myModal");
-        const closeModal = document.getElementById("closeModal");
-        const buttons = document.querySelectorAll("button");
+        // Überschrift und iframe-Link anzeigen
+        if (pageHeading) {
+            var heading = document.createElement('h1');
+            heading.textContent = pageHeading;
+            document.body.appendChild(heading);
+        }
 
-        // Schaltflächen klicken, um das Modal anzuzeigen
-        buttons.forEach((button, index) => {
-            button.addEventListener("click", () => {
-                modal.style.display = "block";
-            });
-        });
-
-        // Modal schließen
-        closeModal.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-
-        // Klicken außerhalb des Modals, um es zu schließen
-        window.addEventListener("click", (event) => {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
+        // iframe erstellen und einbinden
+        if (iframeLink) {
+            var iframe = document.createElement('iframe');
+            iframe.src = iframeLink;
+            iframe.width = '1300';
+            iframe.height = '700';   
+            iframe.frameborde = '0';
+            document.body.appendChild(iframe);
+        }
     </script>
 </body>
 </html>
