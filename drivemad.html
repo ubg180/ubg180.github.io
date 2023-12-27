@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-	<title>Play4All - Drive Mad</title> //// Hier Namen einsetzen
+	<title></title> //// Hier Namen einsetzen
 <-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGESBRYGQ9"></script>
 <script>
@@ -29,8 +29,42 @@
 <body class="h-100">
 	<script src="assets/firebase/script/störungen.js"></script>
   <div id="bar"></div>
-    <h1>Play4All - Drive Mad</h1> //// Hier Namen einsetzen
-	<iframe src="https://ubg365.github.io/drive-mad/" width="1300" height="700" frameborder="0">Oh! Es scheint als sei ein Fehler aufgetreten!</iframe>
-    //// Hier Link einsetzen
+  <script>
+        // Funktion zum Extrahieren von Parametern aus der URL
+        function getParameterByName(name, url) {
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Parameter aus der URL extrahieren
+        var pageTitle = getParameterByName('pageTitle', window.location.href);
+        var pageHeading = getParameterByName('pageHeading', window.location.href);
+        var iframeLink = getParameterByName('iframeLink', window.location.href);
+
+        // Titel der Zielseite setzen
+        if (pageTitle) {
+            document.title = pageTitle;
+        }
+
+        // Überschrift und iframe-Link anzeigen
+        if (pageHeading) {
+            var heading = document.createElement('h1');
+            heading.textContent = pageHeading;
+            document.body.appendChild(heading);
+        }
+
+        // iframe erstellen und einbinden
+        if (iframeLink) {
+            var iframe = document.createElement('iframe');
+            iframe.src = iframeLink;
+            iframe.width = '600';
+            iframe.height = '400';
+            document.body.appendChild(iframe);
+        }
+    </script>
 </body>
 </html>
