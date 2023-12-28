@@ -107,18 +107,51 @@
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
 
  
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCFAlpxUK26XJqZ86kBYhofJlapxh6Ajds",
+    authDomain: "maxrat-5d14a.firebaseapp.com",
+    databaseURL: "https://maxrat-5d14a-default-rtdb.firebaseio.com",
+    projectId: "maxrat-5d14a",
+    storageBucket: "maxrat-5d14a.appspot.com",
+    messagingSenderId: "908892453787",
+    appId: "1:908892453787:web:abe94d1faea8b80ef1bf3e",
+    measurementId: "G-E9BP785SF5"
+  };
+  firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+ // Pfad zu den Alternativtexten in der Datenbank
+  var alternativeTextRef = database.ref('alttext');
 
+  // Höre auf Änderungen in den Daten
+  alternativeTextRef.on('value', function(snapshot) {
+    // Alternativtext aus der Datenbank abrufen
+    var alternativeTextValue = snapshot.val();
+
+    // Den Alternativtext in das HTML-Element mit der ID "alternative" einfügen
+    document.getElementById('alternative').innerText = alternativeTextValue;
+  });
+   // Pfad zu den Textdaten in der Datenbank
+  var textRef = database.ref('text');
+
+  // Höre auf Änderungen in den Daten
+  textRef.on('value', function(snapshot) {
+    // Text aus der Datenbank abrufen
+    var textValue = snapshot.val();
+
+    // Den Text in das HTML-Element mit der ID "message" einfügen
+    document.getElementById('message').innerText = textValue;
+  });
+  </script>
 </head>
 <body>
 	  <div id="bar"></div>
 
   <div id="container">
-    <p id="message">Wir haben zurzeit massive Probleme! <br>
-	Leider funktioniert die Seite nur eingeschränkt. <br>
-	    solltest du diese Meldung sehen greife bitte über diesen Link hinzu. 
+    <p id="message"> 
     </p>
 	
-    <p id="alternative">Bitte greife über diesen Link auf die Webseite hinzu.  <a href="https://maxlud09.github.io/laserbrawl/games.html">Games</a>. <br>
+    <p id="alternative"></p>
   </div>
   <div id="gear"></div>
 </body>
