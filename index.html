@@ -298,17 +298,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <!-- Ende des Login Fensters -->
 
-    <!-- Benachrichtigung wenn Gerät offline ist -->
-    <div style="text-align: center;" id="offlineAlert">
-        <h5>Offline</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Schließen">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <p>Hinweis: Das Programm funktioniert nur, wenn du online bist. Du bist zurzeit offline. Spiele doch eine Runde Snake. Wir benachrichtigen dich, sobald du bereit bist.</p>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeAlert()" id="cancelButton">Abbrechen</button>
-        <button type="button" class="btn btn-primary" id="playSnakeButton" onclick="playSnake()">Snake spielen</button>
-    </div>
-    <!-- Ende der Benachrichtigung -->
+   
 
     <!-- Loader -->
     <div style="display: none;" id="loader" class="loader"></div>
@@ -319,7 +309,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <button onclick="window.location.href = 'games.html';" class="button" aria-label="Games">Games</button>
             <button class="button" onclick="window.location.href = 'chat.html';" aria-label="Chat">Chat</button>
 	    <button onclick="window.location.href = 'report.html';" class="button" aria-label="Bug Report">Bug Report</button>
-	    <button onclick="window.location.href = 'advent.html';" class="button" aria-label="Adventskalender">Adventskalender</button>
 	    <button onclick="window.location.href = 'domains.html';" class="button" aria-label="Ersatzdomains">Ersatzdomains</button>
 	    <button onclick="window.location.href = 'videos.html';" class="button" aria-label="Kontakt">Kontakt</button>
             <button class="button btn-danger" id="logout-button" aria-label="Ausloggen" onclick="confirmLogout()">Ausloggen</button>
@@ -345,9 +334,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 
     <!-- Widget 3 -->
-    <div id="widget3" onclick="window.location.href = 'advent.html';" class="widget">
-      <h1>Schon Prämien und Rabatte abgeholt?</h1>
-      <p>Sichere dir jetzt im Adventskalender tolle Rabatte und Prämien. Einfach hier klicken!</p>
+    <div id="widget3" onclick="window.location.href = 'report.html';" class="widget">
+      <h1>Probleme</h1>
+      <p>Melde uns einfach, sollten dir Probleme z.b defekte Links oder Bugs auftreten. Einfach hier klicken!</p>
     </div>
 	      <div id="widget3" onclick="window.location.href = 'games.html';" class="widget">
       <h1>Spielen?</h1>
