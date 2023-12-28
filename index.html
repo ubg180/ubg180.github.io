@@ -285,6 +285,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="no-c">Passwort vergessen? <a onclick="passwordreset()">Hier klicken!</a></p>
                         <button onclick="login(); Save();" class="btn btn-success">Login</button>
 			<button onclick="anonAnmelden()" class="btn btn-success">Weiter ohne E-Mail</button>
+			<button onclick="googleAnmelden()" class="btn btn-success">Weiter mit Google</button>
                         <p class="no-c">Neu hier? <a href="signup.html">Hier klicken!</a></p>
 		
                     </div>
@@ -394,6 +395,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
         });
     }
+	function googleAnmelden() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+            // Erfolgreiche Anmeldung mit Google
+            const user = result.user;
+            console.log(user);
+        })
+        .catch((error) => {
+            // Bei Fehlern
+            console.error(error.message);
+        });
+}
 </script>
     <!-- Weitere JavaScript-Dateien -->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
