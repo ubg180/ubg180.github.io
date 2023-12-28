@@ -403,9 +403,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             // Erfolgreiche Anmeldung mit Google
             const user = result.user;
             console.log(user);
+			document.getElementById("loader").style.display = "none";
+			document.getElementById("home").style.display = "block";
+			document.getElementById("widget").style.display = "block";
         })
         .catch((error) => {
-            // Bei Fehlern
+            showalert("Es ist ein Fehler aufgetreten!")
             console.error(error.message);
         });
 }
