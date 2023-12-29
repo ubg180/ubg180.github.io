@@ -59,26 +59,14 @@ firebase.initializeApp(firebaseConfig);
 
       });
     }
-		function checkAndUpdate() {
-      updateRef.once('value', (snapshot) => {
-        const updateValue = snapshot.val();
 
-        // Wenn die "update"-Variable auf true gesetzt ist
-        if (updateValue === true) {
-          // Weiterleitung zur "updates.html"-Seite
-          window.location.href = 'update.html';
-        }
-      });
-    }
 
     // Die Funktion zum ersten Mal aufrufen
     updateBar();
-checkAndUpdate();
     // Die Funktion alle 2 Sekunden wiederholen
     setInterval(updateBar, 5000);
 	
 
-    // Überprüfung in regelmäßigen Abständen (z.B., alle 5 Sekunden)
-    setInterval(checkAndUpdate, 1000);
+
 
 
