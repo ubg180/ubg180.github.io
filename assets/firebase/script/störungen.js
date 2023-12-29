@@ -59,13 +59,7 @@ firebase.initializeApp(firebaseConfig);
 
       });
     }
-
-    // Die Funktion zum ersten Mal aufrufen
-    updateBar();
-
-    // Die Funktion alle 2 Sekunden wiederholen
-    setInterval(updateBar, 5000);
-	function checkAndUpdate() {
+		function checkAndUpdate() {
       updateRef.once('value', (snapshot) => {
         const updateValue = snapshot.val();
 
@@ -77,6 +71,14 @@ firebase.initializeApp(firebaseConfig);
       });
     }
 
+    // Die Funktion zum ersten Mal aufrufen
+    updateBar();
+checkAndUpdate();
+    // Die Funktion alle 2 Sekunden wiederholen
+    setInterval(updateBar, 5000);
+	
+
     // Überprüfung in regelmäßigen Abständen (z.B., alle 5 Sekunden)
     setInterval(checkAndUpdate, 1000);
+
 
