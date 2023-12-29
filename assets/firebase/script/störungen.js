@@ -65,7 +65,7 @@ firebase.initializeApp(firebaseConfig);
 
     // Die Funktion alle 2 Sekunden wiederholen
     setInterval(updateBar, 5000);
-	nction checkAndUpdate() {
+	function checkAndUpdate() {
       updateRef.once('value', (snapshot) => {
         const updateValue = snapshot.val();
 
