@@ -15,7 +15,7 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-
+    var database = firebase.database();
 // Auf die Datenbank zugreifen
     var database4 = firebase.database();
 
