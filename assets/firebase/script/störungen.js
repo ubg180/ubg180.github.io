@@ -66,7 +66,4 @@ firebase.initializeApp(firebaseConfig);
     // Die Funktion alle 2 Sekunden wiederholen
     setInterval(updateBar, 5000);
 	
-
-
-
-
+console.log("TEST");
