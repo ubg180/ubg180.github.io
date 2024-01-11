@@ -1,7 +1,7 @@
 # Play4All - Unblocked Browser Games
 Willkommen bei Play4All, der Plattform für unblocked Browser Games!
 ## 1. Rechtlicher Hinweis
-Diese Webseite, Play4All, ist eine private Plattform und unterliegt nicht dem Bayerischen Erziehungs- und Unterrichtsgesetz (BayEUG). Sie wird von privaten Betreibern verwaltet und dient ausschließlich dem privaten Vergnügen und der Unterhaltung. Somit ist eine Sanktionierung durch eine Bildungseinrich
+Diese Webseite, Play4All, ist eine private Plattform und unterliegt nicht dem Bayerischen Erziehungs- und Unterrichtsgesetz (BayEUG). Sie wird von privaten Betreibern verwaltet und dient ausschließlich dem privaten Vergnügen und der Unterhaltung. Somit ist eine Sanktionierung durch eine Bildungseinrichtungen nicht möglich und nicht zulässig. 
 ## 2. Nicht schulische Plattform
 Gemäß unserer Auslegung des Bayerischen Erziehungs- und Unterrichtsgesetzes (BayEUG) betrachten wir Play4All nicht als schulische Plattform. Diese Webseite bietet ausschließlich Spiele für Unterhaltungszwecke an und ist nicht für schulische Aktivitäten bestimmt. Die Nutzung von Play4All hat keinen Bezug zu schulischen Verpflichtungen oder Lehrinhalten. Somit sind schulische Sanktionen jeglicher Art aufrung von BayEUG Artikel 86 (Erziehungs- und Sicherungsmaßnahmen) Absatz 3 Nummer 5 bzw. BayEUG §86 Abs.: 3 Nr.:5; unzulässig. 
 ## 3. Unabhängigkeit von Bildungseinrichtungen
@@ -25,5 +25,5 @@ DIe Nutzung in der Schule oder in dem Netzwerk einer Bildungseinrichtung ist unt
 ### 6.1 Sanktionen
 Bei Verstößen gegen die Nutzungsbedingungen halten wir uns vor die IP Adresse des Nutzers zu sperren. 
 ## 10. Viel Spaß beim Gamen
-Wir wünschen dir viel Spaß beim Gamen und Spaß haben. 
+Wir wünschen dir viel Spaß beim Gamen. 
 
