@@ -218,6 +218,34 @@
         background-color: rgba(255, 0, 0, 0.5);
       }
     }
+	        #cookie-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        #cookie-modal p {
+            margin: 0 0 10px;
+        }
+
+        #cookie-modal button {
+            background-color: #fff;
+            color: #4CAF50;
+            border: none;
+            padding: 8px 15px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
 </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -256,7 +284,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div style="display: none;" id="loader" class="loader"></div>
   <div id="bar">++++ Alle Nutzer die sich vor dem 21.12.2023 registriert haben, müssen sich erneut registrieren! ++++</div>
 <script src="assets/firebase/script/störungen.js"></script>
-
+  <div id="cookie-modal">
+        <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. <br> Wenn Sie auf "Alle Akzeptieren" klicken, stimmen Sie zu, dass wir statistische Daten in Form von "Cookies" erheben.</p>
+        <button id="accept-all">Alle Akzeptieren</button>
+        <button id="reject-all">Alle Ablehnen</button>
+    </div>
     <div id="login" class="container-fluid full-bg h-100">
 
         <div class="container h-100">
@@ -404,6 +436,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="assets/js/script.js"></script>
 	
     <script>
+	            document.addEventListener("DOMContentLoaded", function () {
+            const cookieModal = document.getElementById("cookie-modal");
+            const acceptAllButton = document.getElementById("accept-all");
+            const rejectAllButton = document.getElementById("reject-all");
+
+            const userConsent = localStorage.getItem("cookieConsent");
+
+            function updateCookieModalDisplay() {
+                if (!userConsent || userConsent === "rejected") {
+                    cookieModal.style.display = "block";
+                } else if (userConsent === "accept") {
+                    cookieModal.style.display = "none";
+                }
+            }
+
+            updateCookieModalDisplay();
+
+            acceptAllButton.addEventListener("click", function () {
+                localStorage.setItem("cookieConsent", "accept");
+                updateCookieModalDisplay();
+                showAlert("Vielen Dank!", "Vielen Dank, dass Sie der Erhebung von statistischen Daten zustimmen.", 5000);
+            });
+
+            rejectAllButton.addEventListener("click", function () {
+                localStorage.setItem("cookieConsent", "rejected");
+                updateCookieModalDisplay();
+                showAlert("Hinweis", "Wir werden keine Cookies erheben.", 5000);
+            });
+        });
 	function hideGamesMenu() {
             var gamesMenu = document.getElementById("gamesMenu");
             gamesMenu.style.display = "none";
