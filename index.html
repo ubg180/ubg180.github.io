@@ -402,6 +402,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		document.getElementById("loader").style.display = "none";
 		document.getElementById("home").style.display = "block";
 		document.getElementById("widget").style.display = "block";
+		cookie()
         })
         .catch((error) => {
           // Bei einem Fehler während der Anmeldung
@@ -443,12 +444,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             const userConsent = localStorage.getItem("cookieConsent");
 
-            
+            function cookie() {
                 if (!userConsent || userConsent === "rejected") {
                     cookieModal.style.display = "block";
                 } else if (userConsent === "accept") {
                     cookieModal.style.display = "none";
                 }
+	    }
             
 
 
