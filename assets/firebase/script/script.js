@@ -23,7 +23,7 @@ function login() {
 		     document.getElementById("widget").style.display = "block";
                 home.style.display = "block";
 		document.getElementById("widget").style.display = "block";
-
+		cookie()
             })
             .catch(function (error) {
                 // Fehler bei der Anmeldung
