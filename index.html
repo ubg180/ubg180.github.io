@@ -457,12 +457,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 localStorage.setItem("cookieConsent", "accept");
                 updateCookieModalDisplay();
                 showAlert("Vielen Dank!", "Vielen Dank, dass Sie der Erhebung von statistischen Daten zustimmen.", 5000);
+                    cookieModal.style.display = "none";
+
             });
 
             rejectAllButton.addEventListener("click", function () {
                 localStorage.setItem("cookieConsent", "rejected");
                 updateCookieModalDisplay();
                 showAlert("Hinweis", "Wir werden keine Cookies erheben.", 5000);
+		                        cookieModal.style.display = "none";
+
             });
         });
 	function hideGamesMenu() {
