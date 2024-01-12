@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie-Einstellungen</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8f0;
+        }
+
+        #cookie-settings {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #cookie-banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        #cookie-banner p {
+            margin: 0 0 10px;
+        }
+
+        #cookie-banner button {
+            background-color: #fff;
+            color: #4CAF50;
+            border: none;
+            padding: 8px 15px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="cookie-settings">
+    <div id="cookie-banner">
+        <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Bitte wählen Sie Ihre Cookie-Einstellungen:</p>
+        <button id="accept-all">Alle Akzeptieren</button>
+        <button id="reject-all">Alle Ablehnen</button>
+    </div>
+
+    <div>
+        <p>Ihre aktuellen Cookie-Einstellungen:</p>
+        <p id="current-settings">-</p>
+        <button id="change-settings">Cookie-Einstellungen ändern</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const acceptAllButton = document.getElementById("accept-all");
+        const rejectAllButton = document.getElementById("reject-all");
+        const currentSettingsText = document.getElementById("current-settings");
+        const changeSettingsButton = document.getElementById("change-settings");
+
+        updateCurrentSettings();
+
+        acceptAllButton.addEventListener("click", function() {
+            localStorage.setItem("cookieConsent", "accepted");
+            updateCurrentSettings();
+        });
+
+        rejectAllButton.addEventListener("click", function() {
+            localStorage.setItem("cookieConsent", "rejected");
+            updateCurrentSettings();
+        });
+
+        changeSettingsButton.addEventListener("click", function() {
+            localStorage.removeItem("cookieConsent");
+            updateCurrentSettings();
+        });
+
+        function updateCurrentSettings() {
+            const userConsent = localStorage.getItem("cookieConsent");
+
+            if (userConsent === "accepted") {
+                currentSettingsText.textContent = "Cookies zugestimmt";
+                currentSettingsText.style.color = "#4CAF50"; // grün
+            } else if (userConsent === "rejected") {
+                currentSettingsText.textContent = "Cookies abgelehnt";
+                currentSettingsText.style.color = "#f44336"; // rot
+            } else {
+                currentSettingsText.textContent = "Keine Entscheidung getroffen";
+                currentSettingsText.style.color = "#333"; // standardfarbe
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
