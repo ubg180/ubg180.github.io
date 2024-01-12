@@ -523,34 +523,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </script>
 	<script>
-function bestätigenWeiterleitung(zieldURL) {
-    if (confirm("Möchtest du wirklich auf die Webseite: " + zieldURL + " weitergeleitet werden? Die Webseite ist extern, CasPlay hat keinen Einfluss auf die Webseite.")) {
-        window.location.href = zieldURL;
-    }
-}
+
 		const database3 = firebase.database();
-  const counterRef = database3.ref('counter');
-
-  // Counter-Wert initialisieren
-  let counterValue = 0;
-
-  // Counter-Wert von der Datenbank abrufen
-  counterRef.on('value', (snapshot) => {
-    const data = snapshot.val();
-    counterValue = data ? data : 0;
-    document.getElementById('counter').innerText = counterValue;
-  });
-
-  // Counter erhöhen, wenn die Seite geladen wird
-  counterValue++;
-  counterRef.set(counterValue);
-
-  // Funktion, die den Counter erhöht und in der Datenbank aktualisiert
-  function increaseCounter() {
-    counterValue++;
-    counterRef.set(counterValue);
-  }
-
+  
+ 
   // Füge einen Event Listener hinzu, um den Counter zu erhöhen, wenn die Seite geladen wird
   document.addEventListener('DOMContentLoaded', increaseCounter);
 	
@@ -569,9 +545,7 @@ function bestätigenWeiterleitung(zieldURL) {
   });
 
   // Remove the user from the database when the window is closed or refreshed
-  window.addEventListener("unload", function() {
-    userActivityRef.child(userId).remove();
-  });
+
 
   // Update the user count and the timestamp in the database every minute
   setInterval(function() {
@@ -626,7 +600,7 @@ function bestätigenWeiterleitung(zieldURL) {
     }
 		
 	   
-		
+cookie();		
 </script>
 
 </body>
