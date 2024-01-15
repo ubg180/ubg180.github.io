@@ -214,5 +214,22 @@ const updateRef = database.ref('update');
         <div id="progress"></div>
     </div>
   <div id="gear"></div>
+	<script>
+			const dbRef = firebase.database().ref('/fortschritt');
+
+        // Fortschrittselemente
+        const progressbar = document.getElementById('progressbar');
+        const progress = document.getElementById('progress');
+	dbRef.on('value', snapshot => {
+            const fortgeschrittenerWert = snapshot.val();
+            updateFortschritt(fortgeschrittenerWert);
+        });
+
+        // Funktion zum Aktualisieren des Fortschrittsbalkens
+        function updateFortschritt(fortgeschrittenerWert) {
+            const percent = fortgeschrittenerWert || 0;
+            progress.style.width = percent + '%';
+        }
+	</script>
 </body>
 </html>
