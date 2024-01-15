@@ -16,18 +16,24 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
     var database = firebase.database();
-// Auf die Datenbank zugreifen
 
+console.log("TEST");
+const updateRef = database.ref('update');
 
-    // Auf das Dokument "disruptions" hören
+  updateRef.on('value', (snapshot) => {
+    const updateValue = snapshot.val();
+
+    // Überprüfen, ob der Wert "true" ist
+    if (updateValue === true) {
+      // Weiterleitung zur update.html-Seite
+      window.location.href = 'update.html';
+    }
+  });
     var ref = database.ref("disruptions");
 
-    // Eine Variable für den aktuellen Index der Störung
     var index = 0;
 
-    // Eine Funktion, die die Leiste mit der nächsten Störung aktualisiert
     function updateBar() {
-      // Die Leiste auswählen
       var bar = document.getElementById("bar");
 
       // Die Störungen aus der Datenbank lesen
