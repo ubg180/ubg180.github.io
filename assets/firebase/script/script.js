@@ -226,16 +226,4 @@ function spweiter() {
           
         });
     }
-const updateRef = database.ref('update');
 
-  // Auf Änderungen in der Datenbank hören
-  updateRef.on('value', (snapshot) => {
-    const updateValue = snapshot.val();
-
-    // Überprüfen, ob der Wert "true" ist
-    if (updateValue === true) {
-      // Weiterleitung zur update.html-Seite
-      window.location.href = 'update.html';
-    }
-  });
-	
