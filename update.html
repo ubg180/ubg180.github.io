@@ -178,7 +178,27 @@ var database = firebase.database();
             const percent = fortgeschrittenerWert || 0;
             progress.style.width = percent + '%';
         }
-	
+
+
+
+
+
+
+
+    var database = firebase.database();
+
+console.log("TEST");
+const updateRef = database.ref('update');
+
+  updateRef.on('value', (snapshot) => {
+    const updateValue = snapshot.val();
+
+    // Überprüfen, ob der Wert "true" ist
+    if (updateValue === false) {
+      // Weiterleitung zur update.html-Seite
+      window.location.href = 'index.html';
+    }
+  });
   </script>
 </head>
 <body>
