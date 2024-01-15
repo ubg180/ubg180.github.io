@@ -163,21 +163,6 @@ var database = firebase.database();
     // Den Text in das HTML-Element mit der ID "message" einfügen
     document.getElementById('message').innerText = textValue;
   });    
-	const dbRef = firebase.database().ref('/fortschritt');
-
-        // Fortschrittselemente
-        const progressbar = document.getElementById('progressbar');
-        const progress = document.getElementById('progress');
-	dbRef.on('value', snapshot => {
-            const fortgeschrittenerWert = snapshot.val();
-            updateFortschritt(fortgeschrittenerWert);
-        });
-
-        // Funktion zum Aktualisieren des Fortschrittsbalkens
-        function updateFortschritt(fortgeschrittenerWert) {
-            const percent = fortgeschrittenerWert || 0;
-            progress.style.width = percent + '%';
-        }
 
 
 
@@ -210,12 +195,13 @@ const updateRef = database.ref('update');
 	
     <p id="alternative"></p>
   </div>
-	   <div id="progressbar">
+
+  <div id="gear"></div>
+		   <div id="progressbar">
         <div id="progress"></div>
     </div>
-  <div id="gear"></div>
 	<script>
-			const dbRef = firebase.database().ref('/fortschritt');
+			const dbRef = firebase.database().ref('fortschritt');
 
         // Fortschrittselemente
         const progressbar = document.getElementById('progressbar');
