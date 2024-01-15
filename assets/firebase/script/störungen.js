@@ -11,16 +11,28 @@ var firebaseConfig = {
 };
 
 
-// Restlicher Code bleibt unverändert
+
 
 firebase.initializeApp(firebaseConfig);
 
     var database = firebase.database();
 // Auf die Datenbank zugreifen
-    var database4 = firebase.database();
 
+console.log("TEST");
+const updateRef = database.ref('update');
+
+  // Auf Änderungen in der Datenbank hören
+  updateRef.on('value', (snapshot) => {
+    const updateValue = snapshot.val();
+
+    // Überprüfen, ob der Wert "true" ist
+    if (updateValue === true) {
+      // Weiterleitung zur update.html-Seite
+      window.location.href = 'update.html';
+    }
+  });
     // Auf das Dokument "disruptions" hören
-    var ref = database4.ref("disruptions");
+    var ref = database.ref("disruptions");
 
     // Eine Variable für den aktuellen Index der Störung
     var index = 0;
