@@ -94,6 +94,37 @@
   animation: cube 2s infinite !important;
 }
 
+
+    #scrollButton {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 20px;
+      transition: background-color 0.3s, transform 0.3s;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      outline: none;
+      border: none;
+    }
+
+    #scrollButton:hover {
+      background-color: darkgreen;
+    }
+
+    #scrollButton::before {
+      content: '\2191'; /* Unicode character for an upward arrow */
+    }
+
+    #scrollButton.active {
+      transform: scale(1.2);
+    }
+
   </style>
 		
       <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
@@ -481,5 +512,30 @@
       <p>Fly Car Stunt 2 - Schaffst du es den schönsten Stunt zu machen? Messe dich mit deinen Freunden!</p>
     </div>
   </div>
+  <button id="scrollButton" onclick="scrollToTop()"></button>
+
+<script>
+  // Zeige den Button, wenn der Benutzer nach unten scrollt
+  window.onscroll = function() {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    var scrollButton = document.getElementById("scrollButton");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollButton.style.display = "block";
+      scrollButton.classList.add("active");
+    } else {
+      scrollButton.style.display = "none";
+      scrollButton.classList.remove("active");
+    }
+  }
+
+  // Scroll zum Anfang der Seite, wenn der Button geklickt wird
+  function scrollToTop() {
+    document.body.scrollTop = 0; // Für Safari
+    document.documentElement.scrollTop = 0; // Für andere Browser
+  }
+</script>
 </body>
 </html>
