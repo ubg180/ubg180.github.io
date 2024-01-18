@@ -138,7 +138,35 @@
         transform: translateY(0);
       }
     }
+  .highlight-box {
+      border: 2px solid #ff0000;
+      background-color: rgba(255, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      animation: highlight 2s infinite alternate;
+    }
 
+    .highlight-box h1, .highlight-box p {
+      color: #000000; /* Schwarze Schriftfarbe */
+    }
+
+    @keyframes highlight {
+      from {
+        border-color: #ff0000;
+        background-color: rgba(255, 0, 0, 0.2);
+      }
+      to {
+        border-color: #ff0000;
+        background-color: rgba(255, 0, 0, 0.5);
+      }
+    }
+	  .widget-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 1px !important; /* Äußerer Abstand zu den Seiten auf 1px setzen */
+  box-sizing: border-box;
+}
   </style>
 		
       <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
@@ -180,6 +208,16 @@
 <script src="assets/firebase/script/störungen.js"></script>
   <div id="bar"></div>
   <h1>Play4All - Games</h1>
+	 <div  id="widget" class="widget-container">
+		      <div class="highlight-box">
+    <h1>Wichtige Information:</h1>
+    <p> Die Domain https://maxlud09.github.io/laserbrawl/  wird NUR NOCH BIS ZUM 01.02.2024 UNTERSTÜTZT.
+	    <br>
+	    Die neue Domain lautet: https://play-4-all.web.app. <br>
+	    Die Ersatzdomains sind nicht betroffen. 
+    </p>
+		      </div>
+	 </div>
  <div class="game-box" onclick="window.location.href ='index.html';">
     <img src="img/back.png" alt="Zurück zum Hauptmenu">
     <div class="game-desc">
