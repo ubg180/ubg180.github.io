@@ -1,5 +1,4 @@
-var bar = document.getElementById("bar");
-var disruptions = "Daten werden geladen...";
+
 bar.innerHTML = disruptions;
 var firebaseConfig = {
   apiKey: "AIzaSyCFAlpxUK26XJqZ86kBYhofJlapxh6Ajds",
