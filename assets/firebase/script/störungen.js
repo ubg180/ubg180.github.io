@@ -1,6 +1,6 @@
 var bar = document.getElementById("bar");
 var disruptions = "Daten werden geladen...";
-bar.innerHTML = disruption;
+bar.innerHTML = disruptions;
 var firebaseConfig = {
   apiKey: "AIzaSyCFAlpxUK26XJqZ86kBYhofJlapxh6Ajds",
   authDomain: "maxrat-5d14a.firebaseapp.com",
