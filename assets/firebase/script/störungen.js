@@ -1,5 +1,4 @@
 
-bar.innerHTML = disruptions;
 var firebaseConfig = {
   apiKey: "AIzaSyCFAlpxUK26XJqZ86kBYhofJlapxh6Ajds",
   authDomain: "maxrat-5d14a.firebaseapp.com",
