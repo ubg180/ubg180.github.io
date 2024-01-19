@@ -147,7 +147,7 @@ v<!DOCTYPE html>
     }
 
     .highlight-box h1, .highlight-box p {
-      color: withe; /* Schwarze Schriftfarbe */
+      color: withe; 
     }
 
     @keyframes highlight {
@@ -160,20 +160,14 @@ v<!DOCTYPE html>
         background-color: rgba(255, 0, 0, 0.5);
       }
     }
-	  .widget-container {
+.widget-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 1px !important; /* Äußerer Abstand zu den Seiten auf 1px setzen */
   box-sizing: border-box;
 }
-	  	.widget-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0 1px !important; /* Äußerer Abstand zu den Seiten auf 1px setzen */
-  box-sizing: border-box;
-}
+
   </style>
 		
       <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
@@ -215,7 +209,7 @@ v<!DOCTYPE html>
 <script src="assets/firebase/script/störungen.js"></script>
   <div id="bar"></div>
   <h1>Play4All - Games</h1>
-	 <div  id="widget" class="widget-container">
+	 <div class="widget-container">
 	  <div style="pointer-events: none;" class="widget">
 		      <div class="highlight-box">
     <h1>Wichtige Information:</h1>
@@ -225,7 +219,7 @@ v<!DOCTYPE html>
 	    Die Ersatzdomains stehen aber weiterhin zur Verfügung!<br>
 	    Wir bitten die Änderung zu entschuldigen! <br>
 	    <br>
-	    Viel SPaß mit Play4All
+	    Viel SPaß mit Play4All1
     </p>
 		      </div>
 	  </div>
@@ -384,6 +378,13 @@ v<!DOCTYPE html>
     <div class="game-desc">
       <h3>2048</h3>
       <p>Was ist dein Highscore? Schaffst du es deine Freunde zu besiegen? </p>
+    </div>
+  </div>
+	      <div class="game-box" onclick="redirectToTargetPage('Play4All - 2048 Endless', 'Play4All - 2048 Endless', 'https://aarextiaokhiao.github.io/Aarex2048/')">
+    <img src="img/game9.png" alt=" 2048 sLogo">
+    <div class="game-desc">
+      <h3>2048 Endless</h3>
+      <p>Spiele jetzt 2048 endless.</p>
     </div>
   </div>
         <div class="game-box" onclick="openNewTab('https://maxlud09.github.io/games/slope.html')">
