@@ -1,4 +1,6 @@
-
+var bar = document.getElementById("bar");
+var disruptions = "Daten werden geladen...";
+bar.innerHTML = disruption;
 var firebaseConfig = {
   apiKey: "AIzaSyCFAlpxUK26XJqZ86kBYhofJlapxh6Ajds",
   authDomain: "maxrat-5d14a.firebaseapp.com",
@@ -34,7 +36,6 @@ const updateRef = database.ref('update');
     var index = 0;
 
     function updateBar() {
-      var bar = document.getElementById("bar");
 
       // Die Störungen aus der Datenbank lesen
       ref.once("value", function(snapshot) {
