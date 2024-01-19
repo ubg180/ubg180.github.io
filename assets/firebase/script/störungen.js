@@ -40,7 +40,7 @@ const updateRef = database.ref('update');
         // Die Störungen in ein Array umwandeln
         var disruptions = snapshot.val();
 
-        // Die Anzahl der Störungen ermitteln
+
         var length = disruptions.length;
 
         // Die aktuelle Störung aus dem Array holen
