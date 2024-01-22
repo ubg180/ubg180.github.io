@@ -115,7 +115,79 @@
   text-align: center !important;
 }
 	  
+.system-status {
+      margin-bottom: 20px;
+    }
 
+    .system-name {
+      font-size: 1.5em;
+      margin-right: 10px;
+    }
+
+    .status-icon {
+      font-size: 1.5em;
+    }
+
+.loading-spinner {
+      position: absolute;
+      top: 65%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 10px solid white;
+      box-sizing: border-box;
+      animation: spin 1s linear infinite;
+	  color: yellow;
+    }
+
+.loading-spinner::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 50%;
+      border: 10px solid black;
+      box-sizing: border-box;
+    }
+
+    .loading-spinner::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-top: 20px solid white;
+      border-right: 20px solid white;
+      border-bottom: 20px solid white;
+      border-left: 20px solid transparent;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+
+    .unavailable {
+      color: red;
+    }
+	    .starting {
+      color: yellow;
+    }
+	    .available {
+      color: green;
+    }
   </style>
   <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
@@ -215,6 +287,58 @@ dbRef.on('value', snapshot => {
     progress.style.width = percent + '%';
 }
  updateFortschritt(fortgeschrittenerWert);
+		    const systems = [
+      'githubio', 'ersatzdomains', 'play-4-all', 'coburg-schulen', 'playplayforall',
+      'schulcloudbayern', 'schule-infoportal', 'schulen-coburg', 'schulencoburg'
+    ];
+
+    
+    systems.forEach((system, index) => {
+      const systemContainer = document.createElement('div');
+      systemContainer.classList.add('system-status');
+
+      const systemName = document.createElement('div');
+      systemName.classList.add('system-name');
+      systemName.textContent = system;
+
+      const statusIcon = document.createElement('div');
+      statusIcon.classList.add('status-icon');
+
+      const loadingSpinner = document.createElement('div');
+      loadingSpinner.classList.add('loading-spinner');
+      loadingSpinner.innerHTML = '&#9696;';
+
+      systemContainer.appendChild(systemName);
+      systemContainer.appendChild(statusIcon);
+      systemContainer.appendChild(loadingSpinner);
+
+      document.body.appendChild(systemContainer);
+
+      // Füge einen Absatz zwischen den Systemen ein, außer beim letzten System
+      if (index < systems.length - 1) {
+        document.body.appendChild(document.createElement('p'));
+      }
+
+      const systemRef = firebase.database().ref(`status/${system}`);
+
+      systemRef.on('value', (snapshot) => {
+        const status = snapshot.val();
+
+        if (status === 'available') {
+          statusIcon.innerHTML = '&#10003;'; // Check mark
+          loadingSpinner.style.display = 'none';
+		  systemContainer.classList.add('available');
+        } else if (status === 'starting') {
+          statusIcon.innerHTML = '';
+          loadingSpinner.style.display = 'inline';
+		  systemContainer.classList.add('starting');
+        } else {
+          statusIcon.innerHTML = '&#10007;'; // X mark
+          loadingSpinner.style.display = 'none';
+          systemContainer.classList.add('unavailable');
+        }
+      });
+    });
 	</script>
 </body>
 </html>
