@@ -18,7 +18,7 @@ firebase.initializeApp(firebaseConfig);
     var database = firebase.database();
 
 console.log("TEST");
-const updateRef = database.ref('update');
+const updateRef = database.ref('/fortschritt/update');
 
   updateRef.on('value', (snapshot) => {
     const updateValue = snapshot.val();
