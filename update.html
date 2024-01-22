@@ -9,10 +9,6 @@
             height: 20px;
             background-color: #eee;
             margin-top: 20px;
-      		transform: translate(-50%, -50%)!important;
-	      justify-self: center !important;
-      align-self: end !important;
-      position: absolute !important;
         }
 
         #progress {
@@ -193,11 +189,12 @@ const updateRef = database.ref('/fortschritt/update');
     </p>
 	
     <p id="alternative"></p>
-  </div>
-
-	  <div id="progressbar">
+	  <br>
+	  	  <div id="progressbar">
         <div id="progress"></div>
     </div>
+  </div>
+
 
 	<script>
 const dbRef = firebase.database().ref('/fortschritt/fortschritt');
