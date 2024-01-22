@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Play4All - Störung </title>
+<title>Play4All - Update</title>
   <style>
 	  
 
@@ -180,13 +180,13 @@
 
 
     .unavailable {
-      color: red;
+      color: red !important;
     }
 	    .starting {
-      color: yellow;
+      color: yellow !important;
     }
 	    .available {
-      color: green;
+      color: green !important;
 	    }
 		    
   </style>
@@ -230,15 +230,8 @@ var database = firebase.database();
 
     // Den Text in das HTML-Element mit der ID "message" einfügen
     document.getElementById('message').innerText = textValue;
-  });    
-
-
-
-
-
-
-
-    var database = firebase.database();
+  });   
+var database = firebase.database();
 
 console.log("TEST");
 const updateRef = database.ref('/fortschritt/update');
@@ -255,17 +248,17 @@ const updateRef = database.ref('/fortschritt/update');
   </script>
 </head>
 <body>
-	  <div id="bar"></div>
+<div id="bar"></div>
 
   <div id="container">
     <p id="message"> 
     </p>
 	
-    <p id="alternative"></p>
+    	<p id="alternative"></p>
 	  <br>
-	  	  <div id="progressbar">
-        <div id="progress"></div>
-    </div>
+	  	<div id="progressbar">
+        			<div id="progress"></div>
+   		</div>
   </div>
 
 
@@ -343,6 +336,6 @@ dbRef.on('value', snapshot => {
         }
       });
     });
-	</script>
+</script>
 </body>
 </html>
