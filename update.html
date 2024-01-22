@@ -208,10 +208,13 @@ dbRef.on('value', snapshot => {
 });
 
 function updateFortschritt(fortgeschrittenerWert) {
+dbRef.on('value', snapshot => {
+    const fortgeschrittenerWert = snapshot.val();
+})
     const percent = fortgeschrittenerWert ? (fortgeschrittenerWert / maxProgress) * 100 : 0;
     progress.style.width = percent + '%';
 }
-
+ updateFortschritt(fortgeschrittenerWert);
 	</script>
 </body>
 </html>
