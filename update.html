@@ -14,7 +14,7 @@
         #progress {
             height: 100%;
             width: 0;
-            background-color: #4CAF50;
+            background-color: yellow;
         }
     body {
       background-color: black;
@@ -192,10 +192,12 @@ const updateRef = database.ref('/fortschritt/update');
     <p id="alternative"></p>
   </div>
 
-  <div id="gear"></div>
-		   <div id="progressbar">
+  <div id="gear">		   
+	  <div id="progressbar">
         <div id="progress"></div>
     </div>
+  </div>
+
 	<script>
 const dbRef = firebase.database().ref('/fortschritt/fortschritt');
 const progressbar = document.getElementById('progressbar');
