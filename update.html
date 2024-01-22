@@ -169,7 +169,7 @@ var database = firebase.database();
     var database = firebase.database();
 
 console.log("TEST");
-const updateRef = database.ref('update');
+const updateRef = database.ref('/fortschritt/update');
 
   updateRef.on('value', (snapshot) => {
     const updateValue = snapshot.val();
@@ -197,7 +197,7 @@ const updateRef = database.ref('update');
         <div id="progress"></div>
     </div>
 	<script>
-const dbRef = firebase.database().ref('/fortschritt');
+const dbRef = firebase.database().ref('/fortschritt/update');
 const progressbar = document.getElementById('progressbar');
 const progress = document.getElementById('progress');
 const maxProgress = 100; // Setze den maximalen Fortschrittswert hier
