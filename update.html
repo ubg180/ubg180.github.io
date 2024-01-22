@@ -9,6 +9,7 @@
             height: 20px;
             background-color: #eee;
             margin-top: 20px;
+      		transform: translate(-50%, -50%)!important;
         }
 
         #progress {
@@ -53,7 +54,6 @@
       border-radius: 50%;
       border: 10px solid white;
       box-sizing: border-box;
-      animation: spin 1s linear infinite;
     }
 
     #gear::before {
@@ -192,11 +192,9 @@ const updateRef = database.ref('/fortschritt/update');
     <p id="alternative"></p>
   </div>
 
-  <div id="gear">		   
 	  <div id="progressbar">
         <div id="progress"></div>
     </div>
-  </div>
 
 	<script>
 const dbRef = firebase.database().ref('/fortschritt/fortschritt');
