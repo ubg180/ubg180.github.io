@@ -237,7 +237,43 @@ function passwordreset() {
     // Event-Listener für den Absenden-Button hinzufügen
     document.getElementById('submitBtn').addEventListener('click', resetpass);
 }
+function info(AlertÜberschrift1, AlertText1, duration) {
+	 const alertHTML = `
+        <div class="modal fade" id="alertmodal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="accountModalLabel">${AlertÜberschrift1}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Schließen">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>${AlertText1}</p>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick=" $alertModal.modal('show');" id="bestätigen">Verstanden</button>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 0%;" id="progressBar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    const $alertModal = $(alertHTML);
+    const $progressBar = $alertModal.find('#progressBar');
+    $('body').append($alertModal);
 
+    // Das Modal anzeigen
+    $alertModal.modal('show');
+
+    // Starte die Aktualisierung des Fortschritts
+    updateProgress($progressBar, duration);
+
+    // Schließe das Alert-Fenster nach der angegebenen Dauer
+    setTimeout(function () {
+         $alertModal.modal('show');
+    }, duration);
+}
 function resetpass() {
     const email = document.getElementById("email").value;
 
