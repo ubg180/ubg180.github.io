@@ -321,11 +321,11 @@ dbRef.on('value', snapshot => {
       systemRef.on('value', (snapshot) => {
         const status = snapshot.val();
 
-        if (status === 'available') {
+        if (status === 0) {
           statusIcon.innerHTML = '&#10003;'; // Check mark
           loadingSpinner.style.display = 'none';
 		  systemContainer.classList.add('available');
-        } else if (status === 'starting') {
+        } else if (status === 1) {
           statusIcon.innerHTML = '';
           loadingSpinner.style.display = 'inline';
 		  systemContainer.classList.add('starting');
