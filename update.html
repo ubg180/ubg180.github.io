@@ -324,15 +324,21 @@ dbRef.on('value', snapshot => {
         if (status === 0) {
           statusIcon.innerHTML = '&#10003;'; // Check mark
           loadingSpinner.style.display = 'none';
-		  systemContainer.classList.add('available');
+	systemContainer.classList.remove('unavailable');
+	systemContainer.classList.remove('available');
+	systemContainer.classList.add('available');
         } else if (status === 1) {
           statusIcon.innerHTML = '';
           loadingSpinner.style.display = 'inline';
-		  systemContainer.classList.add('starting');
+	systemContainer.classList.remove('unavailable');
+	systemContainer.classList.remove('available');
+	systemContainer.classList.add('starting');
         } else {
           statusIcon.innerHTML = '&#10007;'; // X mark
           loadingSpinner.style.display = 'none';
-          systemContainer.classList.add('unavailable');
+	systemContainer.classList.remove('starting');
+	systemContainer.classList.remove('available');
+	systemContainer.classList.add('unavailable');
         }
       });
     });
