@@ -37,7 +37,7 @@ const einRef = database.ref('/nicht');
     // Überprüfen, ob der Wert "true" ist
     if (einValue === true) {
       // Weiterleitung zur update.html-Seite
-      window.location.href = 'Nicht.html';
+      window.location.href = 'nicht.html';
     }
   });
     var ref = database.ref("disruptions");
