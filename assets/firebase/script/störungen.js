@@ -29,6 +29,17 @@ const updateRef = database.ref('/fortschritt/update');
       window.location.href = 'update.html';
     }
   });
+const einRef = database.ref('/nicht');
+
+  einRef.on('value', (snapshot) => {
+    const einValue = snapshot.val();
+
+    // Überprüfen, ob der Wert "true" ist
+    if (einValue === true) {
+      // Weiterleitung zur update.html-Seite
+      window.location.href = 'nicht.html';
+    }
+  });
     var ref = database.ref("disruptions");
 
     var index = 0;
