@@ -285,11 +285,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
    <div style="display: none;" id="loader" class="loader"></div>
   <div id="bar"></div>
-  <div id="cookie-modal">
+  <div style="display: none;" id="cookie-modal">
         <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. <br> Wenn Sie auf "Alle Akzeptieren" klicken, stimmen Sie zu, dass wir statistische Daten in Form von "Cookies" erheben. <br>Wenn du deine Einstellungen ändern möchtest, klicke <a-href="cookie.html"/>hier</a>. </p>
         <button id="accept-all">Alle Akzeptieren</button>
         <button id="reject-all">Alle Ablehnen</button>
     </div>
+	<script>
+function cookie() {
+    const cookieModal = document.getElementById("cookie-modal");
+    const acceptAllButton = document.getElementById("accept-all");
+    const rejectAllButton = document.getElementById("reject-all");
+
+    let userConsent = localStorage.getItem("cookieConsent");
+
+    // Funktion für die Cookie-Verarbeitung
+    function handleCookies() {
+        if (!userConsent || userConsent === "rejected") {
+            cookieModal.style.display = "block";
+        } else if (userConsent === "accept") {
+            cookieModal.style.display = "none";
+        }
+    }
+
+    // Überprüfen, ob DOM-Elemente erfolgreich abgerufen wurden
+    if (cookieModal && acceptAllButton && rejectAllButton) {
+        handleCookies();
+
+        acceptAllButton.addEventListener("click", function () {
+            userConsent = "accept";
+            localStorage.setItem("cookieConsent", userConsent);
+            cookieModal.style.display = "none";
+        });
+
+        rejectAllButton.addEventListener("click", function () {
+            userConsent = "rejected";
+            localStorage.setItem("cookieConsent", userConsent);
+            cookieModal.style.display = "none";
+        });
+    } else {
+        console.error("Fehler beim Abrufen von DOM-Elementen.");
+    }
+});
+		cookie();
+	</script>
     <div id="login" class="container-fluid full-bg h-100">
 
         <div class="container h-100">
@@ -447,38 +485,7 @@ Klicke hier wenn du Gamen willst. Entdecke nice Games.</p>
     <script src="assets/js/script.js"></script>
 	
     <script>
-	            document.addEventListener("DOMContentLoaded", function () {
-            const cookieModal = document.getElementById("cookie-modal");
-            const acceptAllButton = document.getElementById("accept-all");
-            const rejectAllButton = document.getElementById("reject-all");
-
-            const userConsent = localStorage.getItem("cookieConsent");
-
-            function cookie() {
-                if (!userConsent || userConsent === "rejected") {
-                    cookieModal.style.display = "block";
-                } else if (userConsent === "accept") {
-                    cookieModal.style.display = "none";
-                }
-	    }
-            
-
-
-			    
-            acceptAllButton.addEventListener("click", function () {
-                localStorage.setItem("cookieConsent", "accept");
-
-		                        cookieModal.style.display = "none";
-
-            });
-
-            rejectAllButton.addEventListener("click", function () {
-                localStorage.setItem("cookieConsent", "rejected");
-		                        cookieModal.style.display = "none";
-
-            });
-			    
-        });
+	          
 	function hideGamesMenu() {
             var gamesMenu = document.getElementById("gamesMenu");
             gamesMenu.style.display = "none";
