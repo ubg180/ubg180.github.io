@@ -597,10 +597,11 @@ cookie();
     }
 		
 document.addEventListener("DOMContentLoaded", function() {
-    var cookieModal = document.getElementById("cookieModal");
-
+    const cookieModal = document.getElementById("cookieModal");
+	
+        cookieModal.style.display = "block";
     // Check if user has accepted cookies
-    var cookiesAccepted = localStorage.getItem("cookiesAccepted");
+   const cookiesAccepted = localStorage.getItem("cookiesAccepted");
 
     if (!cookiesAccepted) {
         // Show the cookie modal if cookies are not accepted
