@@ -246,6 +246,46 @@
             font-size: 14px;
             border-radius: 5px;
         }
+	/* Add your website styles here */
+
+.cookie-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.cmodal-content {
+    width: 300px;
+}
+
+.cmodal-header, .cmodal-footer {
+    padding: 10px;
+    text-align: center;
+}
+
+.cmodal-body {
+    padding: 10px;
+}
+
+..cbutton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+..cbutton:hover {
+    background-color: #45a049;
+}
+
 </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -278,58 +318,8 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 </script>
-    <!-- Login Fenster -->
-<script>
-	showalert("Wichtige Information")
-</script>
-
-   <div style="display: none;" id="loader" class="loader"></div>
-  <div id="bar"></div>
-  <div style="display: none;" id="cookie-modal">
-        <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. <br> Wenn Sie auf "Alle Akzeptieren" klicken, stimmen Sie zu, dass wir statistische Daten in Form von "Cookies" erheben. <br>Wenn du deine Einstellungen ändern möchtest, klicke <a-href="cookie.html"/>hier</a>. </p>
-        <button id="accept-all">Alle Akzeptieren</button>
-        <button id="reject-all">Alle Ablehnen</button>
-    </div>
-	<script>
-function cookie() {
-    const cookieModal = document.getElementById("cookie-modal");
-    const acceptAllButton = document.getElementById("accept-all");
-    const rejectAllButton = document.getElementById("reject-all");
-
-    let userConsent = localStorage.getItem("cookieConsent");
-
-    // Funktion für die Cookie-Verarbeitung
-    function handleCookies() {
-        if (!userConsent || userConsent === "rejected") {
-            cookieModal.style.display = "block";
-        } else if (userConsent === "accept") {
-            cookieModal.style.display = "none";
-        }
-    }
-
-    // Überprüfen, ob DOM-Elemente erfolgreich abgerufen wurden
-    if (cookieModal && acceptAllButton && rejectAllButton) {
-        handleCookies();
-
-        acceptAllButton.addEventListener("click", function () {
-            userConsent = "accept";
-            localStorage.setItem("cookieConsent", userConsent);
-            cookieModal.style.display = "none";
-        });
-
-        rejectAllButton.addEventListener("click", function () {
-            userConsent = "rejected";
-            localStorage.setItem("cookieConsent", userConsent);
-            cookieModal.style.display = "none";
-        });
-    } else {
-        console.error("Fehler beim Abrufen von DOM-Elementen.");
-    }
-});
-		cookie();
-	</script>
+    <!-- Login Fenster --> 
     <div id="login" class="container-fluid full-bg h-100">
-
         <div class="container h-100">
             <div class="row no-margin h-100">
                 <div class="bg-layer d-flex col-md-4">
@@ -438,6 +428,21 @@ Klicke hier wenn du Gamen willst. Entdecke nice Games.</p>
             <span class="alert-text">Fehler beim Ausloggen:</span>
         </div>
     </div>
+	       <div id="cookieModal" class="cookiemodal">
+        <div class="cmodal-content">
+            <div class="cmodal-header" style="background-color: #4CAF50; color: white;">
+                <h2>Cookie-Einstellungen</h2>
+            </div>
+            <div class="cmodal-body">
+                <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.</p>
+            </div>
+            <div class="cmodal-footer">
+                <button class="cbutton" onclick="rejectCookies()">Alle Ablehnen</button>
+                <button class="cbutton" onclick="acceptCookies()">Alle Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
 <script>
 	    function anonAnmelden() {
       firebase.auth().signInAnonymously()
@@ -617,7 +622,34 @@ cookie();
         });
     }
 		
-	   cookie();
+document.addEventListener("DOMContentLoaded", function() {
+    var cookieModal = document.getElementById("cookieModal");
+
+    // Check if user has accepted cookies
+    var cookiesAccepted = localStorage.getItem("cookiesAccepted");
+
+    if (!cookiesAccepted) {
+        // Show the cookie modal if cookies are not accepted
+        cookieModal.style.display = "block";
+    }
+});
+
+function acceptCookies() {
+    // Set a flag indicating that the user has accepted cookies
+    localStorage.setItem("cookiesAccepted", "true");
+
+    // Hide the cookie modal
+    document.getElementById("cookieModal").style.display = "none";
+}
+
+function rejectCookies() {
+    // Clear any previously stored acceptance
+    localStorage.removeItem("cookiesAccepted");
+
+    // Hide the cookie modal
+    document.getElementById("cookieModal").style.display = "none";
+}
+
 	
 </script>
 
