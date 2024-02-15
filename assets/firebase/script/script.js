@@ -87,7 +87,7 @@ async function getAuthenticatedUser() {
           const user = userCredential.user;
           console.log('Angemeldeter Benutzer:', user);
 		  document.getElementById("home").style.display = "block";
-			document.getElementById("widget").style.display = "block";
+		document.getElementById("widget").style.display = "block";
         })
         .catch((error) => {
           // Bei einem Fehler während der Anmeldung
