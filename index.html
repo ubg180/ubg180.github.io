@@ -316,7 +316,7 @@
                         </p>
                         <p class="no-c">Passwort vergessen? <a onclick="passwordreset()">Hier klicken!</a></p>
                         <button onclick="login(); Save();" class="btn btn-success">Login</button>
-			<button onclick="anonAnmelden()" class="btn btn-success">Weiter ohne E-Mail</button>
+			<button onclick="anonymousSignIn()" class="btn btn-success">Weiter ohne E-Mail</button>
                         <p class="no-c">Neu hier? <a href="signup.html">Hier klicken!</a></p>
 			<p class="no-c">
 				<u>Alle</u> <u>Nutzer</u>, die sich <u>vor</u> dem <u>21. Dezember 2023</u> registriert haben, müssen ihre <u>Registrierung</u> <u>erneut</u> <u>durchführen</u>.
@@ -423,13 +423,13 @@ Klicke hier wenn du Gamen willst. Entdecke nice Games.</p>
 		document.getElementById("loader").style.display = "none";
 		document.getElementById("home").style.display = "block";
 		document.getElementById("widget").style.display = "block";
-		cookie()
+		
         })
         .catch((error) => {
           // Bei einem Fehler während der Anmeldung
           const errorCode = error.code;
           const errorMessage = error.message;
-		  showalert("Es ist ein Fehler aufgetreten! Bitte versuche es erneut!");
+		 
           
         });
     }
@@ -511,7 +511,28 @@ Klicke hier wenn du Gamen willst. Entdecke nice Games.</p>
         });
     }
 		
-
+  function anonymousSignIn() {
+	  document.getElementById("login").style.display = "none";
+	  document.getElementById("loader").style.display = "block";
+      firebase.auth().signInAnonymously()
+        .then((userCredential) => {
+          		// Anmeldung erfolgreich
+          		const user = userCredential.user;
+			document.getElementById("loader").style.display = "none";
+        		document.getElementById("home").style.display = "block";
+			document.getElementById("widget").style.display = "block";
+        })
+        .catch((error) => {
+          		// Fehler bei der Anmeldung
+        		const errorCode = error.code;
+          		const errorMessage = error.message;
+          		alert('Fehler bei der Anmeldung: ' + errorMessage);
+			document.getElementById("loader").style.display = "none";
+		        document.getElementById("home").style.display = "none";
+			document.getElementById("widget").style.display = "none";
+			document.getElementById("login").style.display = "block";
+        });
+    }
 
 	
 </script>
