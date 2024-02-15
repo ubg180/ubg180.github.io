@@ -492,61 +492,7 @@ Klicke hier wenn du Gamen willst. Entdecke nice Games.</p>
 </script>
 	<script>
 
-		const database3 = firebase.database();
-  
- 
-  // Füge einen Event Listener hinzu, um den Counter zu erhöhen, wenn die Seite geladen wird
-  document.addEventListener('DOMContentLoaded', increaseCounter);
 	
-  // Get a reference to the database service
-  var db3 = firebase.database();
-
-  // Get a reference to the user activity node in the database
-  var userActivityRef = db3.set("user_activity");
-
-  // Generate a unique id for the current user
-  var userId = Math.random().toString(36).substr(2, 9);
-
-  // Set the online status of the user to true
-  userActivityRef.child(userId).set({
-    online: true
-  });
-
-  
-
-  // Update the user count and the timestamp in the database every minute
-  setInterval(function() {
-    // Get the current timestamp
-    var timestamp = new Date().toISOString();
-
-    // Count the number of online users
-    userActivityRef.once("value", function(snapshot) {
-      var userCount = snapshot.numChildren();
-
-      // Update the user count and the timestamp in the database
-      userActivityRef.push({
-        user_count: userCount,
-        timestamp: timestamp
-      });
-    });
-  }, 60000);
-		  const db5 = firebase.firestore();
-
-        // Funktion zum Anzeigen der Daten
-        function displayGames() {
-            const table = document.getElementById("gamesTable");
-            table.innerHTML = "<tr><th>Name</th><th>Link</th></tr>";
-
-            db5.collection("Games").get()
-                .then((querySnapshot) => {
-                    querySnapshot.forEach((doc) => {
-                        const data = doc.data();
-                        table.innerHTML += `<tr><td>${data.Name}</td><td>${data.Link}</td></tr>`;
-                    });
-                })
-                .catch((error) => {
-                    console.error("Fehler beim Abrufen der Daten: ", error);
-                });
   function anonAnmelden() {
       firebase.auth().signInAnonymously()
         .then((userCredential) => {
