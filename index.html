@@ -463,7 +463,7 @@ Klicke hier wenn du Gamen willst. Entdecke nice Games.</p>
             var gamesMenu = document.getElementById("gamesMenu");
             gamesMenu.style.display = "none";
         }
-cookie();
+
         function pbw	() {
             var gamesMenu = document.getElementById("gamesMenu");
             alleverstecken();
@@ -487,30 +487,7 @@ cookie();
             });
         }
         const db2 = firebase.firestore();
-        function Savem() {
-            const textinput = document.getElementById('texteingabe').value;
-            db1.collection('Zum Hinzufügen').add({
-		Text: textinput,
-                timestamp: new Date()
-            })
-            .then(function(docRef) {
-                console.log("Gespeichert");
-		    document.getElementById("hinzufuegen").style.display = "none";
-            })
-            .catch(function(error) {
-                console.error("Fehler beim Speichern: ", error);
-            });
-        }
- function openNewTab() {
-  var url = "chat.html";
-  var windowName = "Play4All - Chat"; 
-
-
-  var newWindow = window.open(url, windowName);
-
-
-  newWindow.resizeTo(800, 600); 
-}
+        
 
 </script>
 	<script>
@@ -535,8 +512,7 @@ cookie();
     online: true
   });
 
-  // Remove the user from the database when the window is closed or refreshed
-
+  
 
   // Update the user count and the timestamp in the database every minute
   setInterval(function() {
@@ -585,39 +561,12 @@ cookie();
           // Bei einem Fehler während der Anmeldung
           const errorCode = error.code;
           const errorMessage = error.message;
-	alert("Es ist ein Fehler aufgetreten! Bitte versuche es erneut!");
+	
           
         });
     }
 		
-document.addEventListener("DOMContentLoaded", function() {
-    const cookieModal = document.getElementById("cookieModal");
-	
-        cookieModal.style.display = "block";
-    // Check if user has accepted cookies
-   const cookiesAccepted = localStorage.getItem("cookiesAccepted");
 
-    if (!cookiesAccepted) {
-        // Show the cookie modal if cookies are not accepted
-        cookieModal.style.display = "block";
-    }
-});
-
-function acceptCookies() {
-    // Set a flag indicating that the user has accepted cookies
-    localStorage.setItem("cookiesAccepted", "true");
-
-    // Hide the cookie modal
-    document.getElementById("cookieModal").style.display = "none";
-}
-
-function rejectCookies() {
-    // Clear any previously stored acceptance
-    localStorage.removeItem("cookiesAccepted");
-
-    // Hide the cookie modal
-    document.getElementById("cookieModal").style.display = "none";
-}
 
 	
 </script>
