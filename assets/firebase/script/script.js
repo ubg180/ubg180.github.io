@@ -204,11 +204,7 @@ function SPabgeben() {
 					   document.getElementById("loader").style.display = "none";
 }
 }
-// Wird nach Eingabe der E-Mail Adresse beim dem E-Mail Eingabefeld ausgelöst 
-function spweiter() {
-	alleverstecken();
-	document.getElementById("SP2").style.display  = "block"; 
-}
+
     function anonAnmelden() {
       firebase.auth().signInAnonymously()
         .then((userCredential) => {
@@ -222,7 +218,6 @@ function spweiter() {
           // Bei einem Fehler während der Anmeldung
           const errorCode = error.code;
           const errorMessage = error.message;
-		  showalert("Es ist ein Fehler aufgetreten! Bitte versuche es erneut!");
           
         });
     }
