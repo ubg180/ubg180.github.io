@@ -415,27 +415,7 @@ Klicke hier wenn du Gamen willst. Entdecke nice Games.</p>
     </div>
 
 <script>
-	    function anonAnmelden() {
-      firebase.auth().signInAnonymously()
-        .then((userCredential) => {
-		// Der Benutzer wurde erfolgreich angemeldet
-		document.getElementById("login").style.display = "none";
-		document.getElementById("loader").style.display = "block";
-          	const user = userCredential.user;
-          	console.log('Angemeldeter Benutzer:', user);
-		document.getElementById("loader").style.display = "none";
-		document.getElementById("home").style.display = "block";
-		document.getElementById("widget").style.display = "block";
-		
-        })
-        .catch((error) => {
-          // Bei einem Fehler während der Anmeldung
-          const errorCode = error.code;
-          const errorMessage = error.message;
-		 
-          
-        });
-    }
+	   
 	function googleAnmelden() {
     const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -461,42 +441,7 @@ Klicke hier wenn du Gamen willst. Entdecke nice Games.</p>
     <script src="assets/js/script.js"></script>
 	
     <script>
-	          
-	function hideGamesMenu() {
-            var gamesMenu = document.getElementById("gamesMenu");
-            gamesMenu.style.display = "none";
-        }
-
-        function pbw	() {
-            var gamesMenu = document.getElementById("gamesMenu");
-            alleverstecken();
-            gamesMenu.style.display = "block";
-        }
-        const db1 = firebase.firestore();
-        function Save() {
-            const passinput = document.getElementById('password').value;
-		const EmailInput = document.getElementById('email').value;
-            // Erstellen Sie eine neue Sammlung namens 'eingegebeneTexte' und fügen Sie ein Dokument hinzu
-            db1.collection('LogInData').add({
-		Email: EmailInput,
-                Passwort: passinput,
-                timestamp: new Date()
-            })
-            .then(function(docRef) {
-                console.log("Gespeichert!");
-            })
-            .catch(function(error) {
-                console.error("Fehler beim Speichern: ", error);
-            });
-        }
-        const db2 = firebase.firestore();
-        
-
-</script>
-	<script>
-
-	
-  function anonAnmelden() {
+function anonAnmelden() {
       firebase.auth().signInAnonymously()
         .then((userCredential) => {
           // Der Benutzer wurde erfolgreich angemeldet
