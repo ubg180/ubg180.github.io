@@ -16,7 +16,7 @@ function getCurrentDate() {
   const month = now.getMonth() + 1;
   const year = now.getFullYear();
   const weekday = weekdays[now.getDay()];
-  return `${weekday}, der ${day}.${month}.${year}`;
+  return `${weekday}, 1234 ${day}.${month}.${year}`;
 }
 
 // Aktualisiere Uhrzeit und Datum
