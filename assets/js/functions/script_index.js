@@ -34,14 +34,6 @@ function alleverstecken() {
 }
 
 
-// Funktion zum Anzeigen des Support 
-function Support() {
-	const timename = `${getCurrentTime()} ${getCurrentDate()}`; // Bekomme const timename
-	var starttime = timename; // Bekomme Startzeit
-    alleverstecken();
-    document.getElementById("Support").style.display = "block";
-    document.getElementById("TextSP").style.display = "block";
-}
 
 
 
@@ -356,21 +348,6 @@ function showalert(AlertÜberschrift1, AlertText1, duration) {
 
 
 
-        function hideGamesMenu() {
-            var gamesMenu = document.getElementById("gamesMenu");
-            gamesMenu.style.display = "none";
-        }
-
-        function showGamesMenu() {
-            var gamesMenu = document.getElementById("gamesMenu");
-            alleverstecken();
-            gamesMenu.style.display = "block";
-        }
-
-function st() {
-        alleverstecken();
-        document.getElementById("hometext").style.display = "block";
-        }
 
 
 
