@@ -476,7 +476,7 @@ function anonAnmelden() {
 			document.getElementById("loader").style.display = "none";
 			document.getElementById("home").style.display = "block";
 			document.getElementById("widget").style.display = "block";
-		Service();
+	
         })
         .catch((error) => {
             alert("Es ist ein Fehler aufgetreten!")
@@ -493,7 +493,7 @@ let lastExecutionTime = localStorage.getItem('lastExecutionTime');
 
 // Aktueller Zeitstempel
 const currentTime = Date.now();
-function Service() {
+
 // Wenn der Zeitstempel nicht vorhanden ist oder mehr als 4 Stunden alt ist
 if (!lastExecutionTime || (currentTime - lastExecutionTime) > 4 * 60 * 60 * 1000) {
     // Führe die gewünschte Funktion aus
@@ -504,9 +504,9 @@ if (!lastExecutionTime || (currentTime - lastExecutionTime) > 4 * 60 * 60 * 1000
 } else {
 	
 }
-}
 
 
+servi
 
 	    </script>
 
