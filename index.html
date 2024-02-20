@@ -484,6 +484,28 @@ function anonAnmelden() {
 
 	
 </script>
+	    <script>
+		    console.log("Starte");
+		    // Speichere den Zeitstempel der letzten Funktion in einer Variable
+let lastExecutionTime = localStorage.getItem('lastExecutionTime');
+
+// Aktueller Zeitstempel
+const currentTime = Date.now();
+
+// Wenn der Zeitstempel nicht vorhanden ist oder mehr als 4 Stunden alt ist
+if (!lastExecutionTime || (currentTime - lastExecutionTime) > 4 * 60 * 60 * 1000) {
+    // Führe die gewünschte Funktion aus
+    showalert();
+    console.log("True")
+    // Speichere den aktuellen Zeitstempel
+    localStorage.setItem('lastExecutionTime', currentTime);
+} else {
+	console.log("False")
+}
+
+
+
+	    </script>
 
 </body>
 </html>
