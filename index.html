@@ -270,7 +270,10 @@
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+ <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
 <script src="assets/firebase/script/störungen.js"></script>
     <!-- Favicon und Stylesheets -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -416,29 +419,10 @@ Klicke hier wenn du Gamen willst. Entdecke nice Games.</p>
 
 <script>
 	   
-	function googleAnmelden() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-
-    firebase.auth().signInWithPopup(provider)
-        .then((result) => {
-            // Erfolgreiche Anmeldung mit Google
-            const user = result.user;
-            console.log(user);
-			document.getElementById("loader").style.display = "none";
-			document.getElementById("home").style.display = "block";
-			document.getElementById("widget").style.display = "block";
-        })
-        .catch((error) => {
-            alert("Es ist ein Fehler aufgetreten!")
-            console.error(error.message);
-        });
-}
+	
 </script>
     <!-- Weitere JavaScript-Dateien -->
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
+   
 	
     <script>
 function anonAnmelden() {
@@ -481,26 +465,45 @@ function anonAnmelden() {
 			document.getElementById("login").style.display = "block";
         });
     }
+	    function googleAnmelden() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+            // Erfolgreiche Anmeldung mit Google
+            const user = result.user;
+            console.log(user);
+			document.getElementById("loader").style.display = "none";
+			document.getElementById("home").style.display = "block";
+			document.getElementById("widget").style.display = "block";
+		Service();
+        })
+        .catch((error) => {
+            alert("Es ist ein Fehler aufgetreten!")
+            console.error(error.message);
+        });
+}
 
 	
 </script>
 	    <script>
-		    console.log("Starte");
+		
 		    // Speichere den Zeitstempel der letzten Funktion in einer Variable
 let lastExecutionTime = localStorage.getItem('lastExecutionTime');
 
 // Aktueller Zeitstempel
 const currentTime = Date.now();
-
+function Service() {
 // Wenn der Zeitstempel nicht vorhanden ist oder mehr als 4 Stunden alt ist
 if (!lastExecutionTime || (currentTime - lastExecutionTime) > 4 * 60 * 60 * 1000) {
     // Führe die gewünschte Funktion aus
-    showalert();
-    console.log("True")
+    showalert("Service:", "Kein Bock die ganze Zeit den Link zu suchen? Drücke einfach Strg + Umschalt(=Groß) und D. Vielen Dank");
+ 
     // Speichere den aktuellen Zeitstempel
     localStorage.setItem('lastExecutionTime', currentTime);
 } else {
-	console.log("False")
+	
+}
 }
 
 
