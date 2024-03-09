@@ -3,43 +3,39 @@
 <title>UBG180</title>
 	<head>
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGESBRYGQ9"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
- 		 gtag('config', 'G-TGESBRYGQ9');
-	    // Erstellen Sie eine Referenz auf die Anzahl der Nutzer
-	  </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8703503301801933"
-     crossorigin="anonymous"></script>
-<style>
-	.widget-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0 1px !important; /* Äußerer Abstand zu den Seiten auf 1px setzen */
-  box-sizing: border-box;
-}
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGESBRYGQ9"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+	 		 gtag('config', 'G-TGESBRYGQ9');
+		</script>
+		<style>
+			.widget-container {
+  				display: flex;
+  				flex-wrap: wrap;
+  				justify-content: space-around;
+  				margin: 0 1px !important; 
+  				box-sizing: border-box;
+			}
 
 
-.widget {
-  flex: 0 0 calc(25% - 20px) !important; /* 25% der Breite minus den äußeren Abstand von 20px */
-  height: 200px;
-  width: 100px
-  border: 2px solid green;
-  border-radius: 10px;
-  background-color: rgba(0, 128, 0, 0.5);
-  box-shadow: 0 0 10px green;
-  margin: 10px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  position: relative;
-  transition: box-shadow 0.3s ease;
-}
+			.widget {
+				  flex: 0 0 calc(25% - 20px) !important;
+			  	  height: 200px;
+				  width: 100px
+				  border: 2px solid green;
+				  border-radius: 10px;
+				  background-color: rgba(0, 128, 0, 0.5);
+				  box-shadow: 0 0 10px green;
+				  margin: 10px;
+				  text-align: center;
+				  font-family: Arial, sans-serif;
+				  overflow-y: hidden;
+				  overflow-x: hidden;
+				  position: relative;
+				  transition: box-shadow 0.3s ease;
+				}
 
     .widget:hover {
       box-shadow: 0 0 20px green;
@@ -343,10 +339,10 @@
     <div id="home" style="display: none;">
         <!-- Anfang des Home Menus -->
         <div class="homebar">
-            <button onclick="window.location.href = 'games.html';" class="button" aria-label="Games">Games</button>
-	    <button onclick="window.location.href = 'report.html';" class="button" aria-label="Bug Report">Bug Report</button>
-	    <button onclick="window.location.href = 'domains.html';" class="button" aria-label="Ersatzdomains">Ersatzdomains</button>
-	    <button onclick="window.location.href = 'videos.html';" class="button" aria-label="Kontakt">Kontakt</button>
+            <button onclick="window.__cpLocation.href = 'games.html';" class="button" aria-label="Games">Games</button>
+	    <button onclick="window.__cpLocation.href = 'report.html';" class="button" aria-label="Bug Report">Bug Report</button>
+	    <button onclick="window.__cpLocation.href = 'domains.html';" class="button" aria-label="Ersatzdomains">Ersatzdomains</button>
+	    <button onclick="window.__cpLocation.href = 'videos.html';" class="button" aria-label="Kontakt">Kontakt</button>
             <button class="button btn-danger" id="logout-button" aria-label="Ausloggen" onclick="confirmLogout()">Ausloggen</button>
             <span id="current-time" class="button"></span>
             <span id="current-date" class="button"></span>
@@ -372,13 +368,13 @@
   
 
     <!-- Widget 3 -->	
-    <div id="widget3" onclick="window.location.href = 'report.html';" class="widget">
+    <div id="widget3" onclick="window.__cpLocation.href = 'report.html';" class="widget">
       	<h1>Probleme</h1>
       		<p>
 			Melde uns einfach, sollten dir Probleme z.b defekte Links oder Bugs auftreten. Einfach hier klicken!
 		</p>
     </div>
-<div id="widget3" onclick="window.location.href = 'games.html';" class="widget">
+<div id="widget3" onclick="window.__cpLocation.href = 'games.html';" class="widget">
       <h1>Langweilig?</h1>
       <p>
 Klicke hier wenn du Gamen willst. Entdecke nice Games.</p>
