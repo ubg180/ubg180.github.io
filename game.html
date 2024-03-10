@@ -67,7 +67,7 @@
             iframe.src = iframeLink;
 		iframe.width = '1300';
 		iframe.height = '700';
-		iframe.frameborder = '0';
+		iframe.frameBorder = '0';
 		iframe.scrolling = 'none';
 		iframe.allowfullscreen = '';
 		iframe.id = 'vollbild';
@@ -87,8 +87,9 @@
                 alert("Fehler: Mehr als 5 Minuten vergangen!");
             }
         }
-var elem = document.getElementById("vollbild");
+
                         function openFullscreen() {
+				var elem = document.getElementById("vollbild");
                             if (elem.requestFullscreen) {
                                 elem.requestFullscreen();
                             } else if (elem.webkitRequestFullscreen) { /* Safari */
