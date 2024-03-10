@@ -30,7 +30,7 @@
 <body class="h-100">
    <button class="button" onclick="window.__cpLocation.href = 'games.html';" aria-label="Zurück">Zurück zu den Games</button>
    <button class="button" onclick="openFullscreen()" aria-label="Vollbild">Vollbild</button>
-
+<p id="vollbild">1</p>
 	
 <script>
     // Funktion zum Extrahieren von Parametern aus der URL
@@ -73,11 +73,10 @@
         iframe.height = '700';
         iframe.frameBorder = '0';
         iframe.scrolling = 'none';
-	iframe.id = "vollbild";
-	iframe.allowFullscreen = '';
+	iframe.id = "Vollbild";
         document.body.appendChild(iframe);
     }
-	alert("Test")
+	alert("Test1")
 </script>
 
 <script>
