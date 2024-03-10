@@ -35,20 +35,22 @@
   <script>
              // Funktion zum Extrahieren von Parametern aus der URL
         function getParameterByName(name, url) {
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
+    name = name.replace(/[[]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 
         // Parameter aus der URL extrahieren
         var pageTitle = getParameterByName('pageTitle', window.__cpLocation.href);
         var pageHeading = getParameterByName('pageHeading', window.__cpLocation.href);
         var iframeLink = getParameterByName('iframeLink', window.__cpLocation.href);
         var currentTime = getParameterByName('currentTime', window.__cpLocation.href);
-
+  </script>
+	<script>
         // Titel der Zielseite setzen
         if (pageTitle) {
             document.title = pageTitle;
@@ -70,7 +72,7 @@
 		iframe.height = '700';
 		iframe.frameBorder = '0';
 		iframe.scrolling = 'none';
-		iframe.allowfullscreen = '';
+	
             document.body.appendChild(iframe);
         }
 		</script>
