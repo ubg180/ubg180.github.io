@@ -29,7 +29,7 @@
 </head>
 <body class="h-100">
    <button class="button" onclick="window.__cpLocation.href = 'games.html';" aria-label="Zurück">Zurück zu den Games</button>
-
+   <button class="button" onclick="openFullscreen()" aria-label="Vollbild">Vollbild</button>
 
 	
 <script>
@@ -74,7 +74,7 @@
         iframe.frameBorder = '0';
         iframe.scrolling = 'none';
 	iframe.id = "vollbild";
-
+	iframe.allowfullscreen = '';
         document.body.appendChild(iframe);
     }
 </script>
@@ -93,6 +93,8 @@
             alert("Fehler: Mehr als 5 Minuten vergangen!");
         }
     }
+	    </script>
+	<script>
 var elem = document.getElementById("vollbild");
                         function openFullscreen() {
                             if (elem.requestFullscreen) {
@@ -105,6 +107,6 @@ var elem = document.getElementById("vollbild");
                         }
 </script>
   
-    </script>
+    
 </body>
 </html>
