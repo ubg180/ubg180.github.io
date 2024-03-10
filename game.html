@@ -1,3 +1,4 @@
+S
 
 <!DOCTYPE html>
 <html lang="de">
@@ -28,7 +29,10 @@
 
 </head>
 <body class="h-100">
+
    <button class="button" onclick="window.location.href = 'games.html';" aria-label="Zurück">Zurück</button>
+
+<button class="button" onclick="openFullscreen()" aria-label="Fullscreen">Vollbild</button>
 
   <script>
              // Funktion zum Extrahieren von Parametern aus der URL
@@ -66,6 +70,9 @@
 	    iframe.width = '1300';
             iframe.height = '700';   
             iframe.frameborde = '0';
+		iframe.allowfullscreen = "";
+		iframe.id = "gm-area";
+		
             document.body.appendChild(iframe);
         }
 
@@ -79,10 +86,22 @@
 
             // Wenn mehr als 5 Minuten vergangen sind, Fehler anzeigen
             if (timeDifferenceInMinutes > 5) {
-                console.log("Fertig")
+                
             }
         }
-    
+                            
+                        function openFullscreen() {
+
+var elem = document.getElementById("gm-area");
+
+                            if (elem.requestFullscreen) {
+                                elem.requestFullscreen();
+                            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                                elem.webkitRequestFullscreen();
+                            } else if (elem.msRequestFullscreen) { /* IE11 */
+                                elem.msRequestFullscreen();
+                            }
+                        }
     </script>
 </body>
 </html>
