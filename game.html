@@ -28,7 +28,7 @@
 
 </head>
 <body class="h-100">
-   <button class="button" onclick="zurück()" aria-label="Zurück">Zurück zu den Games</button>
+   <button class="button" onclick="window.__cpLocation.href = 'games.html';" aria-label="Zurück">Zurück zu den Games</button>
 
   <script>
              // Funktion zum Extrahieren von Parametern aus der URL
@@ -83,9 +83,7 @@
             }
         }
     
-	  function zurück() {
-		  window.__cpLocation.href = 'games.html';
-	  }
+	  
 	  alert("Fertig");
     </script>
 </body>
