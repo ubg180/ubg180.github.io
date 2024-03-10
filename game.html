@@ -45,7 +45,7 @@
 
         // Parameter aus der URL extrahieren
         var pageTitle = getParameterByName('pageTitle', window.__cpLocation.href);
-        var pageHeading = pageTitle;
+        var pageHeading = getParameterByName('pageHeading', window.__cpLocation.href);
         var iframeLink = getParameterByName('iframeLink', window.__cpLocation.href);
         var currentTime = getParameterByName('currentTime', window.__cpLocation.href);
 
