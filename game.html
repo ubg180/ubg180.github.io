@@ -30,7 +30,7 @@
 <body class="h-100">
    <button class="button" onclick="window.__cpLocation.href = 'games.html';" aria-label="Zurück">Zurück zu den Games</button>
    <button class="button" onclick="openFullscreen()" aria-label="Vollbild">Vollbild</button>
-<p id="vollbild">1</p>
+
 	
 <script>
     // Funktion zum Extrahieren von Parametern aus der URL
@@ -76,7 +76,7 @@
 	iframe.id = "Vollbild";
         document.body.appendChild(iframe);
     }
-	alert("Test1")
+	alert("Test12")
 </script>
 
 <script>
@@ -94,19 +94,7 @@
         }
     }
 	    </script>
-	<script>
-var elem = document.getElementById("vollbild");
-                        function openFullscreen() {
-                            if (elem.requestFullscreen) {
-                                elem.requestFullscreen();
-                            } else if (elem.webkitRequestFullscreen) { /* Safari */
-                                elem.webkitRequestFullscreen();
-                            } else if (elem.msRequestFullscreen) { /* IE11 */
-                                elem.msRequestFullscreen();
-                            }
-                        }
-</script>
-  
-    
+
+
 </body>
 </html>
