@@ -32,59 +32,58 @@
 
   <script>
              // Funktion zum Extrahieren von Parametern aus der URL
-        function getParameterByName(name, url) {
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
+function getParameterByName(name, url) {
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 
-        // Parameter aus der URL extrahieren
-        var pageTitle = getParameterByName('pageTitle', window.__cpLocation.href);
-        var pageHeading = getParameterByName('pageHeading', window.__cpLocation.href);
-        var iframeLink = getParameterByName('iframeLink', window.__cpLocation.href);
-        var currentTime = getParameterByName('currentTime', window.__cpLocation.href);
+// Parameter aus der URL extrahieren
+var pageTitle = getParameterByName('pageTitle', window.__cpLocation.href);
+var pageHeading = getParameterByName('pageHeading', window.__cpLocation.href);
+var iframeLink = getParameterByName('iframeLink', window.__cpLocation.href);
+var currentTime = getParameterByName('currentTime', window.__cpLocation.href);
 
-        // Titel der Zielseite setzen
-        if (pageTitle) {
-            document.title = pageTitle;
-        }
+// Titel der Zielseite setzen
+if (pageTitle) {
+    document.title = pageTitle;
+}
 
-        // Überschrift setzen
-        if (pageHeading) {
-            var heading = document.createElement('h1');
-            heading.textContent = pageHeading;
-            document.body.appendChild(heading);
-        }
+// Überschrift setzen
+if (pageHeading) {
+    var heading = document.createElement('h1');
+    heading.textContent = pageHeading;
+    document.body.appendChild(heading);
+}
 
-        // iframe erstellen und einbinden
-        if (iframeLink) {
-            var iframe = document.createElement('iframe');
-            iframe.src = iframeLink;
-	    iframe.width = '1300';
-            iframe.height = '700';   
-            iframe.frameborde = '0';
-            document.body.appendChild(iframe);
-        }
+// iframe erstellen und einbinden
+if (iframeLink) {
+    var iframe = document.createElement('iframe');
+    iframe.src = iframeLink;
+    iframe.width = '1300';
+    iframe.height = '700';
+    iframe.frameborder = '0'; // Korrektur: frameBorder statt frameborde
+    document.body.appendChild(iframe);
+}
 
-        // Zeitunterschied prüfen
-        if (currentTime) {
-            var currentTimeInMillis = parseInt(currentTime);
-            var currentTimeOnPageLoad = new Date().getTime();
+// Zeitunterschied prüfen
+if (currentTime) {
+    var currentTimeInMillis = parseInt(currentTime); // Korrektur: currentTimeInMillis hinzugefügt
+    var currentTimeOnPageLoad = new Date().getTime();
 
-            // Zeitunterschied in Minuten berechnen
-            var timeDifferenceInMinutes = (currentTimeOnPageLoad - currentTimeInMillis) / (1000 * 60);
+    // Zeitunterschied in Minuten berechnen
+    var timeDifferenceInMinutes = (currentTimeOnPageLoad - currentTimeInMillis) / (1000 * 60);
 
-            // Wenn mehr als 5 Minuten vergangen sind, Fehler anzeigen
-            if (timeDifferenceInMinutes > 5) {
-			console.log("Hallo");
-            }
-        }
-    
-	  
-	  alert("Fertig");
+    // Wenn mehr als 5 Minuten vergangen sind, Fehler anzeigen
+    if (timeDifferenceInMinutes > 5) {
+        console.log("Hallo");
+    }
+}
+
+alert("Fertig");
     </script>
 </body>
 </html>
