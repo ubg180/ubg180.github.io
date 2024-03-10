@@ -32,8 +32,6 @@
    <button class="button" onclick="window.location.href = 'games.html';" aria-label="Zurück">Zurück</button>
 
 <button class="button" onclick="openFullscreen()" aria-label="Fullscreen">Vollbild</button>
-	<br>
-	<p>Information: Manche Spiele können an Apple Geräten nur im Vollbildmodus mit Tasten gespielt werden. Wir bitten um Verständniss.</p>
 
   <script>
              // Funktion zum Extrahieren von Parametern aus der URL
@@ -66,14 +64,17 @@
 
         // iframe erstellen und einbinden
         if (iframeLink) {
-            	var iframe = document.createElement('iframe');
-            	iframe.src = iframeLink;
-	  	iframe.width = '1300';
-            	iframe.height = '700';   
-            	iframe.frameborde = '0';
-		iframe.allowfullscreen = "";
-		iframe.id = "gm-area";
-		document.body.appendChild(iframe);
+
+var iframe = document.createElement('iframe');
+iframe.src = iframeLink;
+iframe.width = '1300';
+iframe.height = '700';
+iframe.frameborder = '0';
+iframe.allowfullscreen = "";
+iframe.id = "gm-area";
+iframe.sandbox = "allow-scripts allow-same-origin allow-modals allow-popups allow-presentation";
+document.body.appendChild(iframe);
+
         }
 
         // Zeitunterschied prüfen
@@ -86,7 +87,7 @@
 
             // Wenn mehr als 5 Minuten vergangen sind, Fehler anzeigen
             if (timeDifferenceInMinutes > 5) {
-               
+                alert("Fehler: Mehr als 5 Minuten vergangen!");
             }
         }
 
