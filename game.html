@@ -60,7 +60,8 @@
             heading.textContent = pageHeading;
             document.body.appendChild(heading);
         }
-
+		</script>
+	<script>
         // iframe erstellen und einbinden
         if (iframeLink) {
             var iframe = document.createElement('iframe');
@@ -72,7 +73,8 @@
 		iframe.allowfullscreen = '';
             document.body.appendChild(iframe);
         }
-
+		</script>
+	<script>
         // Zeitunterschied prüfen
         if (currentTime) {
             var currentTimeInMillis = parseInt(currentTime);
@@ -86,7 +88,8 @@
                 alert("Fehler: Mehr als 5 Minuten vergangen!");
             }
         }
-
+		</script>
+	<script>
                         function openFullscreen() {
 				var elem = document.getElementById("iframe");
                             if (elem.requestFullscreen) {
@@ -97,6 +100,7 @@
                                 elem.msRequestFullscreen();
                             }
                         }
+	</script>
     
     </script>
 </body>
