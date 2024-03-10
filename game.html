@@ -32,6 +32,8 @@
    <button class="button" onclick="window.location.href = 'games.html';" aria-label="Zurück">Zurück</button>
 
 <button class="button" onclick="openFullscreen()" aria-label="Fullscreen">Vollbild</button>
+	<br>
+	<p>Information: Manche Spiele können an Apple Geräten nur im Vollbildmodus mit Tasten gespielt werden. Wir bitten um Verständniss.</p>
 
   <script>
              // Funktion zum Extrahieren von Parametern aus der URL
@@ -66,12 +68,11 @@
         if (iframeLink) {
             	var iframe = document.createElement('iframe');
             	iframe.src = iframeLink;
-	    	iframe.width = '1300';
+	  	iframe.width = '1300';
             	iframe.height = '700';   
             	iframe.frameborde = '0';
 		iframe.allowfullscreen = "";
-		iframe.id = gm-area
-		iframe.scrolling = 'none';
+		iframe.id = "gm-area";
 		document.body.appendChild(iframe);
         }
 
@@ -91,7 +92,7 @@
 
                         function openFullscreen() {
 
-			var elem = document.getElementById("gm-area");
+var elem = document.getElementById("gm-area");
 
                             if (elem.requestFullscreen) {
                                 elem.requestFullscreen();
