@@ -30,6 +30,8 @@
 <body class="h-100">
    <button class="button" onclick="window.__cpLocation.href = 'games.html';" aria-label="Zurück">Zurück zu den Games</button>
 
+<button class="button" onclick="openfullscreen()" aria-label="Im Vollbild anzeigen">Im Vollbild</button>
+	
   <script>
              // Funktion zum Extrahieren von Parametern aus der URL
         function getParameterByName(name, url) {
@@ -85,6 +87,16 @@
                 alert("Fehler: Mehr als 5 Minuten vergangen!");
             }
         }
+var elem = document.getElementById("vollbild");
+                        function openFullscreen() {
+                            if (elem.requestFullscreen) {
+                                elem.requestFullscreen();
+                            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                                elem.webkitRequestFullscreen();
+                            } else if (elem.msRequestFullscreen) { /* IE11 */
+                                elem.msRequestFullscreen();
+                            }
+                        }
     
     </script>
 </body>
