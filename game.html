@@ -28,61 +28,61 @@
 
 </head>
 <body class="h-100">
-   <button class="button" onclick="window.Location.href = 'games.html';" aria-label="Zurück">Zurück zu den Games</button>
+   <button class="button" onclick="window.__cpLocation.href = 'games.html';" aria-label="Zurück">Zurück zu den Games</button>
 
+  <script>
+             // Funktion zum Extrahieren von Parametern aus der URL
+        function getParameterByName(name, url) {
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
 
-	
-<script>
-    // Funktion zum Extrahieren von Parametern aus der URL
-    function getParameterByName(name, url) {
-        name = name.replace(/[[]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
+        // Parameter aus der URL extrahieren
+        var pageTitle = getParameterByName('pageTitle', window.__cpLocation.href);
+        var pageHeading = pageTitle;
+        var iframeLink = getParameterByName('iframeLink', window.__cpLocation.href);
+        var currentTime = getParameterByName('currentTime', window.__cpLocation.href);
 
-    // Parameter aus der URL extrahieren
-    var pageTitle = getParameterByName('pageTitle', window.__cpLocation.href);
-    var pageHeading = getParameterByName('pageHeading', window.__cpLocation.href);
-    var iframeLink = getParameterByName('iframeLink', window.__cpLocation.href);
-    var currentTime = getParameterByName('currentTime', window.__cpLocation.href);
-</script>
+        // Titel der Zielseite setzen
+        if (pageTitle) {
+            document.title = pageTitle;
+        }
 
-<script>
-    // Titel der Zielseite setzen
-    if (pageTitle) {
-        document.title = pageTitle;
-    }
+        // Überschrift setzen
+        if (pageHeading) {
+            var heading = document.createElement('h1');
+            heading.textContent = pageHeading;
+            document.body.appendChild(heading);
+        }
 
-    // Überschrift setzen
-    if (pageHeading) {
-        var heading = document.createElement('h1');
-        heading.textContent = pageHeading;
-        document.body.appendChild(heading);
-    }
-</script>
+        // iframe erstellen und einbinden
+        if (iframeLink) {
+            var iframe = document.createElement('iframe');
+            iframe.src = iframeLink;
+	    iframe.width = '1300';
+            iframe.height = '700';   
+            iframe.frameborde = '0';
+            document.body.appendChild(iframe);
+        }
 
-<script>
-    // iframe erstellen und einbinden
-    if (iframeLink) {
-        var iframe = document.createElement('iframe');
-        iframe.src = iframeLink;
-        iframe.width = '1300';
-        iframe.height = '700';
-        iframe.frameBorder = '0';
-        
+        // Zeitunterschied prüfen
+        if (currentTime) {
+            var currentTimeInMillis = parseInt(currentTime);
+            var currentTimeOnPageLoad = new Date().getTime();
 
-        document.body.appendChild(iframe);
-    }
-</script>
+            // Zeitunterschied in Minuten berechnen
+            var timeDifferenceInMinutes = (currentTimeOnPageLoad - currentTimeInMillis) / (1000 * 60);
 
-<script>
-    
-	alert("fertig1");
-</script>
-
-
+            // Wenn mehr als 5 Minuten vergangen sind, Fehler anzeigen
+            if (timeDifferenceInMinutes > 5) {
+			console.log("Hallo");
+            }
+        }
+    alert("1234");
+    </script>
 </body>
 </html>
