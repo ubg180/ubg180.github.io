@@ -92,34 +92,8 @@
             alert("Fehler: Mehr als 5 Minuten vergangen!");
         }
     }
-</script>
 
-<script>
-    // Funktion, um das Iframe im Vollbild anzuzeigen
-    function toggleFullscreen(iframe) {
-        if (!document.fullscreenElement) {
-            iframe.requestFullscreen().catch(err => {
-                console.error('Fullscreen request failed:', err);
-            });
-        } else {
-            document.exitFullscreen();
-        }
-    }
-</script>
 
-<script>
-    // Button erstellen und einbinden
-    var fullscreenButton = document.createElement('button');
-    fullscreenButton.textContent = 'Toggle Fullscreen';
-
-    fullscreenButton.addEventListener('click', function () {
-        var iframe = document.querySelector('iframe');
-        if (iframe) {
-            toggleFullscreen(iframe);
-        }
-    });
-
-    document.body.appendChild(fullscreenButton);
 </script>
 
 </body>
