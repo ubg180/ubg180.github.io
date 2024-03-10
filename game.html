@@ -1,4 +1,3 @@
-S
 
 <!DOCTYPE html>
 <html lang="de">
@@ -65,15 +64,15 @@ S
 
         // iframe erstellen und einbinden
         if (iframeLink) {
-            var iframe = document.createElement('iframe');
-            iframe.src = iframeLink;
-	    iframe.width = '1300';
-            iframe.height = '700';   
-            iframe.frameborde = '0';
+            	var iframe = document.createElement('iframe');
+            	iframe.src = iframeLink;
+	    	iframe.width = '1300';
+            	iframe.height = '700';   
+            	iframe.frameborde = '0';
 		iframe.allowfullscreen = "";
-		iframe.id = "gm-area";
-		
-            document.body.appendChild(iframe);
+		iframe.id = gm-area
+		iframe.scrolling = 'none';
+		document.body.appendChild(iframe);
         }
 
         // Zeitunterschied prüfen
@@ -86,13 +85,13 @@ S
 
             // Wenn mehr als 5 Minuten vergangen sind, Fehler anzeigen
             if (timeDifferenceInMinutes > 5) {
-                
+               
             }
         }
-                            
+
                         function openFullscreen() {
 
-var elem = document.getElementById("gm-area");
+			var elem = document.getElementById("gm-area");
 
                             if (elem.requestFullscreen) {
                                 elem.requestFullscreen();
