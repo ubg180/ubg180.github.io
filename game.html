@@ -28,9 +28,7 @@
 
 </head>
 <body class="h-100">
-	<script src="assets/firebase/script/störungen.js"></script>
-  <div id="bar"></div>
-   <button class="button" onclick="window.location.href = 'games.html';" aria-label="Zurück">Zurück zu den Games</button>
+   <button class="button" onclick="window.__cpLocation.href = 'games.html';" aria-label="Zurück">Zurück zu den Games</button>
 
   <script>
              // Funktion zum Extrahieren von Parametern aus der URL
@@ -44,10 +42,10 @@
         }
 
         // Parameter aus der URL extrahieren
-        var pageTitle = getParameterByName('pageTitle', window.location.href);
-        var pageHeading = getParameterByName('pageHeading', window.location.href);
-        var iframeLink = getParameterByName('iframeLink', window.location.href);
-        var currentTime = getParameterByName('currentTime', window.location.href);
+        var pageTitle = getParameterByName('pageTitle', window.__cpLocation.href);
+        var pageHeading = getParameterByName('pageHeading', window.__cpLocation.href);
+        var iframeLink = getParameterByName('iframeLink', window.__cpLocation.href);
+        var currentTime = getParameterByName('currentTime', window.__cpLocation.href);
 
         // Titel der Zielseite setzen
         if (pageTitle) {
