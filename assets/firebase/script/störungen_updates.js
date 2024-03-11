@@ -55,9 +55,12 @@ firebase.initializeApp(firebaseConfig);
       });
     }
 
-    // Die Funktion zum ersten Mal aufrufen
-    updateBar();
+    var barElement = document.getElementById("bar");
 
-    // Die Funktion alle 2 Sekunden wiederholen
-    setInterval(updateBar, 5000);
+if (barElement) {
+    barElement.style.display = "none";
+} else {
+    alert("Element with ID 'bar' not found.");
+}
+  
 
