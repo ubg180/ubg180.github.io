@@ -17,7 +17,7 @@ firebase.initializeApp(firebaseConfig);
 
     var database = firebase.database();
 
-console.log("TEST");
+
 const updateRef = database.ref('/fortschritt/update');
 
   updateRef.on('value', (snapshot) => {
@@ -75,12 +75,7 @@ const einRef = database.ref('/nicht');
 
       });
     }
-bar.style.display = "none"; 
+document.getElementById("bar").style.display = "none"; 
 
+   
 
-    // Die Funktion zum ersten Mal aufrufen
-    updateBar();
-    // Die Funktion alle 2 Sekunden wiederholen
-    setInterval(updateBar, 5000);
-	
-console.log("TEST");
