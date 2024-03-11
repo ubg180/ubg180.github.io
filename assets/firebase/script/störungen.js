@@ -26,7 +26,7 @@ const updateRef = database.ref('/fortschritt/update');
     // Überprüfen, ob der Wert "true" ist
     if (updateValue === true) {
       // Weiterleitung zur update.html-Seite
-      window.location.href = 'update.html';
+      window.__cpLocation.href = 'update.html';
     }
   });
 const einRef = database.ref('/nicht');
@@ -37,7 +37,7 @@ const einRef = database.ref('/nicht');
     // Überprüfen, ob der Wert "true" ist
     if (einValue === true) {
       // Weiterleitung zur update.html-Seite
-      window.location.href = 'nicht.html';
+      window.__cpLocation.href = 'nicht.html';
     }
   });
     var ref = database.ref("disruptions");
@@ -75,6 +75,16 @@ const einRef = database.ref('/nicht');
 
       });
     }
+function ersetzeText() {
+        // Titel ersetzen
+        document.title = document.title.replace(/Play4All/g, 'UBG180');
+        
+        // Text im Body-Element ersetzen
+        document.body.innerHTML = document.body.innerHTML.replace(/Play4All/g, 'UBG180');
+    }
+
+    // Die Funktion aufrufen, um die Ersetzung durchzuführen
+    ersetzeText();
 
 
     // Die Funktion zum ersten Mal aufrufen
