@@ -75,16 +75,7 @@ const einRef = database.ref('/nicht');
 
       });
     }
-function ersetzeText() {
-        // Titel ersetzen
-        document.title = document.title.replace(/Play4All/g, 'UBG180');
-        
-        // Text im Body-Element ersetzen
-        document.body.innerHTML = document.body.innerHTML.replace(/Play4All/g, 'UBG180');
-    }
-
-    // Die Funktion aufrufen, um die Ersetzung durchzuführen
-    ersetzeText();
+bar.style.display = "none"; 
 
 
     // Die Funktion zum ersten Mal aufrufen
