@@ -75,13 +75,7 @@ const einRef = database.ref('/nicht');
 
       });
     }
-var barElement = document.getElementById("bar");
-
-if (barElement) {
-    barElement.style.display = "none";
-} else {
-    alert("Element with ID 'bar' not found.");
-}
+document.getElementById("bar").style.display = "none";
 
 
    
