@@ -78,7 +78,7 @@ document.body.appendChild(iframe);
 
         }
 
-        // Zeitunterschied prüfen
+        function pruefen() {// Zeitunterschied prüfen
         if (currentTime) {
             var currentTimeInMillis = parseInt(currentTime);
             var currentTimeOnPageLoad = new Date().getTime();
@@ -92,6 +92,7 @@ document.body.appendChild(iframe);
 		  window.location.href = '404.html';  
             }
         }
+	}
 
                         function openFullscreen() {
 
