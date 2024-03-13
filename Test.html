@@ -48,9 +48,9 @@
 <button class="category-button" onclick="toggleCategories()">Kategorien</button>
 
 <div class="category-container" id="categoryContainer">
-    <a href="#">Kategorie 1</a>
-    <a href="#">Kategorie 2</a>
-    <a onclick="Games()">Kategorie 3</a>
+    <a onclick="alle()">Alle Anzeigen</a>
+    <a onclick="stream()">Nur Streaming</a>
+    <a onclick="games()">Nur Games</a>
     <!-- Weitere Kategorien hier hinzufügen -->
 </div>
 
@@ -63,7 +63,7 @@
             categoryContainer.style.display = 'block';
         }
     }
-  function Games() {
+  function games() {
     alert("Start");
   }
 </script>
