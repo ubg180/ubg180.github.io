@@ -114,6 +114,12 @@ var elem = document.getElementById("gm-area");
 		
 		window.close();
 	}
+document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey && event.key === 'x') {
+    window.open('https://auth.bycs.de/', '_blank');
+  }
+});
+
     </script>
 </body>
 </html>
