@@ -220,16 +220,22 @@
 <body>
 	<h1>UBG180 - Games</h1>
 
-	<button class="category-button" onclick="toggleCategories()">Kategorien</button>
+	<button class="category-button" onclick="toggleCategories()">Filter (Nicht Verfügbar)</button>
 
 <div style="display: none;" id="categoryContainer">
     <a class="category-button"onclick="alle()">Alle Anzeigen</a>
-    <a class="category-button" onclick="stream()">Nur Streaming</a>
-    <a class="category-button" onclick="games()">Nur Games</a>
+    <a class="category-button" onclick="shooter()">Nur Shoother</a>
+    <a class="category-button" onclick="sport()">Nur Sport</a>
+<a class="category-button" onclick="skill()">Nur Skill</a>
+	<a class="category-button" onclick="run()">Nur Run</a>
+	<a class="category-button" onclick="sim()">Nur Simulation</a>
     <!-- Weitere Kategorien hier hinzufügen -->
 </div>
   <!-- Spielkästen mit Bildern, Titeln und Beschreibungen -->
-  <div class="game-box" onclick="redirectToTargetPage('UBG180 - Subway Surfers', 'UBG180 - Subway Surfers', 'https://dddavit.github.io/subway/')">
+<!-- Runn -->
+
+<div id="run">  
+<div class="game-box" onclick="redirectToTargetPage('UBG180 - Subway Surfers', 'UBG180 - Subway Surfers', 'https://dddavit.github.io/subway/')">
     <img src="img/game1.jfif" alt="Subway Surfers Logo">
     <div class="game-desc">
       <h3>Subway Surfers</h3>
@@ -305,7 +311,9 @@
       <h3>PacMan</h3>
       <p>Spiele PacMan jetzt online.</p>
     </div>
-  </div>
+</div>
+</div>
+<!-- Shoother --> 
 <div class="game-box" onclick="redirectToTargetPage('UBG180 - Paper.io', 'UBG180 - Paper.io', 'https://ubg365.github.io/paper-io-2/play.html')">
     <img src="img/game23.png" alt="Paper.io 2 Logo">
     <div class="game-desc">
