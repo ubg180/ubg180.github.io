@@ -66,33 +66,7 @@
       font-size: 16px;
       margin: 5px 0;
     }
-#bar {
-  color: red !important;
-  background-color: black !important;
-  font-family: Arial, sans-serif !important;
-  font-size: 20px !important;
-  padding: 10px !important;
-  width: 100% !important;
-  text-align: center !important;
-}
 
-/* Die Animation soll wie ein Würfel aussehen */
-@keyframes cube {
-  0% {
-    transform: rotateX(0deg);
-  }
-  50% {      
-    transform: rotateX(90deg);
-  }
-  100% {
-    transform: rotateX(180deg);
-  }
-}
-
-/* Die Animation soll alle 2 Sekunden wechseln */
-.animate {
-  animation: cube 2s infinite !important;
-}
 
 
   #scrollButton {
@@ -181,6 +155,7 @@
         .category-container {
             display: none;
             margin-top: 20px;
+	color: #fff; 
         }
 
         .category-container a {
