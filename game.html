@@ -32,8 +32,8 @@
 
 	<p><u>Wichtige Information:
 		<br>
-	</u>Bei einigen Games, vorallem bei Games von Stick, werden bei manchen Geräten die Spielstände nicht gespeichert! Wir bitten um Verständniss und arbeiten daran.</p>
-   <button class="button" onclick="window.location.href = 'games.html';" aria-label="Zurück">Zurück</button>
+	</u>Bei einigen Games, vorallem bei Games von Stick, werden bei manchen Geräten die Spielstände nicht gespeichert!</p>
+   <button class="button" onclick="zurück()" aria-label="Zurück">Zurück</button>
 
 <button class="button" onclick="openFullscreen()" aria-label="Fullscreen">Vollbild</button>
   <script>
@@ -108,6 +108,10 @@ var elem = document.getElementById("gm-area");
                                 elem.msRequestFullscreen();
                             }
                         }
+	function zurück() {
+		alert("Der Tab wird geschlossen!");
+		window.stop();
+	}
     </script>
 </body>
 </html>
