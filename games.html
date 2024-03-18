@@ -223,11 +223,11 @@
 	<button class="category-button" onclick="toggleCategories()">Filter (Teilweise Verfügbar)</button>
 
 <div style="display: none;" id="categoryContainer">
-    <a class="category-button"onclick="alle()">Alle Anzeigen (Verfügbar)</a>
-    <a class="category-button" onclick="shooter()">Shoother (Verfügbar)</a>
-    <a class="category-button" onclick="sport()">Sport (Verfügbar)</a>
-<a class="category-button" onclick="skill()">Skill (Verfügbar)</a>
-	<a class="category-button" onclick="run()">Sonstige (Teilweise)</a>
+    <a class="category-button"onclick="alle()">Alle Anzeigen</a>
+    <a class="category-button" onclick="shooter()">Shoother (Teilweise)</a>
+    <a class="category-button" onclick="sport()">Sport (Nicht)</a>
+<a class="category-button" onclick="skill()">Skill</a>
+	<a class="category-button" onclick="sonstige()">Sonstige</a>
 	<a class="category-button" onclick="sim()">Cars (Teilweise)</a>
     <!-- Weitere Kategorien hier hinzufügen -->
 </div>
@@ -1289,9 +1289,9 @@
     </div>
   </div>
 </div>
-	<!-- Ende Shoothing -->
+	<!-- Ende Shoothing 1-->
 </div>
-<!-- Ende Shoothing -->
+<!-- Ende Shoothing 2 -->
 
 
 <div style="display: none;">
@@ -1339,7 +1339,18 @@
     document.documentElement.scrollTop = 0; // Für andere Browser
   }
 const skill = document.getElementById("skill");
-const shooting = document.getById("shooting");
+const shooting = document.getElementById("shooting");
+const car = document.getElementById("car");
+const sonstige = document.getElementById("sonstige"); 
+function sonstige() {
+	car.style.display = "none";
+	shooting.style.display = "none";
+	skill.style.display = "none";
+	sonstige.style.display = "block"; 
+}
+	
+	
+
 </script>
 </body>
 </html>
