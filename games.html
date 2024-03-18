@@ -220,15 +220,15 @@
 <body>
 	<h1>UBG180 - Games</h1>
 
-	<button class="category-button" onclick="toggleCategories()">Filter (Nicht Verfügbar)</button>
+	<button class="category-button" onclick="toggleCategories()">Filter (Teilweise Verfügbar)</button>
 
 <div style="display: none;" id="categoryContainer">
-    <a class="category-button"onclick="alle()">Alle Anzeigen</a>
-    <a class="category-button" onclick="shooter()">Nur Shoother</a>
-    <a class="category-button" onclick="sport()">Nur Sport</a>
-<a class="category-button" onclick="skill()">Nur Skill</a>
-	<a class="category-button" onclick="run()">Nur Run</a>
-	<a class="category-button" onclick="sim()">Nur Simulation</a>
+    <a class="category-button"onclick="alle()">Alle Anzeigen (Verfügbar)</a>
+    <a class="category-button" onclick="shooter()">Nur Shoother (Nicht Verfügbar)</a>
+    <a class="category-button" onclick="sport()">Nur Sport (Nicht Verfügbar)</a>
+<a class="category-button" onclick="skill()">Nur Skill (Teilweise Verfügbar)</a>
+	<a class="category-button" onclick="run()">Nur Sonstige (Teilweise Verfügbar)</a>
+	<a class="category-button" onclick="sim()">Nur Cars (Teilweise Verfügbar)</a>
     <!-- Weitere Kategorien hier hinzufügen -->
 </div>
   <!-- Spielkästen mit Bildern, Titeln und Beschreibungen -->
@@ -809,7 +809,7 @@
       <p>Spiele jetzt James Gun unblocked in der Schule. Messe dich mit deinen Freunden!</p>
     </div>
   </div>
-</div>
+
 
 
 <div class="game-box" onclick="redirectToTargetPage('UBG180 - Wheely 8', 'UBG180 - Wheely 8','https://smartcart1.github.io/s88/wheely-8')">
@@ -1200,9 +1200,9 @@
     </div>
   </div>
 </div>
-<!-- Ende Skill -->
+<!-- Ende Skill 1 -->
 </div>
-<!-- Ende Skill -->
+<!-- Ende Skill 2 -->
 	<div class="game-box" onclick="redirectToTargetPage('UBG180 - Getaway', 'UBG180 - Getaway','https://smartcart1.github.io/s4/getaway-shootout')">
     <img src="https://smartcart1.github.io/imgs/getaway-shootout.png" alt="Getaway Logo">
     <div class="game-desc">
@@ -1216,7 +1216,7 @@
 <!-- Ende Run -->
 </div> 
 <!-- Anfang Race -->
-<div id="race">
+<div id="car">
 <div class="game-box" onclick="redirectToTargetPage('UBG180 - Grand Prix Hero', 'UBG180 - Grand Prix Hero','https://23azostore.github.io/s4/grand-prix-hero')">
     <img src="https://23azostore.github.io/img/grand-prix-hero.png" alt="Grand Prix Hero Logo">
     <div class="game-desc">
@@ -1338,6 +1338,8 @@
     document.body.scrollTop = 0; // Für Safari
     document.documentElement.scrollTop = 0; // Für andere Browser
   }
+const skill = document.getElementById("skill");
+const shooting = document.getById("shooting");
 </script>
 </body>
 </html>
