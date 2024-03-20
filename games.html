@@ -220,7 +220,8 @@
 <body>
 	<h1>UBG180 - Games</h1>
 
-	<button class="category-button" onclick="toggleCategories()">Filter (Nicht Verfügbar)</button>
+	<button id="neubutton" class="category-button" onclick="neu()">Nur neue Games anzeigen</button>
+	<button id="altbutton" class="category-button" onclick="alt()">Alle Games anzeigen</button>
 
 <div style="display: none;" id="categoryContainer">
     <a class="category-button"onclick="alle()">Alle Anzeigen</a>
@@ -232,7 +233,7 @@
     <!-- Weitere Kategorien hier hinzufügen -->
 </div>
   <!-- Spielkästen mit Bildern, Titeln und Beschreibungen -->
-	
+	<div id="alt">
 <!-- Anfang Sonstige/Noch zum Sotieren 1 -->
 	<div id="sonstige">
 <!-- Anfang Sonstige/Noch zum Sotieren 1 -->
@@ -1385,7 +1386,9 @@
       <p>Spiele jetzt Off Road Rain Cargo Simulator unblocked in der Schule. Messe dich mit deinen Freunden!</p>
     </div>
   </div>
+</div>
 	<!-- Neue Games am 20.03.2024 -->
+<div id="neu">
 <div class="game-box" onclick="redirectToTargetPage('UBG180 - Puppet Master', 'UBG180 - Puppet Master','https://tvz3gstore.github.io/g6/puppet-master')">
     <img src="https://tvz3gstore.github.io/img/puppet-master.png" alt="Puppet Master Logo">
     <div class="game-desc">
@@ -1529,14 +1532,16 @@
     </div>
   </div>
 
-<div class="game-box" onclick="redirectToTargetPage('UBG180 - ', 'UBG180 - ','')">
-    <img src="" alt=" Logo">
+<div class="game-box" onclick="redirectToTargetPage('UBG180 - Burnin Crash n Burn', 'UBG180 - Burnin Crash n Burn','ttps://tvz3gstore.github.io/g2/burnin-rubber-crash-n-burn')">
+    <img src="ttps://tvz3gstore.github.io/img/burnin-rubber-crash-n-burn.png" alt="Burnin Crash n Burn Logo">
     <div class="game-desc">
-      <h3></h3>
-      <p>Spiele jetzt  unblocked in der Schule. Messe dich mit deinen Freunden!</p>
+      <h3>Burnin Crash n Burn</h3>
+      <p>Spiele jetzt Burnin Crash n Burn unblocked in der Schule. Messe dich mit deinen Freunden!</p>
     </div>
   </div>
-
+</div>
+<!-- Ende der neu hinzugefügten Games am 20.03.2024 -->
+<!-- ACHTUNG: AB HIER KEINE GAMES MEHR EINFÜGEN! NUR TEMPLATES !! -->
 <div style="display: none;">
 <div class="game-box" onclick="redirectToTargetPage('UBG180 - ', 'UBG180 - ','')">
     <img src="" alt=" Logo">
@@ -1592,8 +1597,37 @@ function sonstige() {
 	sonstige.style.display = "block"; 
 }
 	
+const alt = document.getElementById("alt");
+const neu = document.getElementById("neu");
+const neubutton = document.getElementById("neubutton");
+const altbutton = document.getElementById("altbutton");
+var neuangezeigt = 0;
+altbutton.styl.display = "none";
+function neu() {
+	if(neuangezeigt==0) {
+	alt.style.display = "none";
+	neubutton.style.display = "none";
+	neu.style.display = "block";
+	altbutton.styl.display = "block";
+	neuangezeigt = 1; 
+	}
+}
+function alt() {
+	if(neuangezeigt==1) {
+	neu.style.display = "none";
+	altbutton.styl.display = "none";
+	alt.style.display = "block";
+	neubutton.style.display = "block";
+	neuangezeigt = 0;
+	}
+}
+	
+	
+		
 	
 
+
+	
 </script>
 </body>
 </html>
