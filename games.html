@@ -1568,7 +1568,9 @@
     document.body.scrollTop = 0; // Für Safari
     document.documentElement.scrollTop = 0; // Für andere Browser
   }
-
+</script>
+<script>
+alert("Test2");
 	
 const alt = document.getElementById("alt");
 const neu = document.getElementById("neu");
@@ -1576,23 +1578,28 @@ const neubutton = document.getElementById("neubutton");
 const altbutton = document.getElementById("altbutton");
 var neuangezeigt = 0;
 altbutton.style.display = "none";
+alert("Test3");
+</script>
+<script>
 function neu() {
-	if(neuangezeigt==0) {
+	alert("Neu")
 	alt.style.display = "none";
 	neubutton.style.display = "none";
 	neu.style.display = "block";
 	altbutton.style.display = "block";
-	neuangezeigt = 1; 
-	}
+	
+	
 }
+</script>
+<script>
 function alt() {
-	if(neuangezeigt==1) {
+	alert("alt");
 	neu.style.display = "none";
 	altbutton.styl.display = "none";
 	alt.style.display = "block";
 	neubutton.style.display = "block";
-	neuangezeigt = 0;
-	}
+	
+	
 }
 	
 	
