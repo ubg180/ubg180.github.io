@@ -57,73 +57,51 @@
             document.body.appendChild(heading);
         }
 		</script>
-<p style="color: red;"><b><u>Wichtige Information:</u></b>
-	
+	<!-- Wichtige Informationen -->
+	<p style="color: red;"><b><u>Wichtige Information:</u></b>	
 		<br>
 		Bei manchen Geräten werden die Spielstände nicht gespeichert! 
-	<br>
+		<br>
 		Bei manchen Games werden Fehler in Form eines Alerts angezeigt. Klickt bitte auf <i><b>Schließen</b></i>.
-	<br> 
+		<br> 
 	</p>
-	<script>
-
-        // iframe erstellen und einbinden
-        if (iframeLink) {
-
-var iframe = document.createElement('iframe');
-iframe.src = iframeLink;
-iframe.width = '1300';
-iframe.height = '700';
-iframe.frameborder = '0';
-iframe.allowfullscreen = "";
-iframe.id = "gm-area";
-iframe.sandbox = "allow-scripts allow-same-origin allow-modals allow-popups allow-presentation";
-document.body.appendChild(iframe);
-
-        }
-
-        function pruefen() {// Zeitunterschied prüfen
-        if (currentTime) {
-            var currentTimeInMillis = parseInt(currentTime);
-            var currentTimeOnPageLoad = new Date().getTime();
-
-            // Zeitunterschied in Minuten berechnen
-            var timeDifferenceInMinutes = (currentTimeOnPageLoad - currentTimeInMillis) / (1000 * 60);
-
-            // Wenn mehr als 5 Minuten vergangen sind, Fehler anzeigen
-            if (timeDifferenceInMinutes > 10) {
-                alert("Es tut uns leid, aber um sicherzustellen, dass du immer die aktuelle Version hast der Seite hast, musst du leider zu den Games zurückkehren. Wir bitten um Verständniss. Wenn du meinst, dass es ein Fehler ist, melde dich beim Support unter ubg180@web.de. Vielen Dank für dein Verständniss. Du wirst weitergeleitet!");
-		  window.location.href = '404.html';  
-            }
-        }
-	}
-
-                        function openFullscreen() {
-
-var elem = document.getElementById("gm-area");
-
-                            if (elem.requestFullscreen) {
-                                elem.requestFullscreen();
-                            } else if (elem.webkitRequestFullscreen) { /* Safari */
-                                elem.webkitRequestFullscreen();
-                            } else if (elem.msRequestFullscreen) { /* IE11 */
-                                elem.msRequestFullscreen();
-                            }
-                        }
-	function zurück() {
-		
-		window.close();
-	}
-document.addEventListener('keydown', function(event) {
-  if (event.ctrlKey && event.key === 'x') {
-    window.open('https://auth.bycs.de/', '_blank');
-  }
-});
-
-    </script>
-	
+	<!-- HH -->
    <button class="button" onclick="zurück()" aria-label="Zurück">Zurück</button>
 
 <button class="button" onclick="openFullscreen()" aria-label="Fullscreen">Vollbild</button>
+<script>
+
+        // iframe erstellen und einbinden
+        if (iframeLink) {
+	var iframe = document.createElement('iframe');
+	iframe.src = iframeLink;
+	iframe.width = '1300';
+	iframe.height = '700';
+	iframe.frameborder = '0';
+	iframe.allowfullscreen = "";
+	iframe.id = "gm-area";
+	iframe.sandbox = "allow-scripts allow-same-origin allow-modals allow-popups allow-presentation";
+	document.body.appendChild(iframe);
+        }
+	// Open Fullscreen
+        function openFullscreen() {
+	var elem = document.getElementById("gm-area");
+        if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+        }
+	else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+        } 
+	else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+        }
+        }
+	//Funktion zum Schließen des Tabs
+	function zurück() {
+	window.close();
+	}
+
+    </script>
+	
 </body>
 </html>
