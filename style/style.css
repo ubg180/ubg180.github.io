@@ -1,44 +1,6 @@
-body {
-    font-family: 'Creepster', cursive;
-    background-color: #222;
-    color: #ff6600;
-    text-align: center;
-    padding: 20px;
-    animation: backgroundFade 3s ease infinite;
-}
-#bar {
-  color: red !important;
-  background-color: black !important;
-  font-family: Arial, sans-serif !important;
-  font-size: 20px !important;
-  padding: 10px !important;
-  width: 100% !important;
-  text-align: center !important;
-}
 
-/* Die Animation soll wie ein Würfel aussehen */
-@keyframes cube {
-  0% {
-    transform: rotateX(0deg);
-  }
-  50% {
-    transform: rotateX(90deg);
-  }
-  100% {
-    transform: rotateX(180deg);
-  }
-}
 
-/* Die Animation soll alle 2 Sekunden wechseln */
-.animate {
-  animation: cube 2s infinite !important;
-}
 
-.homebar {
-    background-color: #333;
-    color: #ff6600;
-    padding: 10px;
-}
 .block {
         style: block;
         }
@@ -94,9 +56,7 @@ body {
             display: none;
         }
 
-        .halloween {
-            color: #ff6600;
-        }
+      
 
         @keyframes backgroundFade {
             0% {
@@ -183,11 +143,7 @@ input[type="submit"]:hover {
       z-index: 9999;
     }
 
-    /* CSS für den Spielerzähler */
-    #playerCount {
-      color: orange;
-      font-size: 36px;
-    }
+   
 
     /* CSS für die Verlassen-Schaltfläche */
     #leaveButton {
