@@ -340,37 +340,3 @@ input::-webkit-input-placeholder {
   display: block;
   opacity: 1;
 }
-
-#offlineAlert {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-}
-
-.offline-animation {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    text-align: center;
-}
-
-.offline-animation .circle {
-    width: 100px;
-    height: 100px;
-    background-color: #00a651; 
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.offline-animation .text {
-    font-size: 24px;
-    color: #00a651; 
-    margin-top: 10px;
-}
-
